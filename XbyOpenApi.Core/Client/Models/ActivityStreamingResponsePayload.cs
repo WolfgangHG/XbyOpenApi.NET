@@ -55,7 +55,7 @@ namespace XbyOpenApi.Core.Client.Models
       {
         result.NewsActivityResponsePayload = new global::XbyOpenApi.Core.Client.Models.NewsActivityResponsePayload();
       }
-      else if ("profile.update.banner_picture".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      else if ("profile.update.affiliate_badge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
       {
         result.ProfileUpdateActivityResponsePayload = new global::XbyOpenApi.Core.Client.Models.ProfileUpdateActivityResponsePayload();
       }

@@ -606,11 +606,11 @@ namespace XByOpenApi.Sample.WinForms
     {
       if (this.radioButtonOAuth1.Checked == true)
       {
-        return this.InitTwitterClientOAuth1();
+        return this.InitXClientOAuth1();
       }
       else
       {
-        return this.InitTwitterClientOAuth2Bearer();
+        return this.InitXClientOAuth2Bearer();
       }
     }
 
@@ -618,7 +618,7 @@ namespace XByOpenApi.Sample.WinForms
     /// Creates an XClient for OAuth1. This requires that all four fields are filled.
     /// </summary>
     /// <returns></returns>
-    private XClient InitTwitterClientOAuth1()
+    private XClient InitXClientOAuth1()
     {
       XClient client = XClientOAuth1Util.InitXClient(this.OAuth1ConsumerApiKey, this.OAuth1ConsumerApiKeySecret, this.OAuth1AccessToken, this.OAuth1AccessTokenSecret);
       return client;
@@ -629,7 +629,7 @@ namespace XByOpenApi.Sample.WinForms
     /// Creates an XClient for OAuth2. This requires that an AccessToken was fetched..
     /// </summary>
     /// <returns></returns>
-    private XClient InitTwitterClientOAuth2Bearer()
+    private XClient InitXClientOAuth2Bearer()
     {
       XClient client = XClientOAuth2Util.InitXClient(this.OAuth2AccessToken);
       return client;

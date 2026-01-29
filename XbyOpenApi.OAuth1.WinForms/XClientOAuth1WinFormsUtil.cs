@@ -43,7 +43,7 @@ namespace XbyOpenApi.OAuth1.WinForms
       // Construct the authorization url
       var authorizationUrl = tinyOAuth.GetAuthorizationUrl(requestTokenInfo.RequestToken);
 
-      // Go to the URL so that Twitter authenticates the user and gives him a PIN code.
+      // Go to the URL so that X authenticates the user and gives him a PIN code.
       Process.Start(new ProcessStartInfo(authorizationUrl)
       {
         UseShellExecute = true

@@ -12,7 +12,7 @@ using TinyOAuth1;
 namespace XbyOpenApi.OAuth1
 {
   /// <summary>
-  /// AuthenticationProvider für OAuth1-Zugriffe auf die Twitter-API.
+  /// AuthenticationProvider used for OAuth1 access to the X API.
   /// </summary>
   internal class XOAuth1AuthenticationProvider : IAuthenticationProvider
   {
@@ -20,12 +20,26 @@ namespace XbyOpenApi.OAuth1
     private string strAccessToken;
     private string strAccessTokenSecret;
 
+    /// <summary>
+    /// Creates the provider using a TinyOAuth instance and a access token.
+    /// </summary>
+    /// <param name="_tinyOAuth"></param>
+    /// <param name="_strAccessToken"></param>
+    /// <param name="_strAccessTokenSecret"></param>
     public XOAuth1AuthenticationProvider(TinyOAuth _tinyOAuth, string _strAccessToken, string _strAccessTokenSecret)
     {
       this.tinyOAuth = _tinyOAuth;
       this.strAccessToken = _strAccessToken;
       this.strAccessTokenSecret = _strAccessTokenSecret;
     }
+
+    /// <summary>
+    /// Add authentication header to a request. Here the OAuth1 signature is added. 
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="additionalAuthenticationContext"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
     {
       //Convert URI and HttpMethod 
@@ -35,11 +49,11 @@ namespace XbyOpenApi.OAuth1
         Method.GET => HttpMethod.Get,
         Method.POST => HttpMethod.Post,
         Method.DELETE => HttpMethod.Delete,
-        _ => throw new NotImplementedException("Nicht unterstützt für " + request.HttpMethod)
+        _ => throw new NotImplementedException("Not supported for " + request.HttpMethod)
       };
       AuthenticationHeaderValue authHeader = this.tinyOAuth.GetAuthorizationHeader(this.strAccessToken, this.strAccessTokenSecret, strUrl, httpMethod);
 
-      //"ToString" hängt Scheme und Parameter aneinander, d.h. "
+      //"ToString" appends Scheme and actual authorization value, here "OAuth xyz":
       request.Headers.Add("Authorization", authHeader.ToString());
 
       return Task.CompletedTask;

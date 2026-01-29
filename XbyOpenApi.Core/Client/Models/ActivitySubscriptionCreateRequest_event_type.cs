@@ -36,6 +36,10 @@ namespace XbyOpenApi.Core.Client.Models
 #pragma warning disable CS1591
     ProfileUpdateVerified_badge,
 #pragma warning restore CS1591
+    [EnumMember(Value = "profile.update.affiliate_badge")]
+#pragma warning disable CS1591
+    ProfileUpdateAffiliate_badge,
+#pragma warning restore CS1591
     [EnumMember(Value = "news.new")]
 #pragma warning disable CS1591
     NewsNew,

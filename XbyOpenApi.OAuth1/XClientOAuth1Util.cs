@@ -31,8 +31,8 @@ namespace XbyOpenApi.OAuth1
       // Create request adapter using the HttpClient-based implementation
       var adapter = new HttpClientRequestAdapter(authProvider);
 
-      XClient twitterClient = new XClient(adapter);
-      return twitterClient;
+      XClient xClient = new XClient(adapter);
+      return xClient;
     }
 
     /// <summary>
