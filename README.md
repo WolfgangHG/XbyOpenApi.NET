@@ -4,4 +4,4 @@ A sample for accessing the X/Twitter REST API with a Kiota generated client and 
 
 # How the code works
 
-How to create a C# client using Kiota: [Kiota.md](Kiota.md)
+[Here](doc/Kiota.md) you find a description on how to create a C# client using Kiota.
