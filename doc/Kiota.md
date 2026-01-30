@@ -125,18 +125,8 @@ string request = GetStringFromStream(requestOption.RequestBody);
 ```
 
 
-This might be helpful for error handling: e.g. the endpoint to delete a tweet currently apparently has a wrong definition
-in OpenAPI version 2.157: it should return an
-object "Error" if the response content type is "application/json" and "Problem" if the content type is "application/problem+json".
-But with an invalid tweet id it returns a "Problem" object and the content type is "application/json". When invoking the endpoint with an
-invalid OAuth2 access token, it returns also a "Problem" object, but with content type "application/problem+json".
-
-Kiota tries to parse the wrong error object and thus throws an empty (and meaningless) error message.
-
-I think Kiota cannot handle different results based on the content type at all, but I created issue https://github.com/microsoft/kiota/issues/7338
-
-To see the actual error message, I added the `BodyInspectionHandlerOption` and parsed the request in the catch block,
-which revealed a meaningful error:
+This trick might be helpful for error handling. Normally, Kiota creates error objects that contain the error message object from the service.
+If you try to delete a tweet with an id that you dont' have write access, the service response message is this:
 
 ```json
 {
@@ -146,3 +136,28 @@ which revealed a meaningful error:
   "status": 403
 }
 ```
+
+This matches the generated model class "Problem", so it should be thrown and you would see a helpful error. 
+But unfortunately, Kiota throws an "Error" instance instance, which has different fields
+and thus cannot be filled with the response data - the thrown error seems to be invalid.
+
+
+Here, two problems come together: 
+* Problem 1: the endpoint to delete a tweet currently apparently has a wrong definition
+in OpenAPI version 2.157: it should return an object "Error" if the response content type is "application/json" and 
+"Problem" if the content type is "application/problem+json".
+But with an invalid tweet id it returns a "Problem" object and the content type is "application/json". When invoking the endpoint with an
+invalid OAuth2 access token, it returns also a "Problem" object, but with content type "application/problem+json".
+Kiota tries to parse the wrong error object and thus throws an empty (and meaningless) error message.
+* Problem 2 (would be relevant if the X specification would be valid): I think Kiota cannot handle different results 
+based on the content type at all, so I created issue https://github.com/microsoft/kiota/issues/7338
+
+To see the actual error message, I added the `BodyInspectionHandlerOption` and parsed the request in the catch block,
+which revealed the actual error.
+
+
+# What about other OpenAPI libraries?
+
+Before switching to Kiota, I tested [NSwag](https://github.com/RicoSuter/NSwag/), but this fails miserably: it creates 
+a REST client that does not compile. And digging deeper reveals that it does not support the "oneOf" declaration which is heavily used by X,
+NSwag just picks the first class: https://github.com/RicoSuter/NSwag/issues/3738
