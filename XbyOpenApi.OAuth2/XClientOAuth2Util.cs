@@ -6,6 +6,7 @@ using System.Collections.Specialized;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -133,8 +134,12 @@ namespace XbyOpenApi.OAuth2
     /// <param name="redirectUrl">Redirect url, e.g. "http://localhost" (not url encoded)</param>
     /// <param name="scopes">List of scopes, should contain at least one entry.</param>
     /// <param name="fetchRefreshToken">Do we also want to fetch a refresh token? This means that an additional scope "offline.access" is added to the scope list.</param>
+    /// <param name="state">A (random) string that is sent back to the redirect url and that you provide to verify against CSRF attacks. 
+    /// The length of this string can be up to 500 characters.
+    /// You could create a random string by calling <see cref="CreateRandomString"/></param>
     /// <returns>URL to open in a browser.</returns>
-    public static string GetAuthorizeUrl(string clientId, string redirectUrl, List<string> scopes, bool fetchRefreshToken)
+    public static string GetAuthorizeUrl(string clientId, string redirectUrl, List<string> scopes, bool fetchRefreshToken,
+      string state)
     {
       if (string.IsNullOrWhiteSpace(clientId) == true)
       {
@@ -143,6 +148,15 @@ namespace XbyOpenApi.OAuth2
       if (string.IsNullOrWhiteSpace(redirectUrl) == true)
       {
         throw new ArgumentNullException(nameof(redirectUrl));
+      }
+      if (string.IsNullOrEmpty(state) == true)
+      {
+        throw new ArgumentNullException(nameof(state));
+      }
+      //State must not be longer than 500 chars:
+      if (state.Length > 500)
+      {
+        throw new ArgumentException("State must not be longer than 500 chars.", nameof(state));
       }
       if(scopes == null)
       {
@@ -161,7 +175,7 @@ namespace XbyOpenApi.OAuth2
         scopesArg += scope;
       }
 
-      //Append "offline.access" if 
+      //Append "offline.access" if a refresh token is requested.
       if (fetchRefreshToken == true)
       {
         if (string.IsNullOrEmpty(scopesArg) == false)
@@ -172,9 +186,11 @@ namespace XbyOpenApi.OAuth2
       }
 
       string encodedRedirectURL = WebUtility.UrlEncode(redirectUrl);
+      //Also encode state:
+      string encodedState = WebUtility.UrlEncode(state);
 
-
-      string authorizeUrl = $"https://x.com/i/oauth2/authorize?response_type=code&client_id={clientId}&redirect_uri={encodedRedirectURL}&scope={scopesArg}&state=state&code_challenge=challenge&code_challenge_method=plain";
+      bool todo_CreateCodeChallenge; //And return to sender.
+      string authorizeUrl = $"https://x.com/i/oauth2/authorize?response_type=code&client_id={clientId}&redirect_uri={encodedRedirectURL}&scope={scopesArg}&state={encodedState}&code_challenge=challenge&code_challenge_method=plain";
 
       return authorizeUrl;
     }
@@ -186,10 +202,20 @@ namespace XbyOpenApi.OAuth2
     /// <param name="strQuery">The query string that was called. Should start with the "redirect url" that was used in
     /// <see cref="GetAuthorizeUrl"/>. The authorization code is contained in a parameter "code".
     /// It might also contain a parameter "error", which means that the user has clicked "Cancel"</param>
+    /// <param name="expectedState">This is the "state" parameter that was sent to the server as part of the authorization url 
+    /// (<see cref="GetAuthorizeUrl"/>). The server provides it to the redirect url, and this method checks that it matches.</param>
     /// <returns>Authorization code or NULL of the request contains "error"</returns>
-    public static string? ParseAutorizationCode(string strQuery)
+    /// <exception cref="OAuth2Exception">If state does not match or request does not contain code.</exception>
+    public static string? ParseAutorizationCode(string strQuery, string expectedState)
     {
       NameValueCollection queryArgs = HttpUtility.ParseQueryString(strQuery);
+
+      //Check "state":
+      string receivedState = queryArgs["state"];
+      if (receivedState != expectedState)
+      {
+        throw new OAuth2Exception($"Redirect url contains parameter 'state' with value \"{receivedState}\", but this does not match expected value \"{expectedState}\"");
+      }
 
       //If the query contains an argument "error"...
       if (queryArgs["error"] != null)
@@ -203,7 +229,7 @@ namespace XbyOpenApi.OAuth2
         string code = queryArgs["code"];
         if (code == null)
         {
-          throw new InvalidOperationException("Error - response did not contain 'code': " + strQuery);
+          throw new OAuth2Exception("Error - response did not contain 'code': " + strQuery);
         }
 
         return code;
@@ -387,6 +413,27 @@ namespace XbyOpenApi.OAuth2
       }
 
       return tokenresponse;
+    }
+
+
+    private static readonly char[] charset = {
+      'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','q','x','y','z',
+      'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+      '0','1','2','3','4','5','6','7','8','9'
+    };
+
+    /// <summary>
+    /// Create a random string containing letters a-z, A-Z and digits 0-9
+    /// </summary>
+    /// <param name="length">Length of the requested string</param>
+    /// <returns>Random string</returns>
+    public static string CreateRandomString(int length = 32)
+    {
+      Random random = new Random();
+      char[] result = new char[length];
+      for (int i = 0; i < length; i++)
+        result[i] = charset[random.Next(charset.Length)];
+      return new string(result);
     }
   }
 }

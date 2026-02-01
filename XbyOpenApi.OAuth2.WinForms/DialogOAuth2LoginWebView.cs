@@ -46,6 +46,11 @@ namespace XbyOpenApi.OAuth2.WinForms
     /// Requested scopes.
     /// </summary>
     private List<string> scopes;
+
+    /// <summary>
+    /// The authorize url contains a "state" parameter (random string created here). The redirect url must also contain this parameter.
+    /// </summary>
+    private string state;
     #endregion
 
     #region Public properties
@@ -88,6 +93,9 @@ namespace XbyOpenApi.OAuth2.WinForms
       this.scopes = scopes;
       this.fetchRefreshToken = fetchRefreshToken;
 
+      //Create random "state":
+      this.state = XClientOAuth2Util.CreateRandomString();
+
       InitializeComponent();
     }
     #endregion
@@ -101,7 +109,7 @@ namespace XbyOpenApi.OAuth2.WinForms
     {
       base.OnLoad(e);
 
-      string authorizeUrl = XClientOAuth2Util.GetAuthorizeUrl(clientID, this.realRedirectURL, this.scopes, this.fetchRefreshToken);
+      string authorizeUrl = XClientOAuth2Util.GetAuthorizeUrl(clientID, this.realRedirectURL, this.scopes, this.fetchRefreshToken, this.state);
 
       this.webBrowser.Source = new Uri(authorizeUrl);
     }
@@ -119,40 +127,26 @@ namespace XbyOpenApi.OAuth2.WinForms
     {
       if (this.webBrowser.Source.AbsoluteUri.StartsWith(realRedirectURL))
       {
-        //The redirect url contains "state=xxx" (this is the state parameter that was set when building the authorization url.
+        //The redirect url contains the authorization code or an error message (if cancel was clicked).
+        //Also check the state parameter that was set when building the authorization url.
 
-        //In case of "cancel" click (when confirming the requested scopes), the url looks like this:
-        //http://localhost/?error=access_denied&state=state
+        string? code = XClientOAuth2Util.ParseAutorizationCode(this.webBrowser.Source.Query, this.state);
 
-        //In Case of success, it contains a parameter "code".
-
-        NameValueCollection queryArgs = HttpUtility.ParseQueryString(this.webBrowser.Source.Query);
-
-        if (queryArgs["error"] != null)
+        if (code != null)
         {
-          //"Cancel" was clicked. Cancel this form.
-          this.DialogResult = DialogResult.Cancel;
-          this.Close();
-          return;
-        }
-        else
-        {
-          //Check state...
-
-          string? code = queryArgs["code"];
-          if (code == null)
-          {
-            MessageBox.Show(this, "Error - response did not contain 'code': " + this.webBrowser.Source.OriginalString);
-            return;
-          }
-
           this.AuthorizationCode = code;
 
           //At this point, you can use the authorization code to create an access token and refresh token.
 
           this.DialogResult = DialogResult.OK;
           this.Close();
-
+        }
+        else
+        {
+          //"Cancel" was clicked. Cancel this form.
+          this.DialogResult = DialogResult.Cancel;
+          this.Close();
+          return;
         }
       }
     }
