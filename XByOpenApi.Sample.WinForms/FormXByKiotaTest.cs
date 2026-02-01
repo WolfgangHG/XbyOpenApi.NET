@@ -86,7 +86,7 @@ namespace XByOpenApi.Sample.WinForms
     {
       //It seems we need those three scopes to view my own profile and to write Tweets.
       //"users.read" is not enough to view my own profile.
-      List<string> scopes = new List<string>() { "users.read", "tweet.read", "tweet.write" };
+      List<string> scopes = new List<string>() { XClientOAuth2Util.SCOPE_USERS_READ, XClientOAuth2Util.SCOPE_TWEET_READ, XClientOAuth2Util.SCOPE_TWEET_WRITE };
 
       try
       {
@@ -94,12 +94,12 @@ namespace XByOpenApi.Sample.WinForms
         if (this.radioButtonOAuth2ConfidentialClient.Checked == true)
         {
           tokenResponse = XClientOAuth2WinFormsUtil.GetAccessToken_ConfidentialClient(this, this.OAuth2ClientID, this.OAuth2ClientSecret,
-            this.OAuth2RedirectUrl, this.OAuth2FetchRefreshToken, scopes);
+            this.OAuth2RedirectUrl, this.OAuth2FetchRefreshToken, scopes, this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked);
         }
         else
         {
           tokenResponse = XClientOAuth2WinFormsUtil.GetAccessToken_PublicClient(this, this.OAuth2ClientID,
-           this.OAuth2RedirectUrl, this.OAuth2FetchRefreshToken, scopes);
+           this.OAuth2RedirectUrl, this.OAuth2FetchRefreshToken, scopes, this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked);
         }
         if (tokenResponse == null)
         {
@@ -222,7 +222,7 @@ namespace XByOpenApi.Sample.WinForms
         if (response.Data != null)
         {
           MessageBox.Show(this, $"Success: Id = {response.Data.Id} " + Environment.NewLine +
-            $"Plain request: {plainRerequest}" + 
+            $"Plain request: {plainRerequest}" +
             Environment.NewLine +
             $"Plain response: {plainResponse}");
 
@@ -333,7 +333,7 @@ namespace XByOpenApi.Sample.WinForms
 
         if (response.Data != null)
         {
-          MessageBox.Show(this, $"Success: deleted = {response.Data.Deleted} " + Environment.NewLine + 
+          MessageBox.Show(this, $"Success: deleted = {response.Data.Deleted} " + Environment.NewLine +
             $"Plain response: {plainResponse}");
         }
         else if (response.Errors != null)
@@ -658,7 +658,7 @@ namespace XByOpenApi.Sample.WinForms
     private TinyOAuth InitTinyOAuth()
     {
       TinyOAuth tinyOAuth = XClientOAuth1Util.InitTinyOAuth(this.OAuth1ConsumerApiKey, this.OAuth1ConsumerApiKeySecret);
-      
+
       return tinyOAuth;
     }
 

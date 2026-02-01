@@ -51,6 +51,11 @@ namespace XbyOpenApi.OAuth2.WinForms
     /// The authorize url contains a "state" parameter (random string created here). The redirect url must also contain this parameter.
     /// </summary>
     private string state;
+
+    /// <summary>
+    /// A code challenge that is sent to the server as part of the authorize url.
+    /// </summary>
+    private OAuth2CodeChallenge codeChallenge;
     #endregion
 
     #region Public properties
@@ -75,8 +80,10 @@ namespace XbyOpenApi.OAuth2.WinForms
     /// <param name="fetchRefreshToken">Du we also want to fetch a RefreshToken (which means adding an additional 
     /// <paramref name="scopes"/>) </param>
     /// <param name="scopes">Requested scopes, must contain at least one item.</param>
+    /// <param name="codeChallenge">A code challenge that is sent to the server as part of the authorize url.
+    /// Must not be null.</param>
     public DialogOAuth2LoginWebView(string clientID, string redirectUrl, bool fetchRefreshToken,
-       List<string> scopes)
+       List<string> scopes, OAuth2CodeChallenge codeChallenge)
     {
       if (scopes == null)
       {
@@ -86,12 +93,18 @@ namespace XbyOpenApi.OAuth2.WinForms
       {
         throw new ArgumentException("Scopes must not be empty");
       }
+      if (codeChallenge == null)
+      {
+        throw new ArgumentNullException(nameof(codeChallenge));
+      }
 
       this.clientID = clientID;
       this.realRedirectURL = redirectUrl;
       
       this.scopes = scopes;
       this.fetchRefreshToken = fetchRefreshToken;
+
+      this.codeChallenge = codeChallenge;
 
       //Create random "state":
       this.state = XClientOAuth2Util.CreateRandomString();
@@ -109,7 +122,7 @@ namespace XbyOpenApi.OAuth2.WinForms
     {
       base.OnLoad(e);
 
-      string authorizeUrl = XClientOAuth2Util.GetAuthorizeUrl(clientID, this.realRedirectURL, this.scopes, this.fetchRefreshToken, this.state);
+      string authorizeUrl = XClientOAuth2Util.GetAuthorizeUrl(clientID, this.realRedirectURL, this.scopes, this.fetchRefreshToken, this.state, this.codeChallenge);
 
       this.webBrowser.Source = new Uri(authorizeUrl);
     }

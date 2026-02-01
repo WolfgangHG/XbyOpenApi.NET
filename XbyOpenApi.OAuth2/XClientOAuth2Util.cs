@@ -132,14 +132,17 @@ namespace XbyOpenApi.OAuth2
     /// </summary>
     /// <param name="clientId">ClientId, required</param>
     /// <param name="redirectUrl">Redirect url, e.g. "http://localhost" (not url encoded)</param>
-    /// <param name="scopes">List of scopes, should contain at least one entry.</param>
+    /// <param name="scopes">List of scopes, must contain at least one entry.</param>
     /// <param name="fetchRefreshToken">Do we also want to fetch a refresh token? This means that an additional scope "offline.access" is added to the scope list.</param>
     /// <param name="state">A (random) string that is sent back to the redirect url and that you provide to verify against CSRF attacks. 
     /// The length of this string can be up to 500 characters.
     /// You could create a random string by calling <see cref="CreateRandomString"/></param>
+    /// <param name="codeChallenge">A code challenge (either "plain" or "S256" method). The <see cref="OAuth2CodeChallenge.Challenge"/> value
+    /// is sent to the server. Later, when calling <see cref="GetAccessTokenByAuthorizationCodeCodeForPublicClient"/> or
+    /// <see cref="GetAccessTokenByAuthorizationCodeCodeForConfidentialClient"/>, the <see cref="OAuth2CodeChallenge.Verifier"/> must be specified.</param>
     /// <returns>URL to open in a browser.</returns>
     public static string GetAuthorizeUrl(string clientId, string redirectUrl, List<string> scopes, bool fetchRefreshToken,
-      string state)
+      string state, OAuth2CodeChallenge codeChallenge)
     {
       if (string.IsNullOrWhiteSpace(clientId) == true)
       {
@@ -158,9 +161,21 @@ namespace XbyOpenApi.OAuth2
       {
         throw new ArgumentException("State must not be longer than 500 chars.", nameof(state));
       }
+      if (codeChallenge == null)
+      {
+        throw new ArgumentNullException(nameof(codeChallenge));
+      }
+      if (string.IsNullOrWhiteSpace(codeChallenge.Challenge))
+      {
+        throw new ArgumentException("CodeChallenge must not be empty");
+      }
       if(scopes == null)
       {
         throw new ArgumentNullException(nameof(scopes));
+      }
+      if (scopes.Count == 0)
+      {
+        throw new ArgumentException("Specifiy at least one scope", nameof(scopes));
       }
 
       //Scopes: an empty list does not make sense..
@@ -185,12 +200,12 @@ namespace XbyOpenApi.OAuth2
         scopesArg += SCOPE_OFFLINE_ACCESS;
       }
 
+      //Encode all parameters that might contain problematic chars:
       string encodedRedirectURL = WebUtility.UrlEncode(redirectUrl);
-      //Also encode state:
       string encodedState = WebUtility.UrlEncode(state);
+      string encodedChallenge = WebUtility.UrlEncode(codeChallenge.Challenge);
 
-      bool todo_CreateCodeChallenge; //And return to sender.
-      string authorizeUrl = $"https://x.com/i/oauth2/authorize?response_type=code&client_id={clientId}&redirect_uri={encodedRedirectURL}&scope={scopesArg}&state={encodedState}&code_challenge=challenge&code_challenge_method=plain";
+      string authorizeUrl = $"https://x.com/i/oauth2/authorize?response_type=code&client_id={clientId}&redirect_uri={encodedRedirectURL}&scope={scopesArg}&state={encodedState}&code_challenge={encodedChallenge}&code_challenge_method={codeChallenge.Method}";
 
       return authorizeUrl;
     }
@@ -246,12 +261,17 @@ namespace XbyOpenApi.OAuth2
     /// <param name="authorizationCode">Authoriziation code sent to the redirect url</param>
     /// <param name="redirectUrl">Redirect url must be send to the server.</param>
     /// <param name="clientId">Required: clientID</param>
+    /// <param name="codeChallenge">This code challenge was sent to the server when creating the authorization request.
+    /// The <see cref="OAuth2CodeChallenge.Verifier"/> will be sent to the server here.
+    /// Not null</param>
     /// <exception cref="OAuth2Exception">An error in fetching the token occured</exception>
     /// <returns>Token response, might also contain a refresh token.</returns>
     public static async Task<GetTokenResponse> GetAccessTokenByAuthorizationCodeCodeForPublicClient(string authorizationCode, string redirectUrl,
-      string clientId)
+      string clientId,
+      OAuth2CodeChallenge codeChallenge)
     {
-      return await GetAccessTokenByAuthorizationCodeCode(authorizationCode, redirectUrl, false, clientId: clientId, clientSecret: null);
+      return await GetAccessTokenByAuthorizationCodeCode(authorizationCode: authorizationCode, redirectUrl: redirectUrl, 
+        confidentialClient: false, clientId: clientId, clientSecret: null, codeChallenge: codeChallenge);
     }
 
     /// <summary>
@@ -264,12 +284,17 @@ namespace XbyOpenApi.OAuth2
     /// <param name="redirectUrl">Redirect url must be send to the server.</param>
     /// <param name="clientId">Required: clientID</param>
     /// <param name="clientSecret">Required: client secret</param>
+    /// <param name="codeChallenge">This code challenge was sent to the server when creating the authorization request.
+    /// The <see cref="OAuth2CodeChallenge.Verifier"/> will be sent to the server here.
+    /// Not null</param>
     /// <exception cref="OAuth2Exception">An error in fetching the token occured</exception>
     /// <returns>Token response, might also contain a refresh token.</returns>
     public static async Task<GetTokenResponse> GetAccessTokenByAuthorizationCodeCodeForConfidentialClient(string authorizationCode, string redirectUrl,
-      string clientId, string clientSecret)
+      string clientId, string clientSecret,
+      OAuth2CodeChallenge codeChallenge)
     {
-      return await GetAccessTokenByAuthorizationCodeCode(authorizationCode, redirectUrl, true, clientId, clientSecret);
+      return await GetAccessTokenByAuthorizationCodeCode(authorizationCode: authorizationCode, redirectUrl: redirectUrl,
+        confidentialClient: true, clientId: clientId, clientSecret: clientSecret, codeChallenge: codeChallenge);
     }
 
 
@@ -284,10 +309,19 @@ namespace XbyOpenApi.OAuth2
     /// <param name="clientId">Required if <paramref name="confidentialClient"/> = true: clientID</param>
     /// <param name="clientSecret">Required if <paramref name="confidentialClient"/> = true: client secret</param>
     /// <exception cref="OAuth2Exception">An error in fetching the token occured</exception>
+    /// <param name="codeChallenge">This code challenge was sent to the server when creating the authorization request.
+    /// The <see cref="OAuth2CodeChallenge.Verifier"/> will be sent to the server here.
+    /// Not null</param>
     /// <returns>Token response, might also contain a refresh token.</returns>
     private static async Task<GetTokenResponse> GetAccessTokenByAuthorizationCodeCode(string authorizationCode, string redirectUrl, bool confidentialClient,
-      string? clientId, string? clientSecret)
+      string? clientId, string? clientSecret,
+      OAuth2CodeChallenge codeChallenge)
     {
+      if (codeChallenge == null)
+      {
+        throw new ArgumentNullException(nameof(codeChallenge));
+      }
+        
       Dictionary<string, string> formData = new Dictionary<string, string>();
       formData.Add("code", authorizationCode);
       formData.Add("grant_type", "authorization_code");
@@ -301,7 +335,7 @@ namespace XbyOpenApi.OAuth2
       }
       //The url will be automaticall encoded.
       formData.Add("redirect_uri", redirectUrl);
-      formData.Add("code_verifier", "challenge");
+      formData.Add("code_verifier", codeChallenge.Verifier);
 
       string url = $"https://api.x.com/2/oauth2/token";
 

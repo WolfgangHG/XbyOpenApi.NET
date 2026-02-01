@@ -1,7 +1,7 @@
 # OpenAPI client with OAuth2 authorization
 
 OAuth2 is all about fetching an Access token. Authorization for all requests is done with an `Authorization` header
-with scheme `Bearerer`, followed by a plain text Access Token.
+with scheme `Bearer`, followed by a plain text Access Token.
 
 
 # Preparation: adding Authorization header to a Kiota request
@@ -78,13 +78,45 @@ The url contains several parameters:
 * `state` contains a string value that is provided to the call of the redirect url. It is used to validate in the redirect url that 
   it the call is the expected one and it is meant to prevent CSRF attacks.
 * `code_challenge` and `code_challenge_method`: this is the PKCE (Proof Key for Code Exchange) part: the `code_challenge_method` can be `plain`
-or `S256`. I use `plain` here, which is actually discouraged (but even the X doc only uses this). Normally, you should first create a `code_verifier`, which is a random string.
-Then you create a SHA2456 hash from this random string, which is used as the `code_challenge` value.
+or `S256`. The sample url above uses `plain`, which is actually discouraged (but even the X doc only explain this). More details see below.
 
-  On successful authorization, you will receive an authentication code, which is used to fetch the access token. And in this step, you will provide
-the `code_verifier` again (not the `code_challenge`).
 
 This authorization url is opened in an embedded browser control or (if the embedded browser control is not available) in a web browser.
+
+### Code challenge
+The `code_challenge` and the `code_challenge_method` are sent to the server as part of the authorization url. On successful authorization, you will receive an 
+authentication code, which is used to fetch the access token. And in this step, you will provide
+the `code_verifier`.
+
+There are two methods `plain` and `S256`.
+
+**Method `plain`**: `code_challenge` and `code_verifier` contain the same string.
+
+**Method `S256`**: the X doc does not describe it, but look e.g. here: 
+[Add Login Using the Authorization Code Flow with PKCE](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-pkce/add-login-using-the-authorization-code-flow-with-pkce).
+
+The `code_verifier` is again the original string (in my sample it is a random string).
+
+The `code_challenge` contains a SHA256 hash of this string. It must be Base64 encoded, and three characters must be replaced:
+* "+" becomes "-"
+* "/" becomes "/"
+* "=" is removed.
+
+The C# code might look like this (snippet is taken from my implementation which uses `netstandard2.0`, so more elegant API might exist in 
+newer .NET versions):
+
+```c#
+
+using var hash = SHA256.Create();
+byte[] result = hash.ComputeHash(Encoding.UTF8.GetBytes(plainText));
+
+//Build "challenge": it must be Base64 encoded:
+string challenge = Convert.ToBase64String(result);
+
+challenge = challenge.Replace("+", "-");
+challenge = challenge.Replace("=", "");
+challenge = challenge.Replace("/", "_");
+```
 
 ### Handling the redirect url
 It is configured as part of the X app settings, and for desktop applications it could be `http://localhost`:
@@ -154,4 +186,6 @@ If the user clicks "cancel" in the last step, the url looks like this:
 ```
 http://localhost/?error=access_denied&state=state
 ```
-An "error" parameter is available.
+It contains an "error" parameter.
+
+For both versions, the client code should check that the `state` parameter contains the same value that was set when creating the authorize url.
