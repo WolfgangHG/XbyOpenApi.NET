@@ -175,7 +175,7 @@ namespace XbyOpenApi.OAuth2
       }
       if (scopes.Count == 0)
       {
-        throw new ArgumentException("Specifiy at least one scope", nameof(scopes));
+        throw new ArgumentException("Specify at least one scope", nameof(scopes));
       }
 
       //Scopes: an empty list does not make sense..
@@ -333,7 +333,7 @@ namespace XbyOpenApi.OAuth2
         }
         formData.Add("client_id", clientId);
       }
-      //The url will be automaticall encoded.
+      //The url will be automatically encoded.
       formData.Add("redirect_uri", redirectUrl);
       formData.Add("code_verifier", codeChallenge.Verifier);
 

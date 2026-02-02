@@ -45,7 +45,7 @@ namespace XbyOpenApi.OAuth2
         // Get the response.
         HttpResponseMessage response = await client.SendAsync(request);
 
-        string responseFromServer = await HttpController.GetTextFromResponse(response);
+        string responseFromServer = await response.Content.ReadAsStringAsync();
         HttpStatusCode responseCode = response.StatusCode;
 
         response.Dispose();
@@ -66,30 +66,6 @@ namespace XbyOpenApi.OAuth2
       {
         throw new HttpException("Error invoking url " + url, ex);
       }
-    }
-
-    /// <summary>
-    /// Read the string content of a http response. Also cares for disposing of the streams created internally.
-    /// 
-    /// Errors in reading the reponse are not caught by rethrown.
-    /// </summary>
-    /// <param name="_response">Response</param>
-    /// <returns>Content of the response as string</returns>
-    private static async Task<string> GetTextFromResponse(HttpResponseMessage _response)
-    {
-      // Get the stream containing content returned by the server.
-      Stream dataStream = await _response.Content.ReadAsStreamAsync();
-      // Open the stream using a StreamReader for easy access.
-      StreamReader reader = new StreamReader(dataStream);
-      // Read the content.
-      string responseFromServer = reader.ReadToEnd();
-      // Cleanup the streams and the response.
-      reader.Close();
-      reader.Dispose();
-      dataStream.Close();
-      dataStream.Dispose();
-
-      return responseFromServer;
     }
 
     #region Inner classes
