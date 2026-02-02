@@ -120,6 +120,7 @@ challenge = challenge.Replace("/", "_");
 
 ### Handling the redirect url
 It is configured as part of the X app settings, and for desktop applications it could be `http://localhost`:
+
 ![Redirect url](images/oauth2_redirecturl.png)
 
 After completing the authorization process in the browser, you are redirected to this url, and the request url contains the authentication code
@@ -196,6 +197,7 @@ Now we send a POST request to the URL `https://api.x.com/2/oauth2/token`
 
 This call differs slightly, depending on the application type: in the configuration of the app, you choose between 
 "Public client" and "Confidential client". 
+
 ![Client type](images/oauth2_clienttype.png)
 
 
@@ -358,6 +360,7 @@ token with the new one in our store. If this chain breaks somewhere, a user has 
 During authorization in step 1, we add an additional scope `offline.access` 
 
 This will be displayed in the last step of authorization where you confirm the privileges of the app:
+
 ![Scope for offline access](images/oauth2_refreshtoken.png)
 
 ### Fetching the initial refresh token
