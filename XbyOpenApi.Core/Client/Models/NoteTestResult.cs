@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Score bucket from the evaluator result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorScoreBucket { get; set; }
+    public string? EvaluatorScoreBucket { get; set; }
 #nullable restore
 #else
     public string EvaluatorScoreBucket { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The type of the evaluator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorType { get; set; }
+    public string? EvaluatorType { get; set; }
 #nullable restore
 #else
     public string EvaluatorType { get; set; }

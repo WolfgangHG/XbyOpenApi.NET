@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The metrics_time_series property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series>? MetricsTimeSeries { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series>? MetricsTimeSeries { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series> MetricsTimeSeries { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The metrics_total property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_total>? MetricsTotal { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_total>? MetricsTotal { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_total> MetricsTotal { get; set; }

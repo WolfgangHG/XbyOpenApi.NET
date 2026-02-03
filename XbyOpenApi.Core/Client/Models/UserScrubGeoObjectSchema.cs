@@ -19,7 +19,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpToTweetId { get; set; }
+    public string? UpToTweetId { get; set; }
 #nullable restore
 #else
     public string UpToTweetId { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserScrubGeoObjectSchema_user? User { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserScrubGeoObjectSchema_user? User { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserScrubGeoObjectSchema_user User { get; set; }

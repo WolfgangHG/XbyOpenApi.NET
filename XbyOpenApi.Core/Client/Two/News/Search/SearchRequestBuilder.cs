@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2NewsSearchResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2NewsSearchResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2NewsSearchResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -99,8 +99,8 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
       /// <summary>A comma separated list of News fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("news%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.News.Search.GetNewsFieldsQueryParameterType[]? NewsFields { get; set; }
+      [QueryParameter("news%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.News.Search.GetNewsFieldsQueryParameterType[]? NewsFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("news%2Efields")]
@@ -109,8 +109,8 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
       /// <summary>The search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("query")]
-            public string? Query { get; set; }
+      [QueryParameter("query")]
+      public string? Query { get; set; }
 #nullable restore
 #else
       [QueryParameter("query")]

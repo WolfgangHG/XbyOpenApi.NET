@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The ID of the client application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAppId { get; set; }
+    public string? ClientAppId { get; set; }
 #nullable restore
 #else
     public string ClientAppId { get; set; }

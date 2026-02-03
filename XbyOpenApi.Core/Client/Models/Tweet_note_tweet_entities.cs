@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The cashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.CashtagEntity>? Cashtags { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.CashtagEntity>? Cashtags { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.CashtagEntity> Cashtags { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The hashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.HashtagEntity>? Hashtags { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.HashtagEntity>? Hashtags { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.HashtagEntity> Hashtags { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The mentions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.MentionEntity>? Mentions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.MentionEntity>? Mentions { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.MentionEntity> Mentions { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.UrlEntity>? Urls { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.UrlEntity>? Urls { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.UrlEntity> Urls { get; set; }

@@ -19,7 +19,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The content type of the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+    public string? ContentType { get; set; }
 #nullable restore
 #else
     public string ContentType { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The url to the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+    public string? Url { get; set; }
 #nullable restore
 #else
     public string Url { get; set; }

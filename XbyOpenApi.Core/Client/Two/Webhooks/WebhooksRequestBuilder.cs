@@ -61,8 +61,8 @@ namespace XbyOpenApi.Core.Client.Two.Webhooks
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2WebhooksResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2WebhooksResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2WebhooksResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,8 +85,8 @@ namespace XbyOpenApi.Core.Client.Two.Webhooks
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateResponse> PostAsync(global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,8 +107,8 @@ namespace XbyOpenApi.Core.Client.Two.Webhooks
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Webhooks.WebhooksRequestBuilder.WebhooksRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -127,8 +127,8 @@ namespace XbyOpenApi.Core.Client.Two.Webhooks
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.WebhookConfigCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
@@ -159,8 +159,8 @@ namespace XbyOpenApi.Core.Client.Two.Webhooks
       /// <summary>A comma separated list of WebhookConfig fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("webhook_config%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Webhooks.GetWebhook_configFieldsQueryParameterType[]? WebhookConfigFields { get; set; }
+      [QueryParameter("webhook_config%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Webhooks.GetWebhook_configFieldsQueryParameterType[]? WebhookConfigFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("webhook_config%2Efields")]

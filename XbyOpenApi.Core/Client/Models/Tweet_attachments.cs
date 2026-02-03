@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Media Keys for each one of the media attachments (if media are attached).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaKeys { get; set; }
+    public List<string>? MediaKeys { get; set; }
 #nullable restore
 #else
     public List<string> MediaKeys { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Posts the media on this Tweet was originally posted in. For example, if the media on a tweet is re-used in another Tweet, this refers to the original, source Tweet..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaSourceTweetId { get; set; }
+    public List<string>? MediaSourceTweetId { get; set; }
 #nullable restore
 #else
     public List<string> MediaSourceTweetId { get; set; }
@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of poll IDs (if polls are attached).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PollIds { get; set; }
+    public List<string>? PollIds { get; set; }
 #nullable restore
 #else
     public List<string> PollIds { get; set; }

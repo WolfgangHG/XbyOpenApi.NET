@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TweetId { get; set; }
+    public string? TweetId { get; set; }
 #nullable restore
 #else
     public string TweetId { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_total_value>? Value { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_total_value>? Value { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_total_value> Value { get; set; }

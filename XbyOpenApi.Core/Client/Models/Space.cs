@@ -19,7 +19,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorId { get; set; }
+    public string? CreatorId { get; set; }
 #nullable restore
 #else
     public string CreatorId { get; set; }
@@ -29,7 +29,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The user ids for the hosts of the Space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HostIds { get; set; }
+    public List<string>? HostIds { get; set; }
 #nullable restore
 #else
     public List<string> HostIds { get; set; }
@@ -37,7 +37,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -45,7 +45,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>An array of user ids for people who were invited to a Space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InvitedUserIds { get; set; }
+    public List<string>? InvitedUserIds { get; set; }
 #nullable restore
 #else
     public List<string> InvitedUserIds { get; set; }
@@ -55,7 +55,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The language of the Space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lang { get; set; }
+    public string? Lang { get; set; }
 #nullable restore
 #else
     public string Lang { get; set; }
@@ -67,7 +67,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>An array of user ids for people who were speakers in a Space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SpeakerIds { get; set; }
+    public List<string>? SpeakerIds { get; set; }
 #nullable restore
 #else
     public List<string> SpeakerIds { get; set; }
@@ -81,7 +81,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The title of the Space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+    public string? Title { get; set; }
 #nullable restore
 #else
     public string Title { get; set; }
@@ -89,7 +89,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The topics of a Space, as selected by its creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Space_topics>? Topics { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Space_topics>? Topics { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Space_topics> Topics { get; set; }

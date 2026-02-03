@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The entities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.News_contexts_entities? Entities { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.News_contexts_entities? Entities { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.News_contexts_entities Entities { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The finance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.News_contexts_finance? Finance { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.News_contexts_finance? Finance { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.News_contexts_finance Finance { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The sports property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.News_contexts_sports? Sports { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.News_contexts_sports? Sports { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.News_contexts_sports Sports { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Topics { get; set; }
+    public List<string>? Topics { get; set; }
 #nullable restore
 #else
     public List<string> Topics { get; set; }

@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The edit_tweet_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EditTweetIds { get; set; }
+    public List<string>? EditTweetIds { get; set; }
 #nullable restore
 #else
     public List<string> EditTweetIds { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitialTweetId { get; set; }
+    public string? InitialTweetId { get; set; }
 #nullable restore
 #else
     public string InitialTweetId { get; set; }
@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceObjectSchema_tweet? Tweet { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceObjectSchema_tweet? Tweet { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceObjectSchema_tweet Tweet { get; set; }

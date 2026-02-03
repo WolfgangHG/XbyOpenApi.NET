@@ -55,8 +55,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2DmEventsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2DmEventsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2DmEventsResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -76,8 +76,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -106,8 +106,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>A comma separated list of DmEvent fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("dm_event%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Dm_events.GetDm_eventFieldsQueryParameterType[]? DmEventFields { get; set; }
+      [QueryParameter("dm_event%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Dm_events.GetDm_eventFieldsQueryParameterType[]? DmEventFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("dm_event%2Efields")]
@@ -116,8 +116,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>The set of event_types to include in the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("event_types")]
-            public global::XbyOpenApi.Core.Client.Two.Dm_events.GetEvent_typesQueryParameterType[]? EventTypes { get; set; }
+      [QueryParameter("event_types")]
+      public global::XbyOpenApi.Core.Client.Two.Dm_events.GetEvent_typesQueryParameterType[]? EventTypes { get; set; }
 #nullable restore
 #else
       [QueryParameter("event_types")]
@@ -126,8 +126,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("expansions")]
-            public global::XbyOpenApi.Core.Client.Two.Dm_events.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+      [QueryParameter("expansions")]
+      public global::XbyOpenApi.Core.Client.Two.Dm_events.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
       [QueryParameter("expansions")]
@@ -139,8 +139,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("media%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Dm_events.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+      [QueryParameter("media%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Dm_events.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("media%2Efields")]
@@ -149,8 +149,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>This parameter is used to get a specified &apos;page&apos; of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("pagination_token")]
-            public string? PaginationToken { get; set; }
+      [QueryParameter("pagination_token")]
+      public string? PaginationToken { get; set; }
 #nullable restore
 #else
       [QueryParameter("pagination_token")]
@@ -159,8 +159,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>A comma separated list of Tweet fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Dm_events.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+      [QueryParameter("tweet%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Dm_events.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("tweet%2Efields")]
@@ -169,8 +169,8 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("user%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Dm_events.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+      [QueryParameter("user%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Dm_events.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("user%2Efields")]

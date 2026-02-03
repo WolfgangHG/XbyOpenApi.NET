@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember1? LikesComplianceStreamResponseMember1 { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember1? LikesComplianceStreamResponseMember1 { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember1 LikesComplianceStreamResponseMember1 { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember2? LikesComplianceStreamResponseMember2 { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember2? LikesComplianceStreamResponseMember2 { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.LikesComplianceStreamResponseMember2 LikesComplianceStreamResponseMember2 { get; set; }

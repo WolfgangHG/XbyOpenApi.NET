@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Stickers list must not be empty and should not exceed 25</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Sticker>? Stickers { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Sticker>? Stickers { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Sticker> Stickers { get; set; }

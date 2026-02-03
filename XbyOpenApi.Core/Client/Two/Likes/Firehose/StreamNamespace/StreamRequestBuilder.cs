@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.StreamingLikeResponseV2?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.StreamingLikeResponseV2?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.StreamingLikeResponseV2> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -99,8 +99,8 @@ namespace XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace
       /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("expansions")]
-            public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+      [QueryParameter("expansions")]
+      public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
       [QueryParameter("expansions")]
@@ -109,8 +109,8 @@ namespace XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace
       /// <summary>A comma separated list of LikeWithTweetAuthor fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[]? LikeWithTweetAuthorFields { get; set; }
+      [QueryParameter("like_with_tweet_author%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[]? LikeWithTweetAuthorFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("like_with_tweet_author%2Efields")]
@@ -125,8 +125,8 @@ namespace XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace
       /// <summary>A comma separated list of Tweet fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+      [QueryParameter("tweet%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("tweet%2Efields")]
@@ -135,8 +135,8 @@ namespace XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace
       /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("user%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+      [QueryParameter("user%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Likes.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("user%2Efields")]

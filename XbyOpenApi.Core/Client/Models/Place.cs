@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The contained_within property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ContainedWithin { get; set; }
+    public List<string>? ContainedWithin { get; set; }
 #nullable restore
 #else
     public List<string> ContainedWithin { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The full name of the county in which this place exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+    public string? Country { get; set; }
 #nullable restore
 #else
     public string Country { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A two-letter ISO 3166-1 alpha-2 country code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode { get; set; }
+    public string? CountryCode { get; set; }
 #nullable restore
 #else
     public string CountryCode { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The full name of this place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullName { get; set; }
+    public string? FullName { get; set; }
 #nullable restore
 #else
     public string FullName { get; set; }
@@ -49,7 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The geo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Geo? Geo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Geo? Geo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Geo Geo { get; set; }
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The identifier for this place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -65,7 +65,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The human readable name of this place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+    public string? Name { get; set; }
 #nullable restore
 #else
     public string Name { get; set; }

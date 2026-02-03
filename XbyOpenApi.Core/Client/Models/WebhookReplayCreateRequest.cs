@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The oldest (starting) UTC timestamp (inclusive) from which events will be provided, in yyyymmddhhmm format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromDate { get; set; }
+    public string? FromDate { get; set; }
 #nullable restore
 #else
     public string FromDate { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The oldest (starting) UTC timestamp (inclusive) from which events will be provided, in yyyymmddhhmm format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToDate { get; set; }
+    public string? ToDate { get; set; }
 #nullable restore
 #else
     public string ToDate { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this webhook config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookId { get; set; }
+    public string? WebhookId { get; set; }
 #nullable restore
 #else
     public string WebhookId { get; set; }

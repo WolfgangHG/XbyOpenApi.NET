@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>IDs and values of all deleted user-specified stream filtering rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.DeleteRulesRequest_delete? Delete { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.DeleteRulesRequest_delete? Delete { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.DeleteRulesRequest_delete Delete { get; set; }

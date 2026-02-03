@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Media>? Media { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Media>? Media { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Media> Media { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The places property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Place>? Places { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Place>? Places { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Place> Places { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The polls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Poll>? Polls { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Poll>? Polls { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Poll> Polls { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Topic>? Topics { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Topic>? Topics { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Topic> Topics { get; set; }
@@ -49,7 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The tweets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Tweet>? Tweets { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweet>? Tweets { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Tweet> Tweets { get; set; }
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.User>? Users { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.User>? Users { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.User> Users { get; set; }

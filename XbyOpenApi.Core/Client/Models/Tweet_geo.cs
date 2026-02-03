@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A [GeoJson Point](https://tools.ietf.org/html/rfc7946#section-3.1.2) geometry object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Point? Coordinates { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Point? Coordinates { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Point Coordinates { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The identifier for this place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaceId { get; set; }
+    public string? PlaceId { get; set; }
 #nullable restore
 #else
     public string PlaceId { get; set; }

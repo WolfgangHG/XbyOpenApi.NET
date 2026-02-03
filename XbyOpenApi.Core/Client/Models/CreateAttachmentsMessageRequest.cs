@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Attachments to a DM Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.DmMediaAttachment>? Attachments { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.DmMediaAttachment>? Attachments { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.DmMediaAttachment> Attachments { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Text of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+    public string? Text { get; set; }
 #nullable restore
 #else
     public string Text { get; set; }

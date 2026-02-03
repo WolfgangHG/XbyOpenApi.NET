@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The bbox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Bbox { get; set; }
+    public List<double?>? Bbox { get; set; }
 #nullable restore
 #else
     public List<double?> Bbox { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A [GeoJson Point](https://tools.ietf.org/html/rfc7946#section-3.1.2) geometry object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Point? Geometry { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Point? Geometry { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Point Geometry { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Geo_properties? Properties { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Geo_properties? Properties { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Geo_properties Properties { get; set; }

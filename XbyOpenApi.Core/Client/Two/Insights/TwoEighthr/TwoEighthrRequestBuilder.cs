@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Insights.TwoEighthr
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2Insights28hrResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2Insights28hrResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2Insights28hrResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Insights.TwoEighthr
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -93,8 +93,8 @@ namespace XbyOpenApi.Core.Client.Two.Insights.TwoEighthr
       /// <summary>A comma separated list of Engagement fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("engagement%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.GetEngagementFieldsQueryParameterType[]? EngagementFields { get; set; }
+      [QueryParameter("engagement%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.GetEngagementFieldsQueryParameterType[]? EngagementFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("engagement%2Efields")]
@@ -106,8 +106,8 @@ namespace XbyOpenApi.Core.Client.Two.Insights.TwoEighthr
       /// <summary>request metrics for historical request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("requested_metrics")]
-            public global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.GetRequested_metricsQueryParameterType[]? RequestedMetrics { get; set; }
+      [QueryParameter("requested_metrics")]
+      public global::XbyOpenApi.Core.Client.Two.Insights.TwoEighthr.GetRequested_metricsQueryParameterType[]? RequestedMetrics { get; set; }
 #nullable restore
 #else
       [QueryParameter("requested_metrics")]
@@ -116,8 +116,8 @@ namespace XbyOpenApi.Core.Client.Two.Insights.TwoEighthr
       /// <summary>List of PostIds for 28hr metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet_ids")]
-            public string[]? TweetIds { get; set; }
+      [QueryParameter("tweet_ids")]
+      public string[]? TweetIds { get; set; }
 #nullable restore
 #else
       [QueryParameter("tweet_ids")]

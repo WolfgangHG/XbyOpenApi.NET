@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Card Uri Parameter. This is mutually exclusive from Quote Tweet Id, Poll, Media, and Direct Message Deep Link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardUri { get; set; }
+    public string? CardUri { get; set; }
 #nullable restore
 #else
     public string CardUri { get; set; }
@@ -23,7 +23,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Community.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommunityId { get; set; }
+    public string? CommunityId { get; set; }
 #nullable restore
 #else
     public string CommunityId { get; set; }
@@ -31,7 +31,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Link to take the conversation from the public timeline to a private Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectMessageDeepLink { get; set; }
+    public string? DirectMessageDeepLink { get; set; }
 #nullable restore
 #else
     public string DirectMessageDeepLink { get; set; }
@@ -39,7 +39,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Options for editing an existing Post. When provided, this request will edit the specified Post instead of creating a new one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_edit_options? EditOptions { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_edit_options? EditOptions { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_edit_options EditOptions { get; set; }
@@ -49,7 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Place ID being attached to the Tweet for geo location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo? Geo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo? Geo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo Geo { get; set; }
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Media information being attached to created Tweet. This is mutually exclusive from Quote Tweet Id, Poll, and Card URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_media? Media { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_media? Media { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_media Media { get; set; }
@@ -67,7 +67,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Poll options for a Tweet with a poll. This is mutually exclusive from Media, Quote Tweet Id, and Card URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_poll? Poll { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_poll? Poll { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_poll Poll { get; set; }
@@ -75,7 +75,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuoteTweetId { get; set; }
+    public string? QuoteTweetId { get; set; }
 #nullable restore
 #else
     public string QuoteTweetId { get; set; }
@@ -83,7 +83,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Tweet information of the Tweet being replied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_reply? Reply { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_reply? Reply { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_reply Reply { get; set; }
@@ -95,7 +95,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+    public string? Text { get; set; }
 #nullable restore
 #else
     public string Text { get; set; }

@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detail { get; set; }
+    public string? Detail { get; set; }
 #nullable restore
 #else
     public string Detail { get; set; }
@@ -28,7 +28,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+    public string? Title { get; set; }
 #nullable restore
 #else
     public string Title { get; set; }
@@ -36,7 +36,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+    public string? Type { get; set; }
 #nullable restore
 #else
     public string Type { get; set; }

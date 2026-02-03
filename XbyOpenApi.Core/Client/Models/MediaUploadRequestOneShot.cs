@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The additional_owners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AdditionalOwners { get; set; }
+    public List<string>? AdditionalOwners { get; set; }
 #nullable restore
 #else
     public List<string> AdditionalOwners { get; set; }
@@ -23,7 +23,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media? Media { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media? Media { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media Media { get; set; }
@@ -81,7 +81,7 @@ namespace XbyOpenApi.Core.Client.Models
       /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.MediaPayloadBinary"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::XbyOpenApi.Core.Client.Models.MediaPayloadBinary? MediaPayloadBinary { get; set; }
+      public global::XbyOpenApi.Core.Client.Models.MediaPayloadBinary? MediaPayloadBinary { get; set; }
 #nullable restore
 #else
       public global::XbyOpenApi.Core.Client.Models.MediaPayloadBinary MediaPayloadBinary { get; set; }
@@ -89,7 +89,7 @@ namespace XbyOpenApi.Core.Client.Models
       /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.MediaPayloadByte"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::XbyOpenApi.Core.Client.Models.MediaPayloadByte? MediaPayloadByte { get; set; }
+      public global::XbyOpenApi.Core.Client.Models.MediaPayloadByte? MediaPayloadByte { get; set; }
 #nullable restore
 #else
       public global::XbyOpenApi.Core.Client.Models.MediaPayloadByte MediaPayloadByte { get; set; }

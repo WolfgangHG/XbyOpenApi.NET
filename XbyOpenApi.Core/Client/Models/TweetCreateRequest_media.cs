@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Media Ids to be attached to a created Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaIds { get; set; }
+    public List<string>? MediaIds { get; set; }
 #nullable restore
 #else
     public List<string> MediaIds { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of User Ids to be tagged in the media for created Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TaggedUserIds { get; set; }
+    public List<string>? TaggedUserIds { get; set; }
 #nullable restore
 #else
     public List<string> TaggedUserIds { get; set; }

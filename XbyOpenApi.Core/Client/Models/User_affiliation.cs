@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The badge URL corresponding to the affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BadgeUrl { get; set; }
+    public string? BadgeUrl { get; set; }
 #nullable restore
 #else
     public string BadgeUrl { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The description of the affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+    public string? Description { get; set; }
 #nullable restore
 #else
     public string Description { get; set; }
@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The URL, if available, to details about an affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+    public string? Url { get; set; }
 #nullable restore
 #else
     public string Url { get; set; }
@@ -42,7 +42,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserId { get; set; }
+    public List<string>? UserId { get; set; }
 #nullable restore
 #else
     public List<string> UserId { get; set; }

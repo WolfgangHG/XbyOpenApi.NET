@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Metadata about a user&apos;s affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.User_affiliation? Affiliation { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.User_affiliation? Affiliation { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.User_affiliation Affiliation { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Returns detailed information about the relationship between two users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.User_connection_status?>? ConnectionStatus { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.User_connection_status?>? ConnectionStatus { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.User_connection_status?> ConnectionStatus { get; set; }
@@ -36,7 +36,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The text of this User&apos;s profile description (also known as bio), if the User provided one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+    public string? Description { get; set; }
 #nullable restore
 #else
     public string Description { get; set; }
@@ -44,7 +44,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of metadata found in the User&apos;s profile description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.User_entities? Entities { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.User_entities? Entities { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.User_entities Entities { get; set; }
@@ -52,7 +52,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -60,7 +60,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The location specified in the User&apos;s profile, if the User provided one. As this is a freeform value, it may not indicate a valid location, but it may be fuzzily evaluated when performing searches with location queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location { get; set; }
+    public string? Location { get; set; }
 #nullable restore
 #else
     public string Location { get; set; }
@@ -68,7 +68,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MostRecentTweetId { get; set; }
+    public string? MostRecentTweetId { get; set; }
 #nullable restore
 #else
     public string MostRecentTweetId { get; set; }
@@ -76,7 +76,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The friendly name of this User, as shown on their profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+    public string? Name { get; set; }
 #nullable restore
 #else
     public string Name { get; set; }
@@ -84,7 +84,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PinnedTweetId { get; set; }
+    public string? PinnedTweetId { get; set; }
 #nullable restore
 #else
     public string PinnedTweetId { get; set; }
@@ -92,7 +92,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The URL to the profile banner for this User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileBannerUrl { get; set; }
+    public string? ProfileBannerUrl { get; set; }
 #nullable restore
 #else
     public string ProfileBannerUrl { get; set; }
@@ -100,7 +100,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The URL to the profile image for this User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileImageUrl { get; set; }
+    public string? ProfileImageUrl { get; set; }
 #nullable restore
 #else
     public string ProfileImageUrl { get; set; }
@@ -110,7 +110,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of metrics for this User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.User_public_metrics? PublicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.User_public_metrics? PublicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.User_public_metrics PublicMetrics { get; set; }
@@ -122,7 +122,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The URL specified in the User&apos;s profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+    public string? Url { get; set; }
 #nullable restore
 #else
     public string Url { get; set; }
@@ -130,7 +130,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The X handle (screen name) of this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+    public string? Username { get; set; }
 #nullable restore
 #else
     public string Username { get; set; }
@@ -142,7 +142,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserWithheld? Withheld { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserWithheld? Withheld { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserWithheld Withheld { get; set; }

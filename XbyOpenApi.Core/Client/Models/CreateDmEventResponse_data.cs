@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of a DM conversation. This can either be a numeric string, or a pair of numeric strings separated by a &apos;-&apos; character in the case of one-on-one DM Conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmConversationId { get; set; }
+    public string? DmConversationId { get; set; }
 #nullable restore
 #else
     public string DmConversationId { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of a DM Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmEventId { get; set; }
+    public string? DmEventId { get; set; }
 #nullable restore
 #else
     public string DmEventId { get; set; }

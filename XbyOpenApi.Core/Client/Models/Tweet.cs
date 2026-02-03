@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Specifies the type of attachments (if any) present in this Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_attachments? Attachments { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_attachments? Attachments { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_attachments Attachments { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorId { get; set; }
+    public string? AuthorId { get; set; }
 #nullable restore
 #else
     public string AuthorId { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Community.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommunityId { get; set; }
+    public string? CommunityId { get; set; }
 #nullable restore
 #else
     public string CommunityId { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The context_annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.ContextAnnotation>? ContextAnnotations { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.ContextAnnotation>? ContextAnnotations { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.ContextAnnotation> ContextAnnotations { get; set; }
@@ -49,7 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+    public string? ConversationId { get; set; }
 #nullable restore
 #else
     public string ConversationId { get; set; }
@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Represent a boundary range (start and end zero-based indices) for the portion of text that is displayed for a post. `start` must be smaller than `end`. The start index is inclusive, the end index is exclusive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? DisplayTextRange { get; set; }
+    public List<int?>? DisplayTextRange { get; set; }
 #nullable restore
 #else
     public List<int?> DisplayTextRange { get; set; }
@@ -67,7 +67,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The edit_controls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_edit_controls? EditControls { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_edit_controls? EditControls { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_edit_controls EditControls { get; set; }
@@ -75,7 +75,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Tweet Ids in this Tweet chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EditHistoryTweetIds { get; set; }
+    public List<string>? EditHistoryTweetIds { get; set; }
 #nullable restore
 #else
     public List<string> EditHistoryTweetIds { get; set; }
@@ -83,7 +83,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The entities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.FullTextEntities? Entities { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.FullTextEntities? Entities { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.FullTextEntities Entities { get; set; }
@@ -91,7 +91,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The location tagged on the Tweet, if the user provided one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_geo? Geo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_geo? Geo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_geo Geo { get; set; }
@@ -99,7 +99,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -107,7 +107,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InReplyToUserId { get; set; }
+    public string? InReplyToUserId { get; set; }
 #nullable restore
 #else
     public string InReplyToUserId { get; set; }
@@ -115,7 +115,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Language of the Tweet, if detected by X. Returned as a BCP47 language tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Lang { get; set; }
+    public string? Lang { get; set; }
 #nullable restore
 #else
     public string Lang { get; set; }
@@ -123,7 +123,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_non_public_metrics? NonPublicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_non_public_metrics? NonPublicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_non_public_metrics NonPublicMetrics { get; set; }
@@ -131,7 +131,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The full-content of the Tweet, including text beyond 280 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_note_tweet? NoteTweet { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_note_tweet? NoteTweet { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_note_tweet NoteTweet { get; set; }
@@ -139,7 +139,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Organic nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_organic_metrics? OrganicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_organic_metrics? OrganicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_organic_metrics OrganicMetrics { get; set; }
@@ -149,7 +149,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Promoted nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_promoted_metrics? PromotedMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_promoted_metrics? PromotedMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_promoted_metrics PromotedMetrics { get; set; }
@@ -157,7 +157,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_public_metrics? PublicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_public_metrics? PublicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_public_metrics PublicMetrics { get; set; }
@@ -165,7 +165,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Posts this Tweet refers to. For example, if the parent Tweet is a Retweet, a Quoted Tweet or a Reply, it will include the related Tweet referenced to by its parent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Tweet_referenced_tweets>? ReferencedTweets { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweet_referenced_tweets>? ReferencedTweets { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Tweet_referenced_tweets> ReferencedTweets { get; set; }
@@ -175,7 +175,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The scopes for this tweet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_scopes? Scopes { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_scopes? Scopes { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_scopes Scopes { get; set; }
@@ -183,7 +183,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>This is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+    public string? Source { get; set; }
 #nullable restore
 #else
     public string Source { get; set; }
@@ -191,7 +191,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The suggested_source_links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.UrlEntity>? SuggestedSourceLinks { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.UrlEntity>? SuggestedSourceLinks { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.UrlEntity> SuggestedSourceLinks { get; set; }
@@ -199,7 +199,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Suggested source links and the number of requests that included each link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_suggested_source_links_with_counts? SuggestedSourceLinksWithCounts { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_suggested_source_links_with_counts? SuggestedSourceLinksWithCounts { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_suggested_source_links_with_counts SuggestedSourceLinksWithCounts { get; set; }
@@ -207,7 +207,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+    public string? Text { get; set; }
 #nullable restore
 #else
     public string Text { get; set; }
@@ -215,7 +215,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The X handle (screen name) of this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+    public string? Username { get; set; }
 #nullable restore
 #else
     public string Username { get; set; }
@@ -223,7 +223,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetWithheld? Withheld { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetWithheld? Withheld { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetWithheld Withheld { get; set; }

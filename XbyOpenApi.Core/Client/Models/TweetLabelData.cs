@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetNoticeSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetNoticeSchema? TweetNoticeSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetNoticeSchema? TweetNoticeSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetNoticeSchema TweetNoticeSchema { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetUnviewableSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetUnviewableSchema? TweetUnviewableSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetUnviewableSchema? TweetUnviewableSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetUnviewableSchema TweetUnviewableSchema { get; set; }

@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2ComplianceJobsIdResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.JobsItemRequestBuilder.JobsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2ComplianceJobsIdResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.JobsItemRequestBuilder.JobsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2ComplianceJobsIdResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.JobsItemRequestBuilder.JobsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.JobsItemRequestBuilder.JobsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.JobsItemRequestBuilder.JobsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.JobsItemRequestBuilder.JobsItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -93,8 +93,8 @@ namespace XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item
       /// <summary>A comma separated list of ComplianceJob fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("compliance_job%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.GetCompliance_jobFieldsQueryParameterType[]? ComplianceJobFields { get; set; }
+      [QueryParameter("compliance_job%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Compliance.Jobs.Item.GetCompliance_jobFieldsQueryParameterType[]? ComplianceJobFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("compliance_job%2Efields")]

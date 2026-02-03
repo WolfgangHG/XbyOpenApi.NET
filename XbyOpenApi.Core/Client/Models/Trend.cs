@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Name of the trend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrendName { get; set; }
+    public string? TrendName { get; set; }
 #nullable restore
 #else
     public string TrendName { get; set; }

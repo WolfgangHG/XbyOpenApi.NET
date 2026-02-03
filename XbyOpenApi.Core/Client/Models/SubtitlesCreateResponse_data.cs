@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The associated_subtitles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Subtitles>? AssociatedSubtitles { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Subtitles>? AssociatedSubtitles { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Subtitles> AssociatedSubtitles { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }

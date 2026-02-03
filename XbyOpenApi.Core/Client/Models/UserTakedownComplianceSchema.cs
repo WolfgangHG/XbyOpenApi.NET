@@ -19,7 +19,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserTakedownComplianceSchema_user? User { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserTakedownComplianceSchema_user? User { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserTakedownComplianceSchema_user User { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The withheld_in_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WithheldInCountries { get; set; }
+    public List<string>? WithheldInCountries { get; set; }
 #nullable restore
 #else
     public List<string> WithheldInCountries { get; set; }

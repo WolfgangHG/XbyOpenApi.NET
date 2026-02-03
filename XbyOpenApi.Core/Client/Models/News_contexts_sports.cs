@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The teams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Teams { get; set; }
+    public List<string>? Teams { get; set; }
 #nullable restore
 #else
     public List<string> Teams { get; set; }

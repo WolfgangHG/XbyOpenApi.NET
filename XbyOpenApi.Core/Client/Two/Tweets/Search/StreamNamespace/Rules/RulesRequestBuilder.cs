@@ -48,8 +48,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.RulesLookupResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.RulesLookupResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.RulesLookupResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -72,8 +72,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesResponse> PostAsync(global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,8 +94,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -114,8 +114,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default)
@@ -146,8 +146,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules
       /// <summary>A comma-separated list of Rule IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("ids")]
-            public string[]? Ids { get; set; }
+      [QueryParameter("ids")]
+      public string[]? Ids { get; set; }
 #nullable restore
 #else
       [QueryParameter("ids")]
@@ -159,8 +159,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules
       /// <summary>This value is populated by passing the &apos;next_token&apos; returned in a request to paginate through results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("pagination_token")]
-            public string? PaginationToken { get; set; }
+      [QueryParameter("pagination_token")]
+      public string? PaginationToken { get; set; }
 #nullable restore
 #else
       [QueryParameter("pagination_token")]

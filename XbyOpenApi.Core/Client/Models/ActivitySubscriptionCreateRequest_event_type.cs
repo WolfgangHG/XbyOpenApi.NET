@@ -52,6 +52,14 @@ namespace XbyOpenApi.Core.Client.Models
 #pragma warning disable CS1591
     FollowUnfollow,
 #pragma warning restore CS1591
+    [EnumMember(Value = "spaces.start")]
+#pragma warning disable CS1591
+    SpacesStart,
+#pragma warning restore CS1591
+    [EnumMember(Value = "spaces.end")]
+#pragma warning disable CS1591
+    SpacesEnd,
+#pragma warning restore CS1591
     [EnumMember(Value = "chat.received")]
 #pragma warning disable CS1591
     ChatReceived,

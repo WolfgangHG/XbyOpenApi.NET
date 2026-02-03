@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Nonpublic engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Video_non_public_metrics? NonPublicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Video_non_public_metrics? NonPublicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Video_non_public_metrics NonPublicMetrics { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Organic nonpublic engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Video_organic_metrics? OrganicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Video_organic_metrics? OrganicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Video_organic_metrics OrganicMetrics { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The preview_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewImageUrl { get; set; }
+    public string? PreviewImageUrl { get; set; }
 #nullable restore
 #else
     public string PreviewImageUrl { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Promoted nonpublic engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Video_promoted_metrics? PromotedMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Video_promoted_metrics? PromotedMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Video_promoted_metrics PromotedMetrics { get; set; }
@@ -49,7 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Video_public_metrics? PublicMetrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Video_public_metrics? PublicMetrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Video_public_metrics PublicMetrics { get; set; }
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>An array of all available variants of the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Variant>? Variants { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Variant>? Variants { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Variant> Variants { get; set; }

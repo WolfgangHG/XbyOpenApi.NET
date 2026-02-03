@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this webhook config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -28,7 +28,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The callback URL of the webhook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+    public string? Url { get; set; }
 #nullable restore
 #else
     public string Url { get; set; }

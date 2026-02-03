@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The tweet_edit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceObjectSchema? TweetEdit { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceObjectSchema? TweetEdit { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceObjectSchema TweetEdit { get; set; }

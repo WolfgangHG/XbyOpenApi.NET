@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The daily usage breakdown for each Client Application a project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.ClientAppUsage>? DailyClientAppUsage { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.ClientAppUsage>? DailyClientAppUsage { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.ClientAppUsage> DailyClientAppUsage { get; set; }
@@ -28,7 +28,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The daily usage breakdown for a project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Usage_daily_project_usage? DailyProjectUsage { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Usage_daily_project_usage? DailyProjectUsage { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Usage_daily_project_usage DailyProjectUsage { get; set; }
@@ -38,7 +38,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier for this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+    public string? ProjectId { get; set; }
 #nullable restore
 #else
     public string ProjectId { get; set; }

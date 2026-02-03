@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this List.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ListId { get; set; }
+    public string? ListId { get; set; }
 #nullable restore
 #else
     public string ListId { get; set; }

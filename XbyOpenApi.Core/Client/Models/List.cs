@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+    public string? Description { get; set; }
 #nullable restore
 #else
     public string Description { get; set; }
@@ -30,7 +30,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this List.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -40,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The name of this List.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+    public string? Name { get; set; }
 #nullable restore
 #else
     public string Name { get; set; }
@@ -48,7 +48,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId { get; set; }
+    public string? OwnerId { get; set; }
 #nullable restore
 #else
     public string OwnerId { get; set; }

@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Engagement_errors>? Errors { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Engagement_errors>? Errors { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Engagement_errors> Errors { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The measurement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Engagement_measurement? Measurement { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Engagement_measurement? Measurement { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Engagement_measurement Measurement { get; set; }

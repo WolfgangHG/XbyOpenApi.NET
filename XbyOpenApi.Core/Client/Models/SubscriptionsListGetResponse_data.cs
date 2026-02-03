@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The application ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId { get; set; }
+    public string? ApplicationId { get; set; }
 #nullable restore
 #else
     public string ApplicationId { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>List of active subscriptions for the webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.SubscriptionsListGetResponse_data_subscriptions>? Subscriptions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.SubscriptionsListGetResponse_data_subscriptions>? Subscriptions { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.SubscriptionsListGetResponse_data_subscriptions> Subscriptions { get; set; }
@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The associated webhook ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookId { get; set; }
+    public string? WebhookId { get; set; }
 #nullable restore
 #else
     public string WebhookId { get; set; }
@@ -42,7 +42,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The url for the associated webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookUrl { get; set; }
+    public string? WebhookUrl { get; set; }
 #nullable restore
 #else
     public string WebhookUrl { get; set; }

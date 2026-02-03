@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The entities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Tweet_note_tweet_entities? Entities { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Tweet_note_tweet_entities? Entities { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Tweet_note_tweet_entities Entities { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The note content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+    public string? Text { get; set; }
 #nullable restore
 #else
     public string Text { get; set; }

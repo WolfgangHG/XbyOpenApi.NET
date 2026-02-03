@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The additional_owners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AdditionalOwners { get; set; }
+    public List<string>? AdditionalOwners { get; set; }
 #nullable restore
 #else
     public List<string> AdditionalOwners { get; set; }

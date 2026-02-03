@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The usage value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.UsageFields>? Usage { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.UsageFields>? Usage { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.UsageFields> Usage { get; set; }

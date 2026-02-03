@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The misleading_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.MisleadingTags?>? MisleadingTags { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.MisleadingTags?>? MisleadingTags { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.MisleadingTags?> MisleadingTags { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The text summary in the Community Note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+    public string? Text { get; set; }
 #nullable restore
 #else
     public string Text { get; set; }

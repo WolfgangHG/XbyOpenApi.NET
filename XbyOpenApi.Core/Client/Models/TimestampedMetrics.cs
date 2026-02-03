@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Metrics? Metrics { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Metrics? Metrics { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Metrics Metrics { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>ISO8601 Time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+    public string? Timestamp { get; set; }
 #nullable restore
 #else
     public string Timestamp { get; set; }

@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Users.Personalized_trends
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2UsersPersonalizedTrendsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder.Personalized_trendsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2UsersPersonalizedTrendsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder.Personalized_trendsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2UsersPersonalizedTrendsResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder.Personalized_trendsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Users.Personalized_trends
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder.Personalized_trendsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder.Personalized_trendsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder.Personalized_trendsRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -93,8 +93,8 @@ namespace XbyOpenApi.Core.Client.Two.Users.Personalized_trends
       /// <summary>A comma separated list of PersonalizedTrend fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("personalized_trend%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.GetPersonalized_trendFieldsQueryParameterType[]? PersonalizedTrendFields { get; set; }
+      [QueryParameter("personalized_trend%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.GetPersonalized_trendFieldsQueryParameterType[]? PersonalizedTrendFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("personalized_trend%2Efields")]

@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The file to upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Media { get; set; }
+    public byte[]? Media { get; set; }
 #nullable restore
 #else
     public byte[] Media { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The segment_index property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.MediaSegments? SegmentIndex { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.MediaSegments? SegmentIndex { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.MediaSegments SegmentIndex { get; set; }

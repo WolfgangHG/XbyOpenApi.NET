@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The registration_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationUrl { get; set; }
+    public string? RegistrationUrl { get; set; }
 #nullable restore
 #else
     public string RegistrationUrl { get; set; }

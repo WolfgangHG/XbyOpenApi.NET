@@ -61,8 +61,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.MediaUploadResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Upload.UploadRequestBuilder.UploadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.MediaUploadResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Upload.UploadRequestBuilder.UploadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.MediaUploadResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Upload.UploadRequestBuilder.UploadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,8 +85,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.MediaUploadResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.MediaUploadResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.MediaUploadResponse> PostAsync(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,8 +107,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Upload.UploadRequestBuilder.UploadRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Upload.UploadRequestBuilder.UploadRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Upload.UploadRequestBuilder.UploadRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -127,8 +127,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
@@ -162,8 +162,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload
       /// <summary>Media id for the requested media upload status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("media_id")]
-            public string? MediaId { get; set; }
+      [QueryParameter("media_id")]
+      public string? MediaId { get; set; }
 #nullable restore
 #else
       [QueryParameter("media_id")]

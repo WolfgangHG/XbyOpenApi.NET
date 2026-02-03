@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The next token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextToken { get; set; }
+    public string? NextToken { get; set; }
 #nullable restore
 #else
     public string NextToken { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The previous token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousToken { get; set; }
+    public string? PreviousToken { get; set; }
 #nullable restore
 #else
     public string PreviousToken { get; set; }

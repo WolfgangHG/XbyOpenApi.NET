@@ -79,8 +79,8 @@ namespace XbyOpenApi.Core.Client.Two.Media
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2MediaResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2MediaResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2MediaResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,8 +100,8 @@ namespace XbyOpenApi.Core.Client.Two.Media
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -130,8 +130,8 @@ namespace XbyOpenApi.Core.Client.Two.Media
       /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("media%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Media.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+      [QueryParameter("media%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Media.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("media%2Efields")]
@@ -140,8 +140,8 @@ namespace XbyOpenApi.Core.Client.Two.Media
       /// <summary>A comma separated list of Media Keys. Up to 100 are allowed in a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("media_keys")]
-            public string[]? MediaKeys { get; set; }
+      [QueryParameter("media_keys")]
+      public string[]? MediaKeys { get; set; }
 #nullable restore
 #else
       [QueryParameter("media_keys")]

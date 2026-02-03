@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Community.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -28,7 +28,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The name of this Community.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+    public string? Name { get; set; }
 #nullable restore
 #else
     public string Name { get; set; }

@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.CreateAttachmentsMessageRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.CreateAttachmentsMessageRequest? CreateAttachmentsMessageRequest { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.CreateAttachmentsMessageRequest? CreateAttachmentsMessageRequest { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.CreateAttachmentsMessageRequest CreateAttachmentsMessageRequest { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.CreateTextMessageRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.CreateTextMessageRequest? CreateTextMessageRequest { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.CreateTextMessageRequest? CreateTextMessageRequest { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.CreateTextMessageRequest CreateTextMessageRequest { get; set; }

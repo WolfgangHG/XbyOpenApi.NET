@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2SpacesSearchResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Spaces.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2SpacesSearchResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Spaces.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2SpacesSearchResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Spaces.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Spaces.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Spaces.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Spaces.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -93,8 +93,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
       /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("expansions")]
-            public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+      [QueryParameter("expansions")]
+      public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
       [QueryParameter("expansions")]
@@ -106,8 +106,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
       /// <summary>The search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("query")]
-            public string? Query { get; set; }
+      [QueryParameter("query")]
+      public string? Query { get; set; }
 #nullable restore
 #else
       [QueryParameter("query")]
@@ -116,8 +116,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
       /// <summary>A comma separated list of Space fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("space%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetSpaceFieldsQueryParameterType[]? SpaceFields { get; set; }
+      [QueryParameter("space%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetSpaceFieldsQueryParameterType[]? SpaceFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("space%2Efields")]
@@ -129,8 +129,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
       /// <summary>A comma separated list of Topic fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("topic%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetTopicFieldsQueryParameterType[]? TopicFields { get; set; }
+      [QueryParameter("topic%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetTopicFieldsQueryParameterType[]? TopicFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("topic%2Efields")]
@@ -139,8 +139,8 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Search
       /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("user%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+      [QueryParameter("user%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Spaces.Search.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("user%2Efields")]

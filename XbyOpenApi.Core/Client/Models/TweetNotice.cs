@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>If the label is being applied or removed. Possible values are ‘apply’ or ‘remove’.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Application { get; set; }
+    public string? Application { get; set; }
 #nullable restore
 #else
     public string Application { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Information shown on the Tweet label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+    public string? Details { get; set; }
 #nullable restore
 #else
     public string Details { get; set; }
@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The type of label on the Tweet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventType { get; set; }
+    public string? EventType { get; set; }
 #nullable restore
 #else
     public string EventType { get; set; }
@@ -43,7 +43,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Link to more information about this kind of label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtendedDetailsUrl { get; set; }
+    public string? ExtendedDetailsUrl { get; set; }
 #nullable restore
 #else
     public string ExtendedDetailsUrl { get; set; }
@@ -51,7 +51,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Title/header of the Tweet label</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LabelTitle { get; set; }
+    public string? LabelTitle { get; set; }
 #nullable restore
 #else
     public string LabelTitle { get; set; }
@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetNotice_tweet? Tweet { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetNotice_tweet? Tweet { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetNotice_tweet Tweet { get; set; }

@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The allow_download_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.AllowDownloadStatus? AllowDownloadStatus { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.AllowDownloadStatus? AllowDownloadStatus { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.AllowDownloadStatus AllowDownloadStatus { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The alt_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.AltText? AltText { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.AltText? AltText { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.AltText AltText { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The audience_policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.AudiencePolicy? AudiencePolicy { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.AudiencePolicy? AudiencePolicy { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.AudiencePolicy AudiencePolicy { get; set; }
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The content_expiration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ContentExpiration? ContentExpiration { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ContentExpiration? ContentExpiration { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ContentExpiration ContentExpiration { get; set; }
@@ -49,7 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The domain_restrictions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.DomainRestrictions? DomainRestrictions { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.DomainRestrictions? DomainRestrictions { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.DomainRestrictions DomainRestrictions { get; set; }
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The found_media_origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.FoundMediaOrigin? FoundMediaOrigin { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.FoundMediaOrigin? FoundMediaOrigin { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.FoundMediaOrigin FoundMediaOrigin { get; set; }
@@ -65,7 +65,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The geo_restrictions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.GeoRestrictions? GeoRestrictions { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.GeoRestrictions? GeoRestrictions { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.GeoRestrictions GeoRestrictions { get; set; }
@@ -73,7 +73,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The management_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ManagementInfo? ManagementInfo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ManagementInfo? ManagementInfo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ManagementInfo ManagementInfo { get; set; }
@@ -81,7 +81,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The preview_image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.PreviewImage? PreviewImage { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.PreviewImage? PreviewImage { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.PreviewImage PreviewImage { get; set; }
@@ -89,7 +89,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The sensitive_media_warning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.SensitiveMediaWarning? SensitiveMediaWarning { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.SensitiveMediaWarning? SensitiveMediaWarning { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.SensitiveMediaWarning SensitiveMediaWarning { get; set; }
@@ -97,7 +97,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The shared_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.SharedInfo? SharedInfo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.SharedInfo? SharedInfo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.SharedInfo SharedInfo { get; set; }
@@ -105,7 +105,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The sticker_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.StickerInfo? StickerInfo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.StickerInfo? StickerInfo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.StickerInfo StickerInfo { get; set; }
@@ -113,7 +113,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The upload_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UploadSource? UploadSource { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UploadSource? UploadSource { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UploadSource UploadSource { get; set; }

@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.FollowActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.FollowActivityResponsePayload? FollowActivityResponsePayload { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.FollowActivityResponsePayload? FollowActivityResponsePayload { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.FollowActivityResponsePayload FollowActivityResponsePayload { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.NewsActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.NewsActivityResponsePayload? NewsActivityResponsePayload { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.NewsActivityResponsePayload? NewsActivityResponsePayload { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.NewsActivityResponsePayload NewsActivityResponsePayload { get; set; }
@@ -32,7 +32,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.ProfileUpdateActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ProfileUpdateActivityResponsePayload? ProfileUpdateActivityResponsePayload { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ProfileUpdateActivityResponsePayload? ProfileUpdateActivityResponsePayload { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ProfileUpdateActivityResponsePayload ProfileUpdateActivityResponsePayload { get; set; }

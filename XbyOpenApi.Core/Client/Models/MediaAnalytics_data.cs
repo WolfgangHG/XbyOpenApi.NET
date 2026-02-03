@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The Media Key identifier for this attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaKey { get; set; }
+    public string? MediaKey { get; set; }
 #nullable restore
 #else
     public string MediaKey { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Array containing metrics data along with the timestamps of their recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.MediaTimestampedMetrics>? TimestampedMetrics { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.MediaTimestampedMetrics>? TimestampedMetrics { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.MediaTimestampedMetrics> TimestampedMetrics { get; set; }

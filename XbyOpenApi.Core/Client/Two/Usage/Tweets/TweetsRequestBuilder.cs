@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Usage.Tweets
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2UsageTweetsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder.TweetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2UsageTweetsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder.TweetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2UsageTweetsResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder.TweetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Usage.Tweets
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder.TweetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder.TweetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder.TweetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -96,8 +96,8 @@ namespace XbyOpenApi.Core.Client.Two.Usage.Tweets
       /// <summary>A comma separated list of Usage fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("usage%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Usage.Tweets.GetUsageFieldsQueryParameterType[]? UsageFields { get; set; }
+      [QueryParameter("usage%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Usage.Tweets.GetUsageFieldsQueryParameterType[]? UsageFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("usage%2Efields")]

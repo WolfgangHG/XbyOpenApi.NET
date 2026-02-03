@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The add property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.RuleNoId>? Add { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.RuleNoId>? Add { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.RuleNoId> Add { get; set; }

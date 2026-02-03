@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>An XAA subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter? Filter { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter? Filter { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter Filter { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+    public string? Tag { get; set; }
 #nullable restore
 #else
     public string Tag { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this webhook config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookId { get; set; }
+    public string? WebhookId { get; set; }
 #nullable restore
 #else
     public string WebhookId { get; set; }

@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The public_tweet_notice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetNotice? PublicTweetNotice { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetNotice? PublicTweetNotice { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetNotice PublicTweetNotice { get; set; }

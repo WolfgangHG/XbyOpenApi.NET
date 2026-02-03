@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The IP address of the connected client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientIp { get; set; }
+    public string? ClientIp { get; set; }
 #nullable restore
 #else
     public string ClientIp { get; set; }
@@ -29,7 +29,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The reason for disconnection, if the connection is inactive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisconnectReason { get; set; }
+    public string? DisconnectReason { get; set; }
 #nullable restore
 #else
     public string DisconnectReason { get; set; }
@@ -37,7 +37,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The name of the streaming endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndpointName { get; set; }
+    public string? EndpointName { get; set; }
 #nullable restore
 #else
     public string EndpointName { get; set; }

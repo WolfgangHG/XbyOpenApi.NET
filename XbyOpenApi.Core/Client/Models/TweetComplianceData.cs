@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetDeleteComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetDeleteComplianceSchema? TweetDeleteComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetDeleteComplianceSchema? TweetDeleteComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetDeleteComplianceSchema TweetDeleteComplianceSchema { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetDropComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetDropComplianceSchema? TweetDropComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetDropComplianceSchema? TweetDropComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetDropComplianceSchema TweetDropComplianceSchema { get; set; }
@@ -32,7 +32,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetEditComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceSchema? TweetEditComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceSchema? TweetEditComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetEditComplianceSchema TweetEditComplianceSchema { get; set; }
@@ -40,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetUndropComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetUndropComplianceSchema? TweetUndropComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetUndropComplianceSchema? TweetUndropComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetUndropComplianceSchema TweetUndropComplianceSchema { get; set; }
@@ -48,7 +48,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.TweetWithheldComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetWithheldComplianceSchema? TweetWithheldComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetWithheldComplianceSchema? TweetWithheldComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetWithheldComplianceSchema TweetWithheldComplianceSchema { get; set; }

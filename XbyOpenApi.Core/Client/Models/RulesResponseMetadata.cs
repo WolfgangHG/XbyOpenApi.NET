@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The next token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextToken { get; set; }
+    public string? NextToken { get; set; }
 #nullable restore
 #else
     public string NextToken { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The sent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sent { get; set; }
+    public string? Sent { get; set; }
 #nullable restore
 #else
     public string Sent { get; set; }
@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.RulesRequestSummary? Summary { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.RulesRequestSummary? Summary { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.RulesRequestSummary Summary { get; set; }

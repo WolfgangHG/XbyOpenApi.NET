@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.MetadataCreateRequest_metadata? Metadata { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.MetadataCreateRequest_metadata? Metadata { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.MetadataCreateRequest_metadata Metadata { get; set; }

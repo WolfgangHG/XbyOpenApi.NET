@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The after property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? After { get; set; }
+    public string? After { get; set; }
 #nullable restore
 #else
     public string After { get; set; }
@@ -23,7 +23,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The before property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Before { get; set; }
+    public string? Before { get; set; }
 #nullable restore
 #else
     public string Before { get; set; }

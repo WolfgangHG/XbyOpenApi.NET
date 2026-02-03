@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The newest id in this response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewestId { get; set; }
+    public string? NewestId { get; set; }
 #nullable restore
 #else
     public string NewestId { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The next token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextToken { get; set; }
+    public string? NextToken { get; set; }
 #nullable restore
 #else
     public string NextToken { get; set; }
@@ -33,7 +33,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The oldest id in this response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldestId { get; set; }
+    public string? OldestId { get; set; }
 #nullable restore
 #else
     public string OldestId { get; set; }

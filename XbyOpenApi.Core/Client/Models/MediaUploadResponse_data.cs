@@ -19,7 +19,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier of this Media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The Media Key identifier for this attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaKey { get; set; }
+    public string? MediaKey { get; set; }
 #nullable restore
 #else
     public string MediaKey { get; set; }
@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The processing_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ProcessingInfo? ProcessingInfo { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ProcessingInfo? ProcessingInfo { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ProcessingInfo ProcessingInfo { get; set; }

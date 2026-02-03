@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>list of links</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.WebhookLinksGetResponse_data_links>? Links { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.WebhookLinksGetResponse_data_links>? Links { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.WebhookLinksGetResponse_data_links> Links { get; set; }

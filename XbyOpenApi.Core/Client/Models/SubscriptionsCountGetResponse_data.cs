@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The account name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+    public string? AccountName { get; set; }
 #nullable restore
 #else
     public string AccountName { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The limit for subscriptions for this app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisionedCount { get; set; }
+    public string? ProvisionedCount { get; set; }
 #nullable restore
 #else
     public string ProvisionedCount { get; set; }
@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The number of active subscriptions across all webhooks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionsCountAll { get; set; }
+    public string? SubscriptionsCountAll { get; set; }
 #nullable restore
 #else
     public string SubscriptionsCountAll { get; set; }
@@ -42,7 +42,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The number of active direct message subscriptions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionsCountDirectMessages { get; set; }
+    public string? SubscriptionsCountDirectMessages { get; set; }
 #nullable restore
 #else
     public string SubscriptionsCountDirectMessages { get; set; }

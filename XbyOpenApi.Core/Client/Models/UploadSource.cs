@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Records the source (e.g., app, device) from which the media was uploaded</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadSourceProp { get; set; }
+    public string? UploadSourceProp { get; set; }
 #nullable restore
 #else
     public string UploadSourceProp { get; set; }

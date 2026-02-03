@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The preview_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewImageUrl { get; set; }
+    public string? PreviewImageUrl { get; set; }
 #nullable restore
 #else
     public string PreviewImageUrl { get; set; }
@@ -23,7 +23,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>An array of all available variants of the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Variant>? Variants { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Variant>? Variants { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Variant> Variants { get; set; }

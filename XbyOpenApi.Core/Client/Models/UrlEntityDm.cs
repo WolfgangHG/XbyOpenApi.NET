@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Description of the URL landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+    public string? Description { get; set; }
 #nullable restore
 #else
     public string Description { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The URL as displayed in the X client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayUrl { get; set; }
+    public string? DisplayUrl { get; set; }
 #nullable restore
 #else
     public string DisplayUrl { get; set; }
@@ -36,7 +36,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A validly formatted URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpandedUrl { get; set; }
+    public string? ExpandedUrl { get; set; }
 #nullable restore
 #else
     public string ExpandedUrl { get; set; }
@@ -44,7 +44,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The images property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.UrlImage>? Images { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.UrlImage>? Images { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.UrlImage> Images { get; set; }
@@ -52,7 +52,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The Media Key identifier for this attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaKey { get; set; }
+    public string? MediaKey { get; set; }
 #nullable restore
 #else
     public string MediaKey { get; set; }
@@ -64,7 +64,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Title of the page the URL points to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+    public string? Title { get; set; }
 #nullable restore
 #else
     public string Title { get; set; }
@@ -72,7 +72,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Fully resolved url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnwoundUrl { get; set; }
+    public string? UnwoundUrl { get; set; }
 #nullable restore
 #else
     public string UnwoundUrl { get; set; }
@@ -80,7 +80,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A validly formatted URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+    public string? Url { get; set; }
 #nullable restore
 #else
     public string Url { get; set; }

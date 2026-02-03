@@ -48,8 +48,8 @@ namespace XbyOpenApi.Core.Client.Two.Connections
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2ConnectionsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2ConnectionsResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2ConnectionsResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,8 +69,8 @@ namespace XbyOpenApi.Core.Client.Two.Connections
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -99,8 +99,8 @@ namespace XbyOpenApi.Core.Client.Two.Connections
       /// <summary>A comma separated list of Connection fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("connection%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Connections.GetConnectionFieldsQueryParameterType[]? ConnectionFields { get; set; }
+      [QueryParameter("connection%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Connections.GetConnectionFieldsQueryParameterType[]? ConnectionFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("connection%2Efields")]
@@ -109,8 +109,8 @@ namespace XbyOpenApi.Core.Client.Two.Connections
       /// <summary>Filter by streaming endpoint. Specify one or more endpoint names to filter results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("endpoints")]
-            public global::XbyOpenApi.Core.Client.Two.Connections.GetEndpointsQueryParameterType[]? Endpoints { get; set; }
+      [QueryParameter("endpoints")]
+      public global::XbyOpenApi.Core.Client.Two.Connections.GetEndpointsQueryParameterType[]? Endpoints { get; set; }
 #nullable restore
 #else
       [QueryParameter("endpoints")]
@@ -122,8 +122,8 @@ namespace XbyOpenApi.Core.Client.Two.Connections
       /// <summary>Token for paginating through results. Use the value from &apos;next_token&apos; in the previous response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("pagination_token")]
-            public string? PaginationToken { get; set; }
+      [QueryParameter("pagination_token")]
+      public string? PaginationToken { get; set; }
 #nullable restore
 #else
       [QueryParameter("pagination_token")]

@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Represents the data for the context annotation domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ContextAnnotationDomainFields? Domain { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ContextAnnotationDomainFields? Domain { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ContextAnnotationDomainFields Domain { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Represents the data for the context annotation entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.ContextAnnotationEntityFields? Entity { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.ContextAnnotationEntityFields? Entity { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.ContextAnnotationEntityFields Entity { get; set; }

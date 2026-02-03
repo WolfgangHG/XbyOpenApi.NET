@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of User Ids to be excluded from the reply Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeReplyUserIds { get; set; }
+    public List<string>? ExcludeReplyUserIds { get; set; }
 #nullable restore
 #else
     public List<string> ExcludeReplyUserIds { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InReplyToTweetId { get; set; }
+    public string? InReplyToTweetId { get; set; }
 #nullable restore
 #else
     public string InReplyToTweetId { get; set; }

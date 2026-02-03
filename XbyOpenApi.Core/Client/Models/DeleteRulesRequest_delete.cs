@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>IDs of all deleted user-specified stream filtering rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get; set; }
+    public List<string>? Ids { get; set; }
 #nullable restore
 #else
     public List<string> Ids { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Values of all deleted user-specified stream filtering rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values { get; set; }
+    public List<string>? Values { get; set; }
 #nullable restore
 #else
     public List<string> Values { get; set; }

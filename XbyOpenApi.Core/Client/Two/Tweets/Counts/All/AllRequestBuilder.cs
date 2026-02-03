@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.Get2TweetsCountsAllResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.Get2TweetsCountsAllResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.Get2TweetsCountsAllResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder.AllRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -99,8 +99,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       /// <summary>This parameter is used to get the next &apos;page&apos; of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("next_token")]
-            public string? NextToken { get; set; }
+      [QueryParameter("next_token")]
+      public string? NextToken { get; set; }
 #nullable restore
 #else
       [QueryParameter("next_token")]
@@ -109,8 +109,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       /// <summary>This parameter is used to get the next &apos;page&apos; of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("pagination_token")]
-            public string? PaginationToken { get; set; }
+      [QueryParameter("pagination_token")]
+      public string? PaginationToken { get; set; }
 #nullable restore
 #else
       [QueryParameter("pagination_token")]
@@ -119,8 +119,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       /// <summary>One query/rule/filter for matching Posts. Refer to https://t.co/rulelength to identify the max query length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("query")]
-            public string? Query { get; set; }
+      [QueryParameter("query")]
+      public string? Query { get; set; }
 #nullable restore
 #else
       [QueryParameter("query")]
@@ -129,8 +129,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       /// <summary>A comma separated list of SearchCount fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("search_count%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.GetSearch_countFieldsQueryParameterType[]? SearchCountFields { get; set; }
+      [QueryParameter("search_count%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.GetSearch_countFieldsQueryParameterType[]? SearchCountFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("search_count%2Efields")]
@@ -139,8 +139,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       /// <summary>Returns results with a Post ID greater than (that is, more recent than) the specified ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("since_id")]
-            public string? SinceId { get; set; }
+      [QueryParameter("since_id")]
+      public string? SinceId { get; set; }
 #nullable restore
 #else
       [QueryParameter("since_id")]
@@ -152,8 +152,8 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       /// <summary>Returns results with a Post ID less than (that is, older than) the specified ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("until_id")]
-            public string? UntilId { get; set; }
+      [QueryParameter("until_id")]
+      public string? UntilId { get; set; }
 #nullable restore
 #else
       [QueryParameter("until_id")]

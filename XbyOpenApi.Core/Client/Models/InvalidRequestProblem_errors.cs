@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+    public string? Message { get; set; }
 #nullable restore
 #else
     public string Message { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem_errors_parameters? Parameters { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem_errors_parameters? Parameters { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem_errors_parameters Parameters { get; set; }

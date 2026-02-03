@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The X User object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.User? Source { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.User? Source { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.User Source { get; set; }
@@ -23,7 +23,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The X User object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.User? Target { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.User? Target { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.User Target { get; set; }

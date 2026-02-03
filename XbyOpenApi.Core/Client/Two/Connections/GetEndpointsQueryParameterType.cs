@@ -8,9 +8,9 @@ namespace XbyOpenApi.Core.Client.Two.Connections
   public enum GetEndpointsQueryParameterType
 #pragma warning restore CS1591
   {
-    [EnumMember(Value = "filter_stream")]
+    [EnumMember(Value = "filtered_stream")]
 #pragma warning disable CS1591
-    Filter_stream,
+    Filtered_stream,
 #pragma warning restore CS1591
     [EnumMember(Value = "sample_stream")]
 #pragma warning disable CS1591

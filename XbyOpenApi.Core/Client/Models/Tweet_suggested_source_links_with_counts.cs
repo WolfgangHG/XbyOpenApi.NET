@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Represent the portion of text recognized as a URL, and its start and end position within the text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UrlEntity? Url { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UrlEntity? Url { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UrlEntity Url { get; set; }

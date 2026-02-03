@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>List of blacklisted country codes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BlacklistedCountryCodes { get; set; }
+    public List<string>? BlacklistedCountryCodes { get; set; }
 #nullable restore
 #else
     public List<string> BlacklistedCountryCodes { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>List of whitelisted country codes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WhitelistedCountryCodes { get; set; }
+    public List<string>? WhitelistedCountryCodes { get; set; }
 #nullable restore
 #else
     public List<string> WhitelistedCountryCodes { get; set; }

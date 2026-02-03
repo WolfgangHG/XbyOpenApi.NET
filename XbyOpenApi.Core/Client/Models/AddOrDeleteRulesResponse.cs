@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>All user-specified stream filtering rules that were created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Rule>? Data { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Rule>? Data { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Rule> Data { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Problem>? Errors { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Problem>? Errors { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Problem> Errors { get; set; }
@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.RulesResponseMetadata? Meta { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.RulesResponseMetadata? Meta { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.RulesResponseMetadata Meta { get; set; }

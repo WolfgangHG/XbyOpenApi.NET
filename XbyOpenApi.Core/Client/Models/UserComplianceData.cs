@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserDeleteComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserDeleteComplianceSchema? UserDeleteComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserDeleteComplianceSchema? UserDeleteComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserDeleteComplianceSchema UserDeleteComplianceSchema { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserProfileModificationComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserProfileModificationComplianceSchema? UserProfileModificationComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserProfileModificationComplianceSchema? UserProfileModificationComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserProfileModificationComplianceSchema UserProfileModificationComplianceSchema { get; set; }
@@ -32,7 +32,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserProtectComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserProtectComplianceSchema? UserProtectComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserProtectComplianceSchema? UserProtectComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserProtectComplianceSchema UserProtectComplianceSchema { get; set; }
@@ -40,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserScrubGeoSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserScrubGeoSchema? UserScrubGeoSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserScrubGeoSchema? UserScrubGeoSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserScrubGeoSchema UserScrubGeoSchema { get; set; }
@@ -48,7 +48,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserSuspendComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserSuspendComplianceSchema? UserSuspendComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserSuspendComplianceSchema? UserSuspendComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserSuspendComplianceSchema UserSuspendComplianceSchema { get; set; }
@@ -56,7 +56,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserUndeleteComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserUndeleteComplianceSchema? UserUndeleteComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserUndeleteComplianceSchema? UserUndeleteComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserUndeleteComplianceSchema UserUndeleteComplianceSchema { get; set; }
@@ -64,7 +64,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserUnprotectComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserUnprotectComplianceSchema? UserUnprotectComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserUnprotectComplianceSchema? UserUnprotectComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserUnprotectComplianceSchema UserUnprotectComplianceSchema { get; set; }
@@ -72,7 +72,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserUnsuspendComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserUnsuspendComplianceSchema? UserUnsuspendComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserUnsuspendComplianceSchema? UserUnsuspendComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserUnsuspendComplianceSchema UserUnsuspendComplianceSchema { get; set; }
@@ -80,7 +80,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UserWithheldComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.UserWithheldComplianceSchema? UserWithheldComplianceSchema { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.UserWithheldComplianceSchema? UserWithheldComplianceSchema { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.UserWithheldComplianceSchema UserWithheldComplianceSchema { get; set; }

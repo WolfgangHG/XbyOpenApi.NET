@@ -21,7 +21,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The text of the Hashtag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; set; }
+    public string? Tag { get; set; }
 #nullable restore
 #else
     public string Tag { get; set; }

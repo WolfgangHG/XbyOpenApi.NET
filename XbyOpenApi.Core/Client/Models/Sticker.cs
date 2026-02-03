@@ -21,7 +21,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier for sticker</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }

@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.FullTextEntities? Description { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.FullTextEntities? Description { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.FullTextEntities Description { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Expanded details for the URL specified in the User&apos;s profile, with start and end indices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.User_entities_url? Url { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.User_entities_url? Url { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.User_entities_url Url { get; set; }

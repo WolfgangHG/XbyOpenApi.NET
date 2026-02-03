@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of card IDs (if cards are attached).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CardIds { get; set; }
+    public List<string>? CardIds { get; set; }
 #nullable restore
 #else
     public List<string> CardIds { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Media Keys for each one of the media attachments (if media are attached).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaKeys { get; set; }
+    public List<string>? MediaKeys { get; set; }
 #nullable restore
 #else
     public List<string> MediaKeys { get; set; }

@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The iso8601_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Iso8601Time { get; set; }
+    public string? Iso8601Time { get; set; }
 #nullable restore
 #else
     public string Iso8601Time { get; set; }

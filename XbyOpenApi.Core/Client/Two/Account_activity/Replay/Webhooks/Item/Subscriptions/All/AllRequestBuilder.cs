@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subsc
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.ReplayJobCreateResponse?> PostAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder.AllRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.ReplayJobCreateResponse?> PostAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder.AllRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.ReplayJobCreateResponse> PostAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder.AllRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subsc
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder.AllRequestBuilderPostQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder.AllRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder.AllRequestBuilderPostQueryParameters>> requestConfiguration = default)
@@ -93,8 +93,8 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subsc
       /// <summary>The oldest (starting) UTC timestamp (inclusive) from which events will be provided, in `yyyymmddhhmm` format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("from_date")]
-            public string? FromDate { get; set; }
+      [QueryParameter("from_date")]
+      public string? FromDate { get; set; }
 #nullable restore
 #else
       [QueryParameter("from_date")]
@@ -103,8 +103,8 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Replay.Webhooks.Item.Subsc
       /// <summary>The latest (ending) UTC timestamp (exclusive) up to which events will be provided, in `yyyymmddhhmm` format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("to_date")]
-            public string? ToDate { get; set; }
+      [QueryParameter("to_date")]
+      public string? ToDate { get; set; }
 #nullable restore
 #else
       [QueryParameter("to_date")]

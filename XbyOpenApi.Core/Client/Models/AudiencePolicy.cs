@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The creator_subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.AudiencePolicy_creator_subscriptions?>? CreatorSubscriptions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.AudiencePolicy_creator_subscriptions?>? CreatorSubscriptions { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.AudiencePolicy_creator_subscriptions?> CreatorSubscriptions { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The x_subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.AudiencePolicy_x_subscriptions?>? XSubscriptions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.AudiencePolicy_x_subscriptions?>? XSubscriptions { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.AudiencePolicy_x_subscriptions?> XSubscriptions { get; set; }

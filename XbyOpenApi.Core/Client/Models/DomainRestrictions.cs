@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>List of whitelisted domains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Whitelist { get; set; }
+    public List<string>? Whitelist { get; set; }
 #nullable restore
 #else
     public List<string> Whitelist { get; set; }

@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The news category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+    public string? Category { get; set; }
 #nullable restore
 #else
     public string Category { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The cluster_posts_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.News_cluster_posts_results>? ClusterPostsResults { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.News_cluster_posts_results>? ClusterPostsResults { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.News_cluster_posts_results> ClusterPostsResults { get; set; }
@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The contexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.News_contexts? Contexts { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.News_contexts? Contexts { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.News_contexts Contexts { get; set; }
@@ -42,7 +42,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The disclaimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Disclaimer { get; set; }
+    public string? Disclaimer { get; set; }
 #nullable restore
 #else
     public string Disclaimer { get; set; }
@@ -50,7 +50,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The news hook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hook { get; set; }
+    public string? Hook { get; set; }
 #nullable restore
 #else
     public string Hook { get; set; }
@@ -58,7 +58,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The keywords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get; set; }
+    public List<string>? Keywords { get; set; }
 #nullable restore
 #else
     public List<string> Keywords { get; set; }
@@ -68,7 +68,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The headline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+    public string? Name { get; set; }
 #nullable restore
 #else
     public string Name { get; set; }
@@ -76,7 +76,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of news story.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestId { get; set; }
+    public string? RestId { get; set; }
 #nullable restore
 #else
     public string RestId { get; set; }
@@ -84,7 +84,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The news summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary { get; set; }
+    public string? Summary { get; set; }
 #nullable restore
 #else
     public string Summary { get; set; }

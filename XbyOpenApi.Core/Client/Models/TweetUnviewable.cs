@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>If the label is being applied or removed. Possible values are ‘apply’ or ‘remove’.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Application { get; set; }
+    public string? Application { get; set; }
 #nullable restore
 #else
     public string Application { get; set; }
@@ -27,7 +27,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.TweetUnviewable_tweet? Tweet { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.TweetUnviewable_tweet? Tweet { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetUnviewable_tweet Tweet { get; set; }

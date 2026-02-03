@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The metric_values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series_value_metric_values>? MetricValues { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series_value_metric_values>? MetricValues { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series_value_metric_values> MetricValues { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series_value_timestamp? Timestamp { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series_value_timestamp? Timestamp { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.Engagement_measurement_metrics_time_series_value_timestamp Timestamp { get; set; }

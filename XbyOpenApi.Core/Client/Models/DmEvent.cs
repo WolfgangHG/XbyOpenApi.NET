@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Specifies the type of attachments (if any) present in this DM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.DmEvent_attachments? Attachments { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.DmEvent_attachments? Attachments { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.DmEvent_attachments Attachments { get; set; }
@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The cashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.CashtagEntity>? Cashtags { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.CashtagEntity>? Cashtags { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.CashtagEntity> Cashtags { get; set; }
@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of a DM conversation. This can either be a numeric string, or a pair of numeric strings separated by a &apos;-&apos; character in the case of one-on-one DM Conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmConversationId { get; set; }
+    public string? DmConversationId { get; set; }
 #nullable restore
 #else
     public string DmConversationId { get; set; }
@@ -43,7 +43,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The event_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventType { get; set; }
+    public string? EventType { get; set; }
 #nullable restore
 #else
     public string EventType { get; set; }
@@ -51,7 +51,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The hashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.HashtagEntity>? Hashtags { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.HashtagEntity>? Hashtags { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.HashtagEntity> Hashtags { get; set; }
@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of a DM Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -67,7 +67,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The mentions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.MentionEntity>? Mentions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.MentionEntity>? Mentions { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.MentionEntity> Mentions { get; set; }
@@ -75,7 +75,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of participants for a ParticipantsJoin or ParticipantsLeave event_type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ParticipantIds { get; set; }
+    public List<string>? ParticipantIds { get; set; }
 #nullable restore
 #else
     public List<string> ParticipantIds { get; set; }
@@ -83,7 +83,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Posts this DM refers to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.DmEvent_referenced_tweets>? ReferencedTweets { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.DmEvent_referenced_tweets>? ReferencedTweets { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.DmEvent_referenced_tweets> ReferencedTweets { get; set; }
@@ -91,7 +91,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderId { get; set; }
+    public string? SenderId { get; set; }
 #nullable restore
 #else
     public string SenderId { get; set; }
@@ -99,7 +99,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+    public string? Text { get; set; }
 #nullable restore
 #else
     public string Text { get; set; }
@@ -107,7 +107,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.UrlEntityDm>? Urls { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.UrlEntityDm>? Urls { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.UrlEntityDm> Urls { get; set; }

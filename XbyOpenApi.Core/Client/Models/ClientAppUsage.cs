@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The unique identifier for this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAppId { get; set; }
+    public string? ClientAppId { get; set; }
 #nullable restore
 #else
     public string ClientAppId { get; set; }
@@ -26,7 +26,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The usage value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.UsageFields>? Usage { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.UsageFields>? Usage { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.UsageFields> Usage { get; set; }

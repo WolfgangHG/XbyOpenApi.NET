@@ -17,7 +17,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::XbyOpenApi.Core.Client.Models.PreviewImage_media_key? MediaKey { get; set; }
+    public global::XbyOpenApi.Core.Client.Models.PreviewImage_media_key? MediaKey { get; set; }
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.PreviewImage_media_key MediaKey { get; set; }

@@ -42,8 +42,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Analytics
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::XbyOpenApi.Core.Client.Models.MediaAnalytics?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Analytics.AnalyticsRequestBuilder.AnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
+    public async Task<global::XbyOpenApi.Core.Client.Models.MediaAnalytics?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Analytics.AnalyticsRequestBuilder.AnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
 #nullable restore
 #else
     public async Task<global::XbyOpenApi.Core.Client.Models.MediaAnalytics> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Analytics.AnalyticsRequestBuilder.AnalyticsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,8 +63,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Analytics
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Analytics.AnalyticsRequestBuilder.AnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Analytics.AnalyticsRequestBuilder.AnalyticsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+    {
 #nullable restore
 #else
     public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Media.Analytics.AnalyticsRequestBuilder.AnalyticsRequestBuilderGetQueryParameters>> requestConfiguration = default)
@@ -99,8 +99,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Analytics
       /// <summary>A comma separated list of MediaAnalytics fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("media_analytics%2Efields")]
-            public global::XbyOpenApi.Core.Client.Two.Media.Analytics.GetMedia_analyticsFieldsQueryParameterType[]? MediaAnalyticsFields { get; set; }
+      [QueryParameter("media_analytics%2Efields")]
+      public global::XbyOpenApi.Core.Client.Two.Media.Analytics.GetMedia_analyticsFieldsQueryParameterType[]? MediaAnalyticsFields { get; set; }
 #nullable restore
 #else
       [QueryParameter("media_analytics%2Efields")]
@@ -109,8 +109,8 @@ namespace XbyOpenApi.Core.Client.Two.Media.Analytics
       /// <summary>A comma separated list of Media Keys. Up to 100 are allowed in a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("media_keys")]
-            public string[]? MediaKeys { get; set; }
+      [QueryParameter("media_keys")]
+      public string[]? MediaKeys { get; set; }
 #nullable restore
 #else
       [QueryParameter("media_keys")]

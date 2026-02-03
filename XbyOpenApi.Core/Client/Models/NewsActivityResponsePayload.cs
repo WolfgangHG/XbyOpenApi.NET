@@ -15,7 +15,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+    public string? Category { get; set; }
 #nullable restore
 #else
     public string Category { get; set; }
@@ -23,7 +23,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The headline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Headline { get; set; }
+    public string? Headline { get; set; }
 #nullable restore
 #else
     public string Headline { get; set; }
@@ -31,7 +31,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The hook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hook { get; set; }
+    public string? Hook { get; set; }
 #nullable restore
 #else
     public string Hook { get; set; }
@@ -39,7 +39,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary { get; set; }
+    public string? Summary { get; set; }
 #nullable restore
 #else
     public string Summary { get; set; }

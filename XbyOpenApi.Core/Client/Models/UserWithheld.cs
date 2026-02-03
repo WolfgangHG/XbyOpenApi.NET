@@ -18,7 +18,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Provides a list of countries where this content is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CountryCodes { get; set; }
+    public List<string>? CountryCodes { get; set; }
 #nullable restore
 #else
     public List<string> CountryCodes { get; set; }

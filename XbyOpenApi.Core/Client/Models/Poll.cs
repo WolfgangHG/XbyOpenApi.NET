@@ -22,7 +22,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Unique identifier of this poll.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+    public string? Id { get; set; }
 #nullable restore
 #else
     public string Id { get; set; }
@@ -30,7 +30,7 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::XbyOpenApi.Core.Client.Models.PollOption>? Options { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.PollOption>? Options { get; set; }
 #nullable restore
 #else
     public List<global::XbyOpenApi.Core.Client.Models.PollOption> Options { get; set; }
