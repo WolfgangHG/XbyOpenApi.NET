@@ -23,10 +23,12 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media? Media { get; set; }
+    //public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media? Media { get; set; }
+    public byte[]? Media { get; set; }
 #nullable restore
 #else
-    public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media Media { get; set; }
+    //public global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media Media { get; set; }
+    public byte[] Media { get; set; }
 #endif
     /// <summary>A string enum value which identifies a media use-case. This identifier is used to enforce use-case specific constraints (e.g. file size) and enable advanced features.</summary>
     public global::XbyOpenApi.Core.Client.Models.MediaCategoryOneShot? MediaCategory { get; set; }
@@ -53,7 +55,8 @@ namespace XbyOpenApi.Core.Client.Models
       return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_owners", n => { AdditionalOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "media", n => { Media = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media.CreateFromDiscriminatorValue); } },
+                //{ "media", n => { Media = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>(global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetByteArrayValue(); } },
                 { "media_category", n => { MediaCategory = n.GetEnumValue<global::XbyOpenApi.Core.Client.Models.MediaCategoryOneShot>(); } },
                 { "media_type", n => { MediaType = n.GetEnumValue<global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot_media_type>(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
@@ -67,7 +70,8 @@ namespace XbyOpenApi.Core.Client.Models
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
       writer.WriteCollectionOfPrimitiveValues<string>("additional_owners", AdditionalOwners);
-      writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>("media", Media);
+      //writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>("media", Media);
+      writer.WriteByteArrayValue("media", Media);
       writer.WriteEnumValue<global::XbyOpenApi.Core.Client.Models.MediaCategoryOneShot>("media_category", MediaCategory);
       writer.WriteEnumValue<global::XbyOpenApi.Core.Client.Models.MediaUploadRequestOneShot_media_type>("media_type", MediaType);
       writer.WriteBoolValue("shared", Shared);

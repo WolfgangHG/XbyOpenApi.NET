@@ -3,6 +3,18 @@
 This project uses [Kiota](https://github.com/microsoft/kiota/) to generate a REST client from the OpenAPI specification of the X services.
 The spec is found at https://api.twitter.com/2/openapi.json
 
+
+# Table of Contents
+
+- [Installing Kiota](#installing-kiota)
+- [Generating the client](#generating-the-client)
+- [Initializing the project](#initializing-the-project)
+- [Using the client](#using-the-client)
+- [Hack: logging requests and responses](#hack-logging-requests-and-responses)
+- [Kiota trouble: uploading binary data](#kiota-trouble-uploading-binary-data)
+- [What about other OpenAPI libraries?](#what-about-other-openapi-libraries)
+
+
 # Installing Kiota
 First of all, we have to install the tool `Microsoft.OpenApi.Kiota` (see https://learn.microsoft.com/en-us/openapi/kiota/install)
 
@@ -155,9 +167,107 @@ based on the content type at all, so I created issue https://github.com/microsof
 To see the actual error message, I added the `BodyInspectionHandlerOption` and parsed the request in the catch block,
 which revealed the actual error.
 
+# Kiota trouble: uploading binary data
+
+Handling of binary data does not seem to work with the Kiota generated client.
+
+See for example the endpoint to upload media (https://docs.x.com/x-api/media/upload-media).
+
+It could work like this using the generated classes:
+
+```c#
+byte[] data = ...;
+MediaUploadRequestOneShot mediaUpload = new MediaUploadRequestOneShot();
+mediaUpload.MediaCategory = MediaCategoryOneShot.Tweet_image;
+mediaUpload.Media = new MediaUploadRequestOneShot.MediaUploadRequestOneShot_media();
+mediaUpload.Media.MediaPayloadByte = new MediaPayloadByte();
+
+await xClient.Two.Media.Upload.PostAsync(mediaUpload);
+```
+
+But there is no way to add the binary data of a media. The class `MediaPayloadByte` has no properties at all.
+
+I asked this in the Kiota project, an answer is pending: https://github.com/microsoft/kiota/discussions/7247
+
+But I hope I found a workaround.
+
+This is the generated class (slightly simplified to remove e.g. namespaces and code that is not relevant here):
+```c#
+public partial class MediaUploadRequestOneShot : IParsable
+{
+  public MediaUploadRequestOneShot.MediaUploadRequestOneShot_media Media { get; set; }
+  public MediaCategoryOneShot? MediaCategory { get; set; }
+  public MediaUploadRequestOneShot_media_type? MediaType { get; set; }
+  public bool? Shared { get; set; }
+  
+  public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+  {
+    return new Dictionary<string, Action<IParseNode>>
+          {
+              { "additional_owners", n => { AdditionalOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+              { "media", n => { Media = n.GetObjectValue<MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>(MediaUploadRequestOneShot.MediaUploadRequestOneShot_media.CreateFromDiscriminatorValue); } },
+              { "media_category", n => { MediaCategory = n.GetEnumValue<MediaCategoryOneShot>(); } },
+              { "media_type", n => { MediaType = n.GetEnumValue<MediaUploadRequestOneShot_media_type>(); } },
+              { "shared", n => { Shared = n.GetBoolValue(); } },
+          };
+  }
+  
+  public virtual void Serialize(ISerializationWriter writer)
+  {
+    if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+    writer.WriteCollectionOfPrimitiveValues<string>("additional_owners", AdditionalOwners);
+    writer.WriteObjectValue<MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>("media", Media);
+    writer.WriteEnumValue<MediaCategoryOneShot>("media_category", MediaCategory);
+    writer.WriteEnumValue<MediaUploadRequestOneShot_media_type>("media_type", MediaType);
+    writer.WriteBoolValue("shared", Shared);
+  }
+}
+```
+
+I modified the property `Media` to be of type `byte[]`. One line in `GetFieldDeserializers` and `Serialize` had
+to be changed, too:
+
+```c#
+public partial class MediaUploadRequestOneShot : IParsable
+{
+  ...
+  public byte[] Media { get; set; }
+  ...
+  
+  public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+  {
+    return new Dictionary<string, Action<IParseNode>>
+          {
+                ...
+              { "media", n => { Media = n.GetByteArrayValue(); } },
+              ....
+  
+          };
+  }
+  
+  public virtual void Serialize(ISerializationWriter writer)
+  {
+    ...
+    writer.WriteByteArrayValue("media", Media);
+    ...
+  }
+```
+
+Now, upload works with this piece of code:
+
+```c#
+byte[] data = ...;
+MediaUploadRequestOneShot mediaUpload = new MediaUploadRequestOneShot();
+mediaUpload.MediaCategory = MediaCategoryOneShot.Tweet_image;
+mediaUpload.Media = data;
+
+await xClient.Two.Media.Upload.PostAsync(mediaUpload);
+```
+
+Looking at the request, we see that Kiota uploads a base64 string.
 
 # What about other OpenAPI libraries?
 
 Before switching to Kiota, I tested [NSwag](https://github.com/RicoSuter/NSwag/), but this fails miserably: it creates 
-a REST client that does not compile. And digging deeper reveals that it does not support the "oneOf" declaration which is heavily used by X,
+a REST client that does not even compile. And digging deeper reveals that it does not support the "oneOf" declaration which is heavily used by X,
 NSwag just picks the first class: https://github.com/RicoSuter/NSwag/issues/3738

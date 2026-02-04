@@ -86,7 +86,14 @@ namespace XByOpenApi.Sample.WinForms
     {
       //It seems we need those three scopes to view my own profile and to write Tweets.
       //"users.read" is not enough to view my own profile.
-      List<string> scopes = new List<string>() { XClientOAuth2Util.SCOPE_USERS_READ, XClientOAuth2Util.SCOPE_TWEET_READ, XClientOAuth2Util.SCOPE_TWEET_WRITE };
+      //For doing an image upload, we need also "media.write".
+      List<string> scopes = new List<string>()
+      {
+        XClientOAuth2Util.SCOPE_USERS_READ,
+        XClientOAuth2Util.SCOPE_TWEET_READ,
+        XClientOAuth2Util.SCOPE_TWEET_WRITE,
+        XClientOAuth2Util.SCOPE_MEDIA_WRITE
+      };
 
       try
       {
@@ -269,38 +276,120 @@ namespace XByOpenApi.Sample.WinForms
 
       XClient xClient = this.InitXClient();
 
+      //Part one: the image upload:
+      //Here, we also have a request body:
+      var requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+
+      MediaUploadResponse mediaResponse;
       try
       {
-        byte[] arrData = File.ReadAllBytes("..\\..\\..\\beispielbild.jpeg");
+        byte[] arrData = File.ReadAllBytes("..\\..\\..\\sample.png");
 
         MediaUploadRequestOneShot mediaUpload = new MediaUploadRequestOneShot();
-        mediaUpload.Media = new MediaUploadRequestOneShot.MediaUploadRequestOneShot_media();
-        mediaUpload.Media.MediaPayloadByte = new MediaPayloadByte();
-        bool todo_GehtNicht;
+        mediaUpload.MediaCategory = MediaCategoryOneShot.Tweet_image;
+        //Property "Media" is modified in my API client:
+        mediaUpload.Media = arrData;
 
-        //mediaUpload.MediaType = MediaUploadRequestOneShot_media_type.ImageJpeg;
-
-        MediaUploadResponse response = xClient.Two.Media.Upload.PostAsync(mediaUpload).GetAwaiter().GetResult();
-
-        bool todo_TweetErzeugenUpload; //Fehlt noch
-        if (response.Data != null)
+        mediaResponse = xClient.Two.Media.Upload.PostAsync(mediaUpload, conf =>
         {
-          MessageBox.Show(this, "Success: Id = " + response.Data.Id);
+          conf.Options.Add(requestOption);
+        }).GetAwaiter().GetResult();
 
-          //this.txtDeleteTweetId.Text = response.Data.Id.ToString();
+        string plainRerequest = GetStringFromStream(requestOption.RequestBody);
+        //For printing the request: Trim large base64 value:
+        plainRerequest = SimplifyMediaBase64(plainRerequest);
+        string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+
+        if (mediaResponse.Data != null)
+        {
+          MessageBox.Show(this, "Media uploaded: Id = " + mediaResponse.Data.Id + Environment.NewLine +
+            $"Plain request: {plainRerequest}" +
+            Environment.NewLine +
+            $"Plain response: {plainResponse}");
         }
-        else if (response.Errors != null)
+        else if (mediaResponse.Errors != null)
         {
-          string strErrors = LogProblems(response.Errors);
-          MessageBox.Show("Error: " + strErrors);
+          string strErrors = LogProblems(mediaResponse.Errors);
+          MessageBox.Show("Error: " + strErrors + Environment.NewLine +
+            $"Plain request: {plainRerequest}" +
+            Environment.NewLine +
+            $"Plain response: {plainResponse}");
+          return;
         }
       }
       catch (Exception ex)
       {
-        MessageBox.Show(this, "An error occured while creating the tweet: " + ex.ToString());
+        string error = "An error occured while uploading the image: " + ex.ToString();
+        if (requestOption.ResponseBody != null)
+        {
+          string plainRerequest = GetStringFromStream(requestOption.RequestBody);
+          //Trim large base64 string:
+          plainRerequest = SimplifyMediaBase64(plainRerequest);
+          string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+
+          error += Environment.NewLine + Environment.NewLine +
+             $"Plain request: {plainRerequest}" +
+            Environment.NewLine +
+            $"Plain response: {plainResponse}";
+        }
+        MessageBox.Show(this, error);
+        return;
+      }
+
+      //Part two: the tweet:
+      //Create the request option again:
+      requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+
+      try
+      {
+        TweetCreateRequest body = new TweetCreateRequest();
+        body.Text = "Sample post created by Kiota";
+        body.Media = new TweetCreateRequest_media();
+        //"Data" cannot be null here, so we use the "null forgiving operator"
+        body.Media.MediaIds =new List<string>() { mediaResponse.Data!.Id };
+        TweetCreateResponse response = xClient.Two.Tweets.PostAsync(body, conf =>
+        {
+          conf.Options.Add(requestOption);
+        }).GetAwaiter().GetResult();
+
+
+        string plainRerequest = GetStringFromStream(requestOption.RequestBody);
+        string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+
+        if (response.Data != null)
+        {
+          MessageBox.Show(this, $"Success: Id = {response.Data.Id} " + Environment.NewLine +
+            $"Plain request: {plainRerequest}" +
+            Environment.NewLine +
+            $"Plain response: {plainResponse}");
+
+          this.textBoxDeleteTweetId.Text = response.Data.Id.ToString();
+        }
+        else if (response.Errors != null)
+        {
+          string strErrors = LogProblems(response.Errors);
+          MessageBox.Show($"Error: {strErrors}" + Environment.NewLine +
+            $"Plain request: {plainRerequest}" +
+            Environment.NewLine +
+            $"Plain response: {plainResponse}");
+        }
+      }
+      catch (Exception ex)
+      {
+        string error = "An error occured while creating the tweet: " + ex.ToString();
+        if (requestOption.ResponseBody != null)
+        {
+          string plainRerequest = GetStringFromStream(requestOption.RequestBody);
+          string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+
+          error += Environment.NewLine + Environment.NewLine +
+             $"Plain request: {plainRerequest}" +
+            Environment.NewLine +
+            $"Plain response: {plainResponse}";
+        }
+        MessageBox.Show(this, error);
       }
     }
-
 
     /// <summary>
     /// Delete a tweet using the Kiota generated api client.
@@ -728,6 +817,42 @@ namespace XByOpenApi.Sample.WinForms
         return reader.ReadToEnd();
       }
     }
+
+    /// <summary>
+    /// Create an abbreviated version of the large media upload request: it contains a big base64 string.
+    /// Remove the middle part of this string so that only beginning and end are visible.
+    /// Thus it can be shown in message boxes.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <returns></returns>
+    private static string SimplifyMediaBase64(string request)
+    {
+      const string MEDIA_START = "\"media\":\"";
+      int indexOfMedia = request.IndexOf(MEDIA_START);
+      if (indexOfMedia <= 0)
+      {
+        return request;
+      }
+      int indexOfQuoteAfterMedia = request.IndexOf("\"", indexOfMedia + MEDIA_START.Length);
+      if (indexOfQuoteAfterMedia <= indexOfMedia)
+      {
+        //Should not happen for a real media upload request...
+        return request;
+      }
+
+      //If media content is longer than 100 chars...
+      if (indexOfQuoteAfterMedia - indexOfMedia > 100)
+      {
+        string firstPart = request.Substring(0, indexOfMedia + MEDIA_START.Length + 50);
+        string last = request.Substring(indexOfQuoteAfterMedia - 50);
+        return firstPart + "..." + last;
+      }
+      else
+      {
+        return request;
+      }
+    }
+
     #endregion
   }
 }
