@@ -29,6 +29,7 @@
     {
       this.buttonKiotaSimpleTweet = new System.Windows.Forms.Button();
       this.groupBoxKiota = new System.Windows.Forms.GroupBox();
+      this.buttonKiotaImageChunked = new System.Windows.Forms.Button();
       this.labelDeleteTweetId = new System.Windows.Forms.Label();
       this.buttonDeleteTweet = new System.Windows.Forms.Button();
       this.textBoxDeleteTweetId = new System.Windows.Forms.TextBox();
@@ -37,14 +38,18 @@
       this.groupBoxConfig = new System.Windows.Forms.GroupBox();
       this.radioButtonOAuth2 = new System.Windows.Forms.RadioButton();
       this.groupBoxOAuth2 = new System.Windows.Forms.GroupBox();
+      this.panelOAuth2CodeChallengeMethod = new System.Windows.Forms.Panel();
+      this.radioButtonOAuth2CodeChallengeMethodSHA256 = new System.Windows.Forms.RadioButton();
+      this.radioButtonOAuth2CodeChallengeMethodPlain = new System.Windows.Forms.RadioButton();
+      this.panelOAuth2ClientType = new System.Windows.Forms.Panel();
+      this.radioButtonOAuth2PublicClient = new System.Windows.Forms.RadioButton();
+      this.radioButtonOAuth2ConfidentialClient = new System.Windows.Forms.RadioButton();
+      this.labelOAuth2ClientSecret = new System.Windows.Forms.Label();
+      this.textBoxOAuth2ClientSecret = new System.Windows.Forms.TextBox();
       this.buttonOAuth2AccessTokenByRefreshToken = new System.Windows.Forms.Button();
       this.textBoxOAuth2RefreshToken = new System.Windows.Forms.TextBox();
       this.labelOAuth2RefreshToken = new System.Windows.Forms.Label();
       this.checkBoxOAuth2FetchRefreshToken = new System.Windows.Forms.CheckBox();
-      this.labelOAuth2ClientSecret = new System.Windows.Forms.Label();
-      this.textBoxOAuth2ClientSecret = new System.Windows.Forms.TextBox();
-      this.radioButtonOAuth2ConfidentialClient = new System.Windows.Forms.RadioButton();
-      this.radioButtonOAuth2PublicClient = new System.Windows.Forms.RadioButton();
       this.textBoxOAuth2RedirectUrl = new System.Windows.Forms.TextBox();
       this.labelOAuth2RedirectUrl = new System.Windows.Forms.Label();
       this.textBoxOAuth2AccessToken = new System.Windows.Forms.TextBox();
@@ -65,17 +70,13 @@
       this.radioButtonOAuth1 = new System.Windows.Forms.RadioButton();
       this.groupBoxPlainHttp = new System.Windows.Forms.GroupBox();
       this.buttonPlainHttpLookupUser = new System.Windows.Forms.Button();
-      this.panelOAuth2ClientType = new System.Windows.Forms.Panel();
-      this.panelOAuth2CodeChallengeMethod = new System.Windows.Forms.Panel();
-      this.radioButtonOAuth2CodeChallengeMethodSHA256 = new System.Windows.Forms.RadioButton();
-      this.radioButtonOAuth2CodeChallengeMethodPlain = new System.Windows.Forms.RadioButton();
       this.groupBoxKiota.SuspendLayout();
       this.groupBoxConfig.SuspendLayout();
       this.groupBoxOAuth2.SuspendLayout();
+      this.panelOAuth2CodeChallengeMethod.SuspendLayout();
+      this.panelOAuth2ClientType.SuspendLayout();
       this.groupBoxOAuth1.SuspendLayout();
       this.groupBoxPlainHttp.SuspendLayout();
-      this.panelOAuth2ClientType.SuspendLayout();
-      this.panelOAuth2CodeChallengeMethod.SuspendLayout();
       this.SuspendLayout();
       // 
       // buttonKiotaSimpleTweet
@@ -84,13 +85,14 @@
       this.buttonKiotaSimpleTweet.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.buttonKiotaSimpleTweet.Name = "buttonKiotaSimpleTweet";
       this.buttonKiotaSimpleTweet.Size = new System.Drawing.Size(147, 23);
-      this.buttonKiotaSimpleTweet.TabIndex = 1;
+      this.buttonKiotaSimpleTweet.TabIndex = 0;
       this.buttonKiotaSimpleTweet.Text = "Simple Tweet";
       this.buttonKiotaSimpleTweet.UseVisualStyleBackColor = true;
       this.buttonKiotaSimpleTweet.Click += this.buttonKiotaSimpleTweet_Click;
       // 
       // groupBoxKiota
       // 
+      this.groupBoxKiota.Controls.Add(this.buttonKiotaImageChunked);
       this.groupBoxKiota.Controls.Add(this.labelDeleteTweetId);
       this.groupBoxKiota.Controls.Add(this.buttonDeleteTweet);
       this.groupBoxKiota.Controls.Add(this.textBoxDeleteTweetId);
@@ -102,9 +104,20 @@
       this.groupBoxKiota.Name = "groupBoxKiota";
       this.groupBoxKiota.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.groupBoxKiota.Size = new System.Drawing.Size(368, 180);
-      this.groupBoxKiota.TabIndex = 2;
+      this.groupBoxKiota.TabIndex = 0;
       this.groupBoxKiota.TabStop = false;
       this.groupBoxKiota.Text = "Kiota/OpenAPI";
+      // 
+      // buttonKiotaImageChunked
+      // 
+      this.buttonKiotaImageChunked.Location = new System.Drawing.Point(162, 55);
+      this.buttonKiotaImageChunked.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+      this.buttonKiotaImageChunked.Name = "buttonKiotaImageChunked";
+      this.buttonKiotaImageChunked.Size = new System.Drawing.Size(181, 23);
+      this.buttonKiotaImageChunked.TabIndex = 2;
+      this.buttonKiotaImageChunked.Text = "Tweet with image (chunked)";
+      this.buttonKiotaImageChunked.UseVisualStyleBackColor = true;
+      this.buttonKiotaImageChunked.Click += this.buttonKiotaImageChunked_Click;
       // 
       // labelDeleteTweetId
       // 
@@ -112,7 +125,7 @@
       this.labelDeleteTweetId.Location = new System.Drawing.Point(7, 96);
       this.labelDeleteTweetId.Name = "labelDeleteTweetId";
       this.labelDeleteTweetId.Size = new System.Drawing.Size(56, 15);
-      this.labelDeleteTweetId.TabIndex = 8;
+      this.labelDeleteTweetId.TabIndex = 3;
       this.labelDeleteTweetId.Text = "Tweet-Id:";
       // 
       // buttonDeleteTweet
@@ -120,7 +133,7 @@
       this.buttonDeleteTweet.Location = new System.Drawing.Point(268, 92);
       this.buttonDeleteTweet.Name = "buttonDeleteTweet";
       this.buttonDeleteTweet.Size = new System.Drawing.Size(75, 23);
-      this.buttonDeleteTweet.TabIndex = 7;
+      this.buttonDeleteTweet.TabIndex = 5;
       this.buttonDeleteTweet.Text = "Delete";
       this.buttonDeleteTweet.UseVisualStyleBackColor = true;
       this.buttonDeleteTweet.Click += this.buttonDeleteTweet_Click;
@@ -130,7 +143,7 @@
       this.textBoxDeleteTweetId.Location = new System.Drawing.Point(68, 93);
       this.textBoxDeleteTweetId.Name = "textBoxDeleteTweetId";
       this.textBoxDeleteTweetId.Size = new System.Drawing.Size(194, 23);
-      this.textBoxDeleteTweetId.TabIndex = 6;
+      this.textBoxDeleteTweetId.TabIndex = 4;
       // 
       // buttonKiotaLookupUser
       // 
@@ -138,7 +151,7 @@
       this.buttonKiotaLookupUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.buttonKiotaLookupUser.Name = "buttonKiotaLookupUser";
       this.buttonKiotaLookupUser.Size = new System.Drawing.Size(147, 23);
-      this.buttonKiotaLookupUser.TabIndex = 3;
+      this.buttonKiotaLookupUser.TabIndex = 6;
       this.buttonKiotaLookupUser.Text = "My user data";
       this.buttonKiotaLookupUser.UseVisualStyleBackColor = true;
       this.buttonKiotaLookupUser.Click += this.buttonKiotaLookupUser_Click;
@@ -149,7 +162,7 @@
       this.buttonKiotaImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.buttonKiotaImage.Name = "buttonKiotaImage";
       this.buttonKiotaImage.Size = new System.Drawing.Size(147, 23);
-      this.buttonKiotaImage.TabIndex = 2;
+      this.buttonKiotaImage.TabIndex = 1;
       this.buttonKiotaImage.Text = "Tweet with image";
       this.buttonKiotaImage.UseVisualStyleBackColor = true;
       this.buttonKiotaImage.Click += this.buttonKiotaImage_Click;
@@ -204,6 +217,90 @@
       this.groupBoxOAuth2.TabStop = false;
       this.groupBoxOAuth2.Text = "OAuth2";
       // 
+      // panelOAuth2CodeChallengeMethod
+      // 
+      this.panelOAuth2CodeChallengeMethod.Controls.Add(this.radioButtonOAuth2CodeChallengeMethodSHA256);
+      this.panelOAuth2CodeChallengeMethod.Controls.Add(this.radioButtonOAuth2CodeChallengeMethodPlain);
+      this.panelOAuth2CodeChallengeMethod.Location = new System.Drawing.Point(180, 131);
+      this.panelOAuth2CodeChallengeMethod.Name = "panelOAuth2CodeChallengeMethod";
+      this.panelOAuth2CodeChallengeMethod.Size = new System.Drawing.Size(389, 19);
+      this.panelOAuth2CodeChallengeMethod.TabIndex = 5;
+      // 
+      // radioButtonOAuth2CodeChallengeMethodSHA256
+      // 
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.AutoSize = true;
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked = true;
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.Location = new System.Drawing.Point(0, 0);
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.Name = "radioButtonOAuth2CodeChallengeMethodSHA256";
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.Size = new System.Drawing.Size(154, 19);
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.TabIndex = 0;
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.TabStop = true;
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.Text = "Code challenge: SHA256";
+      this.radioButtonOAuth2CodeChallengeMethodSHA256.UseVisualStyleBackColor = true;
+      // 
+      // radioButtonOAuth2CodeChallengeMethodPlain
+      // 
+      this.radioButtonOAuth2CodeChallengeMethodPlain.AutoSize = true;
+      this.radioButtonOAuth2CodeChallengeMethodPlain.Location = new System.Drawing.Point(217, 0);
+      this.radioButtonOAuth2CodeChallengeMethodPlain.Name = "radioButtonOAuth2CodeChallengeMethodPlain";
+      this.radioButtonOAuth2CodeChallengeMethodPlain.Size = new System.Drawing.Size(51, 19);
+      this.radioButtonOAuth2CodeChallengeMethodPlain.TabIndex = 1;
+      this.radioButtonOAuth2CodeChallengeMethodPlain.TabStop = true;
+      this.radioButtonOAuth2CodeChallengeMethodPlain.Text = "Plain";
+      this.radioButtonOAuth2CodeChallengeMethodPlain.UseVisualStyleBackColor = true;
+      // 
+      // panelOAuth2ClientType
+      // 
+      this.panelOAuth2ClientType.Controls.Add(this.radioButtonOAuth2PublicClient);
+      this.panelOAuth2ClientType.Controls.Add(this.radioButtonOAuth2ConfidentialClient);
+      this.panelOAuth2ClientType.Controls.Add(this.labelOAuth2ClientSecret);
+      this.panelOAuth2ClientType.Controls.Add(this.textBoxOAuth2ClientSecret);
+      this.panelOAuth2ClientType.Location = new System.Drawing.Point(180, 81);
+      this.panelOAuth2ClientType.Name = "panelOAuth2ClientType";
+      this.panelOAuth2ClientType.Size = new System.Drawing.Size(389, 44);
+      this.panelOAuth2ClientType.TabIndex = 4;
+      // 
+      // radioButtonOAuth2PublicClient
+      // 
+      this.radioButtonOAuth2PublicClient.AutoSize = true;
+      this.radioButtonOAuth2PublicClient.Checked = true;
+      this.radioButtonOAuth2PublicClient.Location = new System.Drawing.Point(0, 0);
+      this.radioButtonOAuth2PublicClient.Name = "radioButtonOAuth2PublicClient";
+      this.radioButtonOAuth2PublicClient.Size = new System.Drawing.Size(90, 19);
+      this.radioButtonOAuth2PublicClient.TabIndex = 0;
+      this.radioButtonOAuth2PublicClient.TabStop = true;
+      this.radioButtonOAuth2PublicClient.Text = "Public client";
+      this.radioButtonOAuth2PublicClient.UseVisualStyleBackColor = true;
+      // 
+      // radioButtonOAuth2ConfidentialClient
+      // 
+      this.radioButtonOAuth2ConfidentialClient.AutoSize = true;
+      this.radioButtonOAuth2ConfidentialClient.Location = new System.Drawing.Point(0, 20);
+      this.radioButtonOAuth2ConfidentialClient.Name = "radioButtonOAuth2ConfidentialClient";
+      this.radioButtonOAuth2ConfidentialClient.Size = new System.Drawing.Size(122, 19);
+      this.radioButtonOAuth2ConfidentialClient.TabIndex = 1;
+      this.radioButtonOAuth2ConfidentialClient.TabStop = true;
+      this.radioButtonOAuth2ConfidentialClient.Text = "Confidential client";
+      this.radioButtonOAuth2ConfidentialClient.UseVisualStyleBackColor = true;
+      this.radioButtonOAuth2ConfidentialClient.CheckedChanged += this.radioButtonOAuth2ConfidentialClient_CheckedChanged;
+      // 
+      // labelOAuth2ClientSecret
+      // 
+      this.labelOAuth2ClientSecret.AutoSize = true;
+      this.labelOAuth2ClientSecret.Location = new System.Drawing.Point(138, 22);
+      this.labelOAuth2ClientSecret.Name = "labelOAuth2ClientSecret";
+      this.labelOAuth2ClientSecret.Size = new System.Drawing.Size(73, 15);
+      this.labelOAuth2ClientSecret.TabIndex = 2;
+      this.labelOAuth2ClientSecret.Text = "Client Secret";
+      // 
+      // textBoxOAuth2ClientSecret
+      // 
+      this.textBoxOAuth2ClientSecret.Enabled = false;
+      this.textBoxOAuth2ClientSecret.Location = new System.Drawing.Point(217, 19);
+      this.textBoxOAuth2ClientSecret.Name = "textBoxOAuth2ClientSecret";
+      this.textBoxOAuth2ClientSecret.Size = new System.Drawing.Size(172, 23);
+      this.textBoxOAuth2ClientSecret.TabIndex = 3;
+      // 
       // buttonOAuth2AccessTokenByRefreshToken
       // 
       this.buttonOAuth2AccessTokenByRefreshToken.Location = new System.Drawing.Point(575, 183);
@@ -239,47 +336,6 @@
       this.checkBoxOAuth2FetchRefreshToken.TabIndex = 6;
       this.checkBoxOAuth2FetchRefreshToken.Text = "Fetch refresh token";
       this.checkBoxOAuth2FetchRefreshToken.UseVisualStyleBackColor = true;
-      // 
-      // labelOAuth2ClientSecret
-      // 
-      this.labelOAuth2ClientSecret.AutoSize = true;
-      this.labelOAuth2ClientSecret.Location = new System.Drawing.Point(138, 22);
-      this.labelOAuth2ClientSecret.Name = "labelOAuth2ClientSecret";
-      this.labelOAuth2ClientSecret.Size = new System.Drawing.Size(73, 15);
-      this.labelOAuth2ClientSecret.TabIndex = 2;
-      this.labelOAuth2ClientSecret.Text = "Client Secret";
-      // 
-      // textBoxOAuth2ClientSecret
-      // 
-      this.textBoxOAuth2ClientSecret.Enabled = false;
-      this.textBoxOAuth2ClientSecret.Location = new System.Drawing.Point(217, 19);
-      this.textBoxOAuth2ClientSecret.Name = "textBoxOAuth2ClientSecret";
-      this.textBoxOAuth2ClientSecret.Size = new System.Drawing.Size(172, 23);
-      this.textBoxOAuth2ClientSecret.TabIndex = 3;
-      // 
-      // radioButtonOAuth2ConfidentialClient
-      // 
-      this.radioButtonOAuth2ConfidentialClient.AutoSize = true;
-      this.radioButtonOAuth2ConfidentialClient.Location = new System.Drawing.Point(0, 20);
-      this.radioButtonOAuth2ConfidentialClient.Name = "radioButtonOAuth2ConfidentialClient";
-      this.radioButtonOAuth2ConfidentialClient.Size = new System.Drawing.Size(122, 19);
-      this.radioButtonOAuth2ConfidentialClient.TabIndex = 1;
-      this.radioButtonOAuth2ConfidentialClient.TabStop = true;
-      this.radioButtonOAuth2ConfidentialClient.Text = "Confidential client";
-      this.radioButtonOAuth2ConfidentialClient.UseVisualStyleBackColor = true;
-      this.radioButtonOAuth2ConfidentialClient.CheckedChanged += this.radioButtonOAuth2ConfidentialClient_CheckedChanged;
-      // 
-      // radioButtonOAuth2PublicClient
-      // 
-      this.radioButtonOAuth2PublicClient.AutoSize = true;
-      this.radioButtonOAuth2PublicClient.Checked = true;
-      this.radioButtonOAuth2PublicClient.Location = new System.Drawing.Point(0, 0);
-      this.radioButtonOAuth2PublicClient.Name = "radioButtonOAuth2PublicClient";
-      this.radioButtonOAuth2PublicClient.Size = new System.Drawing.Size(90, 19);
-      this.radioButtonOAuth2PublicClient.TabIndex = 0;
-      this.radioButtonOAuth2PublicClient.TabStop = true;
-      this.radioButtonOAuth2PublicClient.Text = "Public client";
-      this.radioButtonOAuth2PublicClient.UseVisualStyleBackColor = true;
       // 
       // textBoxOAuth2RedirectUrl
       // 
@@ -468,53 +524,10 @@
       this.buttonPlainHttpLookupUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.buttonPlainHttpLookupUser.Name = "buttonPlainHttpLookupUser";
       this.buttonPlainHttpLookupUser.Size = new System.Drawing.Size(147, 23);
-      this.buttonPlainHttpLookupUser.TabIndex = 4;
+      this.buttonPlainHttpLookupUser.TabIndex = 0;
       this.buttonPlainHttpLookupUser.Text = "My user data";
       this.buttonPlainHttpLookupUser.UseVisualStyleBackColor = true;
       this.buttonPlainHttpLookupUser.Click += this.buttonPlainHttpLookupUser_Click;
-      // 
-      // panelOAuth2ClientType
-      // 
-      this.panelOAuth2ClientType.Controls.Add(this.radioButtonOAuth2PublicClient);
-      this.panelOAuth2ClientType.Controls.Add(this.radioButtonOAuth2ConfidentialClient);
-      this.panelOAuth2ClientType.Controls.Add(this.labelOAuth2ClientSecret);
-      this.panelOAuth2ClientType.Controls.Add(this.textBoxOAuth2ClientSecret);
-      this.panelOAuth2ClientType.Location = new System.Drawing.Point(180, 81);
-      this.panelOAuth2ClientType.Name = "panelOAuth2ClientType";
-      this.panelOAuth2ClientType.Size = new System.Drawing.Size(389, 44);
-      this.panelOAuth2ClientType.TabIndex = 4;
-      // 
-      // panelOAuth2CodeChallengeMethod
-      // 
-      this.panelOAuth2CodeChallengeMethod.Controls.Add(this.radioButtonOAuth2CodeChallengeMethodSHA256);
-      this.panelOAuth2CodeChallengeMethod.Controls.Add(this.radioButtonOAuth2CodeChallengeMethodPlain);
-      this.panelOAuth2CodeChallengeMethod.Location = new System.Drawing.Point(180, 131);
-      this.panelOAuth2CodeChallengeMethod.Name = "panelOAuth2CodeChallengeMethod";
-      this.panelOAuth2CodeChallengeMethod.Size = new System.Drawing.Size(389, 19);
-      this.panelOAuth2CodeChallengeMethod.TabIndex = 5;
-      // 
-      // radioButtonOAuth2CodeChallengeMethodSHA256
-      // 
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.AutoSize = true;
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked = true;
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.Location = new System.Drawing.Point(0, 0);
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.Name = "radioButtonOAuth2CodeChallengeMethodSHA256";
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.Size = new System.Drawing.Size(154, 19);
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.TabIndex = 0;
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.TabStop = true;
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.Text = "Code challenge: SHA256";
-      this.radioButtonOAuth2CodeChallengeMethodSHA256.UseVisualStyleBackColor = true;
-      // 
-      // radioButtonOAuth2CodeChallengeMethodPlain
-      // 
-      this.radioButtonOAuth2CodeChallengeMethodPlain.AutoSize = true;
-      this.radioButtonOAuth2CodeChallengeMethodPlain.Location = new System.Drawing.Point(217, 0);
-      this.radioButtonOAuth2CodeChallengeMethodPlain.Name = "radioButtonOAuth2CodeChallengeMethodPlain";
-      this.radioButtonOAuth2CodeChallengeMethodPlain.Size = new System.Drawing.Size(51, 19);
-      this.radioButtonOAuth2CodeChallengeMethodPlain.TabIndex = 1;
-      this.radioButtonOAuth2CodeChallengeMethodPlain.TabStop = true;
-      this.radioButtonOAuth2CodeChallengeMethodPlain.Text = "Plain";
-      this.radioButtonOAuth2CodeChallengeMethodPlain.UseVisualStyleBackColor = true;
       // 
       // FormXByKiotaTest
       // 
@@ -533,13 +546,13 @@
       this.groupBoxConfig.PerformLayout();
       this.groupBoxOAuth2.ResumeLayout(false);
       this.groupBoxOAuth2.PerformLayout();
+      this.panelOAuth2CodeChallengeMethod.ResumeLayout(false);
+      this.panelOAuth2CodeChallengeMethod.PerformLayout();
+      this.panelOAuth2ClientType.ResumeLayout(false);
+      this.panelOAuth2ClientType.PerformLayout();
       this.groupBoxOAuth1.ResumeLayout(false);
       this.groupBoxOAuth1.PerformLayout();
       this.groupBoxPlainHttp.ResumeLayout(false);
-      this.panelOAuth2ClientType.ResumeLayout(false);
-      this.panelOAuth2ClientType.PerformLayout();
-      this.panelOAuth2CodeChallengeMethod.ResumeLayout(false);
-      this.panelOAuth2CodeChallengeMethod.PerformLayout();
       this.ResumeLayout(false);
     }
 
@@ -586,5 +599,6 @@
     private System.Windows.Forms.Panel panelOAuth2CodeChallengeMethod;
     private System.Windows.Forms.RadioButton radioButtonOAuth2CodeChallengeMethodSHA256;
     private System.Windows.Forms.RadioButton radioButtonOAuth2CodeChallengeMethodPlain;
+    private System.Windows.Forms.Button buttonKiotaImageChunked;
   }
 }

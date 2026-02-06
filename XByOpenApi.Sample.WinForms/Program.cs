@@ -18,8 +18,9 @@ namespace XByOpenApi.Sample.WinForms
       
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      bool todoManfiest;
-      //SetHighDpiMode(HighDpiMode.SystemAware);
+#if NET8_0_OR_GREATER
+      Application.SetHighDpiMode(HighDpiMode.SystemAware);
+#endif
 
       Application.Run(new FormXByKiotaTest());
     }

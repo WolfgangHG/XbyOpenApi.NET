@@ -169,9 +169,8 @@ which revealed the actual error.
 
 # Kiota trouble: uploading binary data
 
-Handling of binary data does not seem to work with the Kiota generated client.
-
-See for example the endpoint to upload media (https://docs.x.com/x-api/media/upload-media).
+Handling of binary data does not work with at least one endpoint of the Kiota generated client.
+The endpoint to upload media (https://docs.x.com/x-api/media/upload-media) is created with unusable code.
 
 It could work like this using the generated classes:
 
@@ -265,6 +264,9 @@ await xClient.Two.Media.Upload.PostAsync(mediaUpload);
 ```
 
 Looking at the request, we see that Kiota uploads a base64 string.
+
+Note: this issue does not happen when using the "chunked" media upload (initialize/append/finalize): https://docs.x.com/x-api/media/initialize-media-upload. 
+So, there is something in the OpenAPI description that Kiota cannot handle
 
 # What about other OpenAPI libraries?
 

@@ -273,17 +273,20 @@ namespace XByOpenApi.Sample.WinForms
         return;
       }
 
-
       XClient xClient = this.InitXClient();
 
-      //Part one: the image upload:
-      //Here, we also have a request body:
-      var requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+      StringBuilder builderMessage = new StringBuilder();
+
+      //For logging request/response body. It is created for each request.
+      BodyInspectionHandlerOption requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
 
       MediaUploadResponse mediaResponse;
       try
       {
         byte[] arrData = File.ReadAllBytes("..\\..\\..\\sample.png");
+
+
+        builderMessage.AppendLine("Sending \"Upload media\" request...");
 
         MediaUploadRequestOneShot mediaUpload = new MediaUploadRequestOneShot();
         mediaUpload.MediaCategory = MediaCategoryOneShot.Tweet_image;
@@ -299,95 +302,220 @@ namespace XByOpenApi.Sample.WinForms
         //For printing the request: Trim large base64 value:
         plainRerequest = SimplifyMediaBase64(plainRerequest);
         string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+        builderMessage.AppendLine($"Plain request: {plainRerequest}");
+        builderMessage.AppendLine($"Plain response: {plainResponse}");
 
-        if (mediaResponse.Data != null)
-        {
-          MessageBox.Show(this, "Media uploaded: Id = " + mediaResponse.Data.Id + Environment.NewLine +
-            $"Plain request: {plainRerequest}" +
-            Environment.NewLine +
-            $"Plain response: {plainResponse}");
-        }
-        else if (mediaResponse.Errors != null)
-        {
-          string strErrors = LogProblems(mediaResponse.Errors);
-          MessageBox.Show("Error: " + strErrors + Environment.NewLine +
-            $"Plain request: {plainRerequest}" +
-            Environment.NewLine +
-            $"Plain response: {plainResponse}");
-          return;
-        }
-      }
-      catch (Exception ex)
-      {
-        string error = "An error occured while uploading the image: " + ex.ToString();
-        if (requestOption.ResponseBody != null)
-        {
-          string plainRerequest = GetStringFromStream(requestOption.RequestBody);
-          //Trim large base64 string:
-          plainRerequest = SimplifyMediaBase64(plainRerequest);
-          string plainResponse = GetStringFromStream(requestOption.ResponseBody);
 
-          error += Environment.NewLine + Environment.NewLine +
-             $"Plain request: {plainRerequest}" +
-            Environment.NewLine +
-            $"Plain response: {plainResponse}";
-        }
-        MessageBox.Show(this, error);
-        return;
-      }
+        //Part two: the tweet:
+        builderMessage.AppendLine();
+        builderMessage.AppendLine($"Posting the tweet...");
 
-      //Part two: the tweet:
-      //Create the request option again:
-      requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+        //Create the request option again:
+        requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
 
-      try
-      {
         TweetCreateRequest body = new TweetCreateRequest();
         body.Text = "Sample post created by Kiota";
         body.Media = new TweetCreateRequest_media();
         //"Data" cannot be null here, so we use the "null forgiving operator"
-        body.Media.MediaIds =new List<string>() { mediaResponse.Data!.Id };
+        body.Media.MediaIds = new List<string>() { mediaResponse.Data!.Id };
         TweetCreateResponse response = xClient.Two.Tweets.PostAsync(body, conf =>
         {
           conf.Options.Add(requestOption);
         }).GetAwaiter().GetResult();
 
 
-        string plainRerequest = GetStringFromStream(requestOption.RequestBody);
-        string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+        plainRerequest = GetStringFromStream(requestOption.RequestBody);
+        plainResponse = GetStringFromStream(requestOption.ResponseBody);
+        builderMessage.AppendLine($"Plain request: {plainRerequest}");
+        builderMessage.AppendLine($"Plain response: {plainResponse}");
 
+        //Write the tweet id to the textbox:
         if (response.Data != null)
         {
-          MessageBox.Show(this, $"Success: Id = {response.Data.Id} " + Environment.NewLine +
-            $"Plain request: {plainRerequest}" +
-            Environment.NewLine +
-            $"Plain response: {plainResponse}");
+          builderMessage.AppendLine();
+          builderMessage.AppendLine($"Succesfully posted Tweet with Id: {response.Data.Id}");
+          this.textBoxDeleteTweetId.Text = response.Data.Id;
+        }
 
-          this.textBoxDeleteTweetId.Text = response.Data.Id.ToString();
-        }
-        else if (response.Errors != null)
-        {
-          string strErrors = LogProblems(response.Errors);
-          MessageBox.Show($"Error: {strErrors}" + Environment.NewLine +
-            $"Plain request: {plainRerequest}" +
-            Environment.NewLine +
-            $"Plain response: {plainResponse}");
-        }
+        MessageBox.Show(this, builderMessage.ToString());
       }
       catch (Exception ex)
       {
-        string error = "An error occured while creating the tweet: " + ex.ToString();
-        if (requestOption.ResponseBody != null)
+        builderMessage.AppendLine("An error occured: " + ex.ToString());
+        //Should never be NULL (but "Stream.Null"). But who knows....
+        if (requestOption.RequestBody != null)
         {
           string plainRerequest = GetStringFromStream(requestOption.RequestBody);
-          string plainResponse = GetStringFromStream(requestOption.ResponseBody);
-
-          error += Environment.NewLine + Environment.NewLine +
-             $"Plain request: {plainRerequest}" +
-            Environment.NewLine +
-            $"Plain response: {plainResponse}";
+          builderMessage.AppendLine($"Plain request: {plainRerequest}");
         }
-        MessageBox.Show(this, error);
+        if (requestOption.ResponseBody != null)
+        {
+          string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+          builderMessage.AppendLine($"Plain response: {plainResponse}");
+        }
+        MessageBox.Show(this, builderMessage.ToString());
+      }
+    }
+
+    /// <summary>
+    /// Post a tweet with an image. Use the "chunked" API to upload.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+
+    private void buttonKiotaImageChunked_Click(object sender, EventArgs e)
+    {
+      StringBuilder builderMessage = new StringBuilder();
+
+      //For logging request/response body. It is created for each request.
+      BodyInspectionHandlerOption requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+
+      try
+      {
+        byte[] arrData = File.ReadAllBytes("..\\..\\..\\sample.png");
+
+
+        XClient xClient = this.InitXClient();
+
+        builderMessage.AppendLine("Sending \"Initialize media upload\" request...");
+
+        MediaUploadConfigRequest mucr = new MediaUploadConfigRequest();
+        mucr.TotalBytes = arrData.Length;
+        mucr.MediaCategory = MediaCategory.Tweet_image;
+
+
+        string plainRerequest;
+        string plainResponse;
+
+        MediaUploadResponse mir = xClient.Two.Media.Upload.Initialize.PostAsync(mucr, conf =>
+        {
+          conf.Options.Add(requestOption);
+
+        }).GetAwaiter().GetResult();
+
+        plainRerequest = GetStringFromStream(requestOption.RequestBody);
+        plainRerequest = SimplifyMediaBase64(plainRerequest);
+        plainResponse = GetStringFromStream(requestOption.ResponseBody);
+        builderMessage.AppendLine($"Plain request: {plainRerequest}");
+        builderMessage.AppendLine($"Plain response: {plainResponse}");
+
+        //Split array by chunk size
+        //https://docs.x.com/x-api/media/initialize-media-upload#response-data-size
+        //Use a chunk size that causes multiple requests. File is 13KB, so 5 KB are a good size.
+        const int CHUNK_SIZE = 5000;
+        int blocks = (arrData.Length / CHUNK_SIZE) + 1;
+
+        for (int block = 0; block < blocks; block++)
+        {
+          MediaUploadAppendRequest muar = new MediaUploadAppendRequest();
+          muar.MediaUploadAppendRequestMember1 = new MediaUploadAppendRequestMember1();
+          muar.MediaUploadAppendRequestMember1.SegmentIndex = new MediaSegments();
+          muar.MediaUploadAppendRequestMember1.SegmentIndex.Integer = block;
+
+          builderMessage.AppendLine();
+          builderMessage.AppendLine($"Sending \"Append media chunk {block}\" request...");
+
+          //Calculate size in block:
+          int sizeInBlock;
+          if (block == blocks - 1)
+          {
+            //Last block: remaining size:
+            sizeInBlock = arrData.Length - (block * CHUNK_SIZE);
+          }
+          else
+          {
+            sizeInBlock = CHUNK_SIZE;
+          }
+          byte[] dataInBlock = new byte[sizeInBlock];
+          Array.Copy(arrData, block * CHUNK_SIZE, dataInBlock, 0, sizeInBlock);
+
+
+          muar.MediaUploadAppendRequestMember1.Media = dataInBlock;
+
+          requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+
+          xClient.Two.Media.Upload[mir.Data.Id].Append.PostAsync(muar, conf =>
+          {
+            conf.Options.Add(requestOption);
+
+          }).GetAwaiter().GetResult();
+
+
+          plainRerequest = GetStringFromStream(requestOption.RequestBody);
+          plainResponse = GetStringFromStream(requestOption.ResponseBody);
+          //Trim base64 binary string:
+          plainRerequest = SimplifyMediaBase64(plainRerequest);
+          builderMessage.AppendLine($"Plain request: {plainRerequest}");
+          builderMessage.AppendLine($"Plain response: {plainResponse}");
+
+        }
+
+        //Finalize:
+
+        builderMessage.AppendLine();
+        builderMessage.AppendLine($"Sending \"Finalize media upload\" request...");
+
+        requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+
+        MediaUploadResponse mediaResponse = xClient.Two.Media.Upload[mir.Data.Id].Finalize.PostAsync(conf =>
+        {
+          conf.Options.Add(requestOption);
+        }).GetAwaiter().GetResult();
+
+        plainRerequest = GetStringFromStream(requestOption.RequestBody);
+        plainResponse = GetStringFromStream(requestOption.ResponseBody);
+        builderMessage.AppendLine($"Plain request: {plainRerequest}");
+        builderMessage.AppendLine($"Plain response: {plainResponse}");
+
+
+        //Post the tweet:
+        builderMessage.AppendLine();
+        builderMessage.AppendLine($"Posting the tweet...");
+
+        TweetCreateRequest body = new TweetCreateRequest();
+        body.Text = "Sample post created by Kiota";
+        body.Media = new TweetCreateRequest_media();
+        //"Data" cannot be null here, so we use the "null forgiving operator"
+        body.Media.MediaIds = new List<string>() { mediaResponse.Data!.Id };
+
+        requestOption = new BodyInspectionHandlerOption { InspectRequestBody = true, InspectResponseBody = true };
+
+        TweetCreateResponse response = xClient.Two.Tweets.PostAsync(body, conf =>
+        {
+          conf.Options.Add(requestOption);
+        }).GetAwaiter().GetResult();
+
+        plainRerequest = GetStringFromStream(requestOption.RequestBody);
+        plainResponse = GetStringFromStream(requestOption.ResponseBody);
+        builderMessage.AppendLine($"Plain request: {plainRerequest}");
+        builderMessage.AppendLine($"Plain response: {plainResponse}");
+
+        //Write the tweet id to the textbox:
+        if (response.Data != null)
+        {
+          builderMessage.AppendLine();
+          builderMessage.AppendLine($"Succesfully posted Tweet with Id: {response.Data.Id}");
+
+          this.textBoxDeleteTweetId.Text = response.Data.Id;
+        }
+
+        MessageBox.Show(this, builderMessage.ToString());
+      }
+      catch (Exception ex)
+      {
+        builderMessage.AppendLine("An error occured: " + ex.ToString());
+        //Should never be NULL (but "Stream.Null"). But who knows....
+        if (requestOption.RequestBody != null)
+        {
+          string plainRerequest = GetStringFromStream(requestOption.RequestBody);
+          builderMessage.AppendLine($"Plain request: {plainRerequest}");
+        }
+        if (requestOption.ResponseBody != null)
+        {
+          string plainResponse = GetStringFromStream(requestOption.ResponseBody);
+          builderMessage.AppendLine($"Plain response: {plainResponse}");
+        }
+        MessageBox.Show(this, builderMessage.ToString());
       }
     }
 
@@ -854,6 +982,7 @@ namespace XByOpenApi.Sample.WinForms
     }
 
     #endregion
+
   }
 }
 
