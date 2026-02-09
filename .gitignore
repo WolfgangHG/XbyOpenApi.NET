@@ -13,6 +13,9 @@
 **/[Bb]in/*
 **/obj/*
 
+# Packages are created here by "nuget_pack.bat"
+/Packages
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 

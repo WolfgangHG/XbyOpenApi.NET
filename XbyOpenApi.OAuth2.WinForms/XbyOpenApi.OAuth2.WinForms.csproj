@@ -29,6 +29,12 @@ There was a conflict between "WindowsBase, Version=4.0.0.0, Culture=neutral, Pub
     <LangVersion>10.0</LangVersion>
     
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <Description>WinForms UI for OAuth2 authentication for the X / Twitter REST API.</Description>
+    <AssemblyTitle>OAuth2 client for the X REST Api: WinForms UI</AssemblyTitle>
+
+    <!--Packaging information, part 1:-->
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,5 +47,10 @@ There was a conflict between "WindowsBase, Version=4.0.0.0, Culture=neutral, Pub
 
   <ItemGroup>
     <ProjectReference Include="..\XbyOpenApi.OAuth2\XbyOpenApi.OAuth2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--Packaging information, part 2: Rename "PackageReadme.md" to "Readme.md" when it is bundled in the package.-->
+    <None Include="PackageReadme.md" Pack="true" PackagePath="\Readme.md"/>
   </ItemGroup>
 </Project>

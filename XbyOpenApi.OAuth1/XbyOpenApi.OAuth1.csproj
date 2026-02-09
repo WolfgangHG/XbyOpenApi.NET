@@ -6,6 +6,12 @@
     <!--Update C# version from 7.3 (default for netstandard2.0) to 8.0 to enable "nullable" -->
     <LangVersion>8.0</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <Description>OAuth1 authentication for the X / Twitter REST API.</Description>
+    <AssemblyTitle>OAuth1 client for the X REST Api</AssemblyTitle>
+
+    <!--Packaging information, part 1:-->
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,5 +20,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\XbyOpenApi.Core\XbyOpenApi.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--Packaging information, part 2: Rename "PackageReadme.md" to "Readme.md" when it is bundled in the package.-->
+    <None Include="PackageReadme.md" Pack="true" PackagePath="\Readme.md"/>
   </ItemGroup>
 </Project>

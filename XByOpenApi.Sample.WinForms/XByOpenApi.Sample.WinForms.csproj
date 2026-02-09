@@ -11,6 +11,10 @@
     <LangVersion>10.0</LangVersion>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+
+    <!--Don't create a Nuget package-->
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
