@@ -11,7 +11,7 @@
     <AssemblyTitle>OAuth1 client for the X REST Api</AssemblyTitle>
 
     <!--Packaging information, part 1:-->
-    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--Packaging information, part 2: Rename "PackageReadme.md" to "Readme.md" when it is bundled in the package.-->
-    <None Include="PackageReadme.md" Pack="true" PackagePath="\Readme.md"/>
+    <!--Packaging information, part 2: Rename "PackageReadme.md" to "README.md" when it is bundled in the package.-->
+    <None Include="PackageReadme.md" Pack="true" PackagePath="\README.md" />
   </ItemGroup>
 </Project>
