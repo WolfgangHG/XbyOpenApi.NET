@@ -92,7 +92,7 @@ If you have fetched it once, it seems to remain constant and you could use it e.
 
 Each X request must be OAuth1 signed.
 
-More details on the implementation and links to the X doc about OAuth1 can be found in the [OAuth1 doc](blob/main/doc/OAuth1.md)
+More details on the implementation and links to the X doc about OAuth1 can be found in the [OAuth1 doc](doc/OAuth1.md)
 
 In the X app that you created in the X developer portal, you will find OAuth1 and OAuth2 keys.
 
@@ -186,7 +186,7 @@ and the service has to fetch an access token based on this refresh token. The ol
 but when fetching an access token, you will also receive a new refresh token, so the background service has to store this new
 refresh token somewhere.
 
-More details on the implementation and links to the X doc about OAuth2 can be found in the [OAuth2 doc](blob/main/doc/OAuth2.md)
+More details on the implementation and links to the X doc about OAuth2 can be found in the [OAuth2 doc](doc/OAuth2.md)
 
 In the X app that you created in the X developer portal, you will find OAuth1 and OAuth2 keys.
 
@@ -204,7 +204,7 @@ For the "on behalf of a user" authentication flow, you also need a redirect url:
 
 ![Redirect url](doc/images/oauth2_redirecturl.png)
 
-Details on the redirect url are described in the [OAuth2 doc](blob/main/doc/OAuth2.md#handling-the-redirect-url). 
+Details on the redirect url are described in the [OAuth2 doc](doc/OAuth2.md#handling-the-redirect-url). 
 If you use a embbeded browser control (as done in my WinForms package), `http://localhost` is a good value.
 
 ## Public or confidential client
@@ -237,7 +237,7 @@ If you defined the wrong scopes when fetching the access token, you will receive
 The scopes are defines as string constants in class `XClientOAuth2Util`, e.g. `XClientOAuth2Util.SCOPE_USERS_READ`.
 
 ## Code challenge
-See the [chapter in OAuth2 doc](blob/main/doc/OAuth2.md#code-challenge)
+See the [chapter in OAuth2 doc](doc/OAuth2.md#code-challenge)
 
 Each OAuth2 token request requires a code challenge. This can be either a plain text (discouraged), or a SHA256 hash.
 
@@ -250,7 +250,7 @@ Add a package reference to [https://www.nuget.org/packages/XbyOpenApi.OAuth2.Win
 
 This will internally use an embedded browser from `Microsoft.Web.WebView2`.
 
-### Step 1: fetching an OAuth1 access token
+### Step 1: fetching an OAuth2 access token
 
 Make this call:
 
