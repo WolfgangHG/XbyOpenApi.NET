@@ -129,9 +129,11 @@ XClient client = XClientOAuth1Util.InitXClient( "MyConsumerApiKey", "MyConsumerA
 ```
 
 The first step will show this dialog:
+
 ![PIN based authentication](doc/images/usage_oauth1_pin1.png)
 
 Meanwhile, a browser window will open where you perform a X login. In the end, the browser will show a PIN:
+
 ![PIN based authentication](doc/images/usage_oauth1_pin2.png)
 
 Copy this PIN to the dialog in your app. Afterwards, an access token is fetched and you can create the `XClient`.
