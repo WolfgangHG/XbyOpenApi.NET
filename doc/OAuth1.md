@@ -11,6 +11,14 @@ The major part of the work (request signing and fetching an access token) might 
 In this project, I use [TinyOAuth1](https://github.com/johot/TinyOAuth1), which does not seem to be maintained any longer,
 but it works and OAuth1 will probably not evolve any more.
 
+
+# Table of Contents
+
+- [Initializing TinyOAuth1](#initializing-tinyoauth1)
+- [Preparation: signing a Kiota request](#preparation-signing-a-kiota-request)
+- [Fetching an access token on behalf of a user](#fetching-an-access-token-on-behalf-of-a-user)
+
+
 # Initializing TinyOAuth1
 
 First, add this Nuget package to the project:

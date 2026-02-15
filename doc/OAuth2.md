@@ -4,6 +4,19 @@ OAuth2 is all about fetching an Access token. Authorization for all requests is 
 with scheme `Bearer`, followed by a plain text Access Token.
 
 
+# Table of Contents
+
+- [Preparation: adding Authorization header to a Kiota request](#preparation-adding-authorization-header-to-a-kiota-request)
+- [Fetching an access token](#fetching-an-access-token)
+  - [Step 1: authorization code](#step-1-authorization-code)
+    - [Code challenge](#code-challenge)
+    - [Handling the redirect url](#handling-the-redirect-url)
+  - [Step 2: access token](#step-2-access-token)
+  - [Refresh token](#refresh-token)
+    - [Authorization](#authorization)
+    - [Fetching the initial refresh token](#fetching-the-initial-refresh-token)
+    - [Getting an access token from a refresh token](#getting-an-access-token-from-a-refresh-token)
+
 # Preparation: adding Authorization header to a Kiota request
 
 This chapter assumes that we already have an Access Token. Below is described to how fetch it.
