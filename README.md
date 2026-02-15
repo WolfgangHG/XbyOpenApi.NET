@@ -92,7 +92,9 @@ If you have fetched it once, it seems to remain constant and you could use it e.
 
 Each X request must be OAuth1 signed.
 
-More details on the implementation and links to the X doc about OAuth1 can be found in the [OAuth1 doc](doc/OAuth1.md)
+The official X documentation for OAuth1 is found here: https://docs.x.com/fundamentals/authentication/oauth-1-0a
+
+More details on my implementation can be found in the [OAuth1 doc](doc/OAuth1.md)
 
 In the X app that you created in the X developer portal, you will find OAuth1 and OAuth2 keys.
 
@@ -188,7 +190,9 @@ and the service has to fetch an access token based on this refresh token. The ol
 but when fetching an access token, you will also receive a new refresh token, so the background service has to store this new
 refresh token somewhere.
 
-More details on the implementation and links to the X doc about OAuth2 can be found in the [OAuth2 doc](doc/OAuth2.md)
+The official X documentation for OAuth2 is found here: https://docs.x.com/fundamentals/authentication/oauth-2-0/
+
+More details on my implementation can be found in the [OAuth2 doc](doc/OAuth2.md)
 
 In the X app that you created in the X developer portal, you will find OAuth1 and OAuth2 keys.
 
