@@ -186,7 +186,7 @@ await xClient.Two.Media.Upload.PostAsync(mediaUpload);
 
 But there is no way to add the binary data of a media. The class `MediaPayloadByte` has no properties at all.
 
-I asked this in the Kiota project, an answer is pending: https://github.com/microsoft/kiota/discussions/7247
+I asked this in the Kiota project, an answer is pending: https://github.com/microsoft/kiota/discussions/7247 and https://github.com/microsoft/kiota/issues/7394
 
 But I hope I found a workaround.
 
