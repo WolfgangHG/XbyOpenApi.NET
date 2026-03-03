@@ -232,7 +232,7 @@ The redirect url looks like this:
 http://localhost/?oauth_token=zvMauAAAAAABoVccAAABnLUCxCw&oauth_verifier=H2IZ2hifZs0W56C65ZDnpjqnrJltLvo2
 ```
   
-Parse the `oauth_verifier`, which is done i the method `XClientOAuth1Util.ParseAutorizationCode`. This method also checks that the `oauth_token` argument
+Parse the `oauth_verifier`, which is done in the method `XClientOAuth1Util.ParseAutorizationCode`. This method also checks that the `oauth_token` argument
 matches the one sent to the server as part of the authorization url:
 
 ```c#
