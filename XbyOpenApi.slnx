@@ -2,6 +2,7 @@
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
     <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
   </Folder>
   <Project Path="XbyOpenApi.OAuth1.WinForms/XbyOpenApi.OAuth1.WinForms.csproj" Id="bcfea456-a0b8-4b2b-b0b5-de71d5932b71" />
   <Project Path="XbyOpenApi.Core/XbyOpenApi.Core.csproj" Id="e49f2986-8566-475e-a668-f1b43bd1e262" />

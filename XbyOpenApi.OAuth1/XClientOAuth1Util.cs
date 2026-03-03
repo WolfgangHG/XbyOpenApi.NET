@@ -1,6 +1,8 @@
 ﻿using Microsoft.Kiota.Http.HttpClientLibrary;
 using System;
+using System.Collections.Specialized;
 using System.Threading.Tasks;
+using System.Web;
 using TinyOAuth1;
 using XbyOpenApi.Core.Client;
 
@@ -71,75 +73,50 @@ namespace XbyOpenApi.OAuth1
     }
 
     /// <summary>
-    /// Performs step 1 of the OAuth flow for fetching a user access token: 
-    /// calls the "request_token" endpoint of the X api and returns the request token.
+    /// This method shoud be invoked in the callback to the redirect url (e.g. in an embedded web browser), and it parses the OAuth 
+    /// verifier from the query argument.
+    /// </summary>
+    /// <remarks>
+    /// A sample url could be this:
     /// 
-    /// </summary>
-    /// <param name="tinyOAuth">A TinyOAuth instance created by <see cref="InitTinyOAuth"/> </param>
-    /// <returns>Request token and request token secret</returns>
-    public static async Task<RequestTokenInfo> GetRequestToken(TinyOAuth tinyOAuth)
+    /// <![CDATA[
+    /// http://localhost/?oauth_token=vcwzUAAAAAABoVccAAABnKk-7ec&oauth_verifier=H2IZ2hifZs0W56C65ZDnpjqnrJltLvo2
+    /// ]]>
+    /// </remarks>
+    /// <param name="strQuery">The query string that was called. Should start with the "redirect url" that was used in
+    /// <see cref="TinyOAuth.GetAuthorizationUrl"/>. The authorization verifier is contained in a parameter "oauth_verifier".</param>
+    /// <param name="requestTokenInfo">This is the request token that was sent to the server as part of the authorization url.
+    /// The server provides it to the redirect url, and this method checks that it matches</param>
+    /// <returns>Authorization code or NULL of the request contains "error"</returns>
+    /// <exception cref="Exception">If request does not contain required arguments or does not contain a verifier.</exception>
+    public static GetAuthorizationResponse? ParseAutorizationCode(string strQuery, RequestTokenInfo requestTokenInfo)
     {
-      if (tinyOAuth == null)
+      NameValueCollection queryArgs = HttpUtility.ParseQueryString(strQuery);
+
+
+      //It seems there is no error redirect if the "cancel" button is clicked during authorization.
+
+      //Success: get code.
+      string token = queryArgs["oauth_token"];
+      if (token == null)
       {
-        throw new ArgumentNullException(nameof(tinyOAuth));
+        throw new Exception("Error - response did not contain 'oauth_token': " + strQuery);
       }
 
-      // Get the request token and request token secret
-      // Here, only pin based authentication is possible due to the fix "oauth_callback=oob" argument in TinyOAuth
-      return await tinyOAuth.GetRequestTokenAsync();
-
-    }
-
-    /// <summary>
-    /// Prepares step 2 of the OAuth flow for fetching a user access token: 
-    /// builds the authorization url and returns it.
-    /// 
-    /// The caller should open a browser window containing and wait for the user login to be finished.
-    /// </summary>
-    /// <param name="tinyOAuth">A TinyOAuth instance created by <see cref="InitTinyOAuth"/>, not null </param>
-    /// <param name="requestTokenInfo">The Request token and secret fetched in <see cref="GetRequestToken"/>, not null</param>
-    /// <returns>Authorization Url</returns>
-    public static string GetAuthorizationUrl(TinyOAuth tinyOAuth, RequestTokenInfo requestTokenInfo)
-    {
-      if (tinyOAuth == null)
+      //This token must be identical to the request token used for creating the authorization url.
+      if (token != requestTokenInfo.RequestToken)
       {
-        throw new ArgumentNullException(nameof(tinyOAuth));
-      }
-      if (requestTokenInfo == null)
-      {
-        throw new ArgumentNullException(nameof(requestTokenInfo));
+        throw new Exception($"Error - request token from response ({token}) does not match token used for creating the authorization url ({requestTokenInfo.RequestToken}");
       }
 
-      // Construct the authorization url
-      var authorizationUrl = tinyOAuth.GetAuthorizationUrl(requestTokenInfo.RequestToken);
-
-      return authorizationUrl;
-
-    }
-
-    /// <summary>
-    /// Performs step 3 of the OAuth flow for fetching a user access token:
-    /// Fetches Access Token and Access Token secret based on a request token
-    /// </summary>
-    /// <param name="tinyOAuth">A TinyOAuth instance created by <see cref="InitTinyOAuth"/> </param>
-    /// <param name="requestTokenInfo">The Request token and secret fetched in <see cref="GetRequestToken"/>, not null</param>
-    /// <param name="pinCode">A pin code that was shown to the user after opening the authorization url returned from <see cref="GetAuthorizationUrl"/></param>
-    /// <returns></returns>
-    public static async Task<AccessTokenInfo> GetAccessToken(TinyOAuth tinyOAuth, RequestTokenInfo requestTokenInfo,
-      string pinCode)
-    {
-      if (tinyOAuth == null)
+      string verifier = queryArgs["oauth_verifier"];
+      if (verifier == null)
       {
-        throw new ArgumentNullException(nameof(tinyOAuth));
-      }
-      if (requestTokenInfo == null)
-      {
-        throw new ArgumentNullException(nameof(requestTokenInfo));
+        throw new Exception("Error - response did not contain 'oauth_verifier': " + strQuery);
       }
 
-      AccessTokenInfo accessTokenInfo = await tinyOAuth.GetAccessTokenAsync(requestTokenInfo.RequestToken, requestTokenInfo.RequestTokenSecret, pinCode);
+      return new GetAuthorizationResponse() { AuthorizationToken = token, AuthorizationVerifier = verifier };
 
-      return accessTokenInfo;
     }
   }
 }

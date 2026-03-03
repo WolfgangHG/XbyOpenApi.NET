@@ -4,6 +4,23 @@
     <!--First set Net8 so that the .NET8 winforms designer is used. -->
     <TargetFrameworks>net8.0-windows;net48</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
+
+    <!--Work around this warning that is caused by WebView2:
+    
+    warning MSB3277: Found conflicts between different versions of "WindowsBase" that could not be resolved.
+There was a conflict between "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" and "WindowsBase, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35".
+     "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" was chosen because it was primary and "WindowsBase, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" was not.
+     References which depend on "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" [C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\WindowsBase.dll].
+         C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\WindowsBase.dll
+           Project file item includes which caused reference "C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref\net8.0\WindowsBase.dll".
+             C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.11\ref/net8.0/WindowsBase.dll
+     References which depend on or have been unified to "WindowsBase, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" [].
+         C:\Users\wknauf\.nuget\packages\microsoft.web.webview2\1.0.2903.40\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.dll
+           Project file item includes which caused reference "C:\Users\wknauf\.nuget\packages\microsoft.web.webview2\1.0.2903.40\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.dll".
+             C:\Users\wknauf\.nuget\packages\microsoft.web.webview2\1.0.2903.40\buildTransitive\..\\lib_manual\net5.0-windows10.0.17763.0\Microsoft.Web.WebView2.Wpf.dll     
+    -->
+    <UseWPF>True</UseWPF>
+    
     <Nullable>enable</Nullable>
     <!--Update C# version from 7.3 (default for netstandard2.0) to 8.0 to enable "nullable" -->
     <LangVersion>8.0</LangVersion>
@@ -14,6 +31,7 @@
     
     <!--Packaging information, part 1:-->
     <PackageReadmeFile>README.md</PackageReadmeFile>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,10 +40,17 @@
 
   <ItemGroup>
     <!--Packaging information, part 2: Rename "PackageReadme.md" to "README.md" when it is bundled in the package.-->
-    <None Include="PackageReadme.md" Pack="true" PackagePath="\README.md"/>
+    <None Include="PackageReadme.md" Pack="true" PackagePath="\README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" />
   </ItemGroup>
   
   <ItemGroup>
+    <Compile Update="DialogOAuth1LoginWebView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Resources\DialogEnterPIN.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

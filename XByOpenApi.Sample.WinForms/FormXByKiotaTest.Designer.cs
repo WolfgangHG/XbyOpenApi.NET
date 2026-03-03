@@ -58,10 +58,14 @@
       this.labelOAuth2ClientID = new System.Windows.Forms.Label();
       this.buttonOAuth2AccessToken = new System.Windows.Forms.Button();
       this.groupBoxOAuth1 = new System.Windows.Forms.GroupBox();
+      this.textBoxOAuth1RedirectUrl = new System.Windows.Forms.TextBox();
+      this.labelOAuth1RedirectUrl = new System.Windows.Forms.Label();
+      this.radioButtonOAuth1EmbeddedBrowser = new System.Windows.Forms.RadioButton();
+      this.radioButtonOAuth1PinBased = new System.Windows.Forms.RadioButton();
       this.textBoxOAuth1AccessToken = new System.Windows.Forms.TextBox();
       this.labelOAuth1AccessToken = new System.Windows.Forms.Label();
       this.textBoxOAuth1AccessTokenSecret = new System.Windows.Forms.TextBox();
-      this.buttonOAuth1PIN = new System.Windows.Forms.Button();
+      this.buttonOAuth1AccessToken = new System.Windows.Forms.Button();
       this.labelOAuth1ConsumerAPIKeySecret = new System.Windows.Forms.Label();
       this.labelOAuth1AccessTokenSecret = new System.Windows.Forms.Label();
       this.textBoxOAuth1ConsumerAPIKeySecret = new System.Windows.Forms.TextBox();
@@ -99,7 +103,7 @@
       this.groupBoxKiota.Controls.Add(this.buttonKiotaLookupUser);
       this.groupBoxKiota.Controls.Add(this.buttonKiotaImage);
       this.groupBoxKiota.Controls.Add(this.buttonKiotaSimpleTweet);
-      this.groupBoxKiota.Location = new System.Drawing.Point(27, 520);
+      this.groupBoxKiota.Location = new System.Drawing.Point(27, 592);
       this.groupBoxKiota.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.groupBoxKiota.Name = "groupBoxKiota";
       this.groupBoxKiota.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -177,7 +181,7 @@
       this.groupBoxConfig.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.groupBoxConfig.Name = "groupBoxConfig";
       this.groupBoxConfig.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-      this.groupBoxConfig.Size = new System.Drawing.Size(755, 498);
+      this.groupBoxConfig.Size = new System.Drawing.Size(755, 570);
       this.groupBoxConfig.TabIndex = 0;
       this.groupBoxConfig.TabStop = false;
       this.groupBoxConfig.Text = "Authorization config";
@@ -185,12 +189,12 @@
       // radioButtonOAuth2
       // 
       this.radioButtonOAuth2.AutoSize = true;
-      this.radioButtonOAuth2.Location = new System.Drawing.Point(8, 200);
+      this.radioButtonOAuth2.Location = new System.Drawing.Point(8, 266);
       this.radioButtonOAuth2.Name = "radioButtonOAuth2";
-      this.radioButtonOAuth2.Size = new System.Drawing.Size(134, 19);
+      this.radioButtonOAuth2.Size = new System.Drawing.Size(99, 19);
       this.radioButtonOAuth2.TabIndex = 2;
       this.radioButtonOAuth2.TabStop = true;
-      this.radioButtonOAuth2.Text = "OAuth2-Anmeldung";
+      this.radioButtonOAuth2.Text = "OAuth2 login:";
       this.radioButtonOAuth2.UseVisualStyleBackColor = true;
       this.radioButtonOAuth2.CheckedChanged += this.radioButtonOAuth2_CheckedChanged;
       // 
@@ -210,7 +214,7 @@
       this.groupBoxOAuth2.Controls.Add(this.labelOAuth2ClientID);
       this.groupBoxOAuth2.Controls.Add(this.buttonOAuth2AccessToken);
       this.groupBoxOAuth2.Enabled = false;
-      this.groupBoxOAuth2.Location = new System.Drawing.Point(20, 236);
+      this.groupBoxOAuth2.Location = new System.Drawing.Point(20, 302);
       this.groupBoxOAuth2.Name = "groupBoxOAuth2";
       this.groupBoxOAuth2.Size = new System.Drawing.Size(713, 256);
       this.groupBoxOAuth2.TabIndex = 3;
@@ -397,10 +401,14 @@
       // 
       // groupBoxOAuth1
       // 
+      this.groupBoxOAuth1.Controls.Add(this.textBoxOAuth1RedirectUrl);
+      this.groupBoxOAuth1.Controls.Add(this.labelOAuth1RedirectUrl);
+      this.groupBoxOAuth1.Controls.Add(this.radioButtonOAuth1EmbeddedBrowser);
+      this.groupBoxOAuth1.Controls.Add(this.radioButtonOAuth1PinBased);
       this.groupBoxOAuth1.Controls.Add(this.textBoxOAuth1AccessToken);
       this.groupBoxOAuth1.Controls.Add(this.labelOAuth1AccessToken);
       this.groupBoxOAuth1.Controls.Add(this.textBoxOAuth1AccessTokenSecret);
-      this.groupBoxOAuth1.Controls.Add(this.buttonOAuth1PIN);
+      this.groupBoxOAuth1.Controls.Add(this.buttonOAuth1AccessToken);
       this.groupBoxOAuth1.Controls.Add(this.labelOAuth1ConsumerAPIKeySecret);
       this.groupBoxOAuth1.Controls.Add(this.labelOAuth1AccessTokenSecret);
       this.groupBoxOAuth1.Controls.Add(this.textBoxOAuth1ConsumerAPIKeySecret);
@@ -408,47 +416,87 @@
       this.groupBoxOAuth1.Controls.Add(this.labelOAuth1ConsumerAPIKey);
       this.groupBoxOAuth1.Location = new System.Drawing.Point(27, 47);
       this.groupBoxOAuth1.Name = "groupBoxOAuth1";
-      this.groupBoxOAuth1.Size = new System.Drawing.Size(706, 147);
+      this.groupBoxOAuth1.Size = new System.Drawing.Size(706, 213);
       this.groupBoxOAuth1.TabIndex = 1;
       this.groupBoxOAuth1.TabStop = false;
       this.groupBoxOAuth1.Text = "OAuth1 configuration";
       // 
+      // textBoxOAuth1RedirectUrl
+      // 
+      this.textBoxOAuth1RedirectUrl.Enabled = false;
+      this.textBoxOAuth1RedirectUrl.Location = new System.Drawing.Point(415, 113);
+      this.textBoxOAuth1RedirectUrl.Name = "textBoxOAuth1RedirectUrl";
+      this.textBoxOAuth1RedirectUrl.Size = new System.Drawing.Size(147, 23);
+      this.textBoxOAuth1RedirectUrl.TabIndex = 7;
+      // 
+      // labelOAuth1RedirectUrl
+      // 
+      this.labelOAuth1RedirectUrl.AutoSize = true;
+      this.labelOAuth1RedirectUrl.Location = new System.Drawing.Point(338, 116);
+      this.labelOAuth1RedirectUrl.Name = "labelOAuth1RedirectUrl";
+      this.labelOAuth1RedirectUrl.Size = new System.Drawing.Size(71, 15);
+      this.labelOAuth1RedirectUrl.TabIndex = 6;
+      this.labelOAuth1RedirectUrl.Text = "Redirect Url:";
+      // 
+      // radioButtonOAuth1EmbeddedBrowser
+      // 
+      this.radioButtonOAuth1EmbeddedBrowser.AutoSize = true;
+      this.radioButtonOAuth1EmbeddedBrowser.Location = new System.Drawing.Point(310, 88);
+      this.radioButtonOAuth1EmbeddedBrowser.Name = "radioButtonOAuth1EmbeddedBrowser";
+      this.radioButtonOAuth1EmbeddedBrowser.Size = new System.Drawing.Size(127, 19);
+      this.radioButtonOAuth1EmbeddedBrowser.TabIndex = 5;
+      this.radioButtonOAuth1EmbeddedBrowser.Text = "Embedded browser";
+      this.radioButtonOAuth1EmbeddedBrowser.UseVisualStyleBackColor = true;
+      this.radioButtonOAuth1EmbeddedBrowser.CheckedChanged += this.radioButtonOAuth1EmbeddedBrowser_CheckedChanged;
+      // 
+      // radioButtonOAuth1PinBased
+      // 
+      this.radioButtonOAuth1PinBased.AutoSize = true;
+      this.radioButtonOAuth1PinBased.Checked = true;
+      this.radioButtonOAuth1PinBased.Location = new System.Drawing.Point(179, 88);
+      this.radioButtonOAuth1PinBased.Name = "radioButtonOAuth1PinBased";
+      this.radioButtonOAuth1PinBased.Size = new System.Drawing.Size(104, 19);
+      this.radioButtonOAuth1PinBased.TabIndex = 4;
+      this.radioButtonOAuth1PinBased.TabStop = true;
+      this.radioButtonOAuth1PinBased.Text = "PIN based flow";
+      this.radioButtonOAuth1PinBased.UseVisualStyleBackColor = true;
+      // 
       // textBoxOAuth1AccessToken
       // 
-      this.textBoxOAuth1AccessToken.Location = new System.Drawing.Point(173, 84);
+      this.textBoxOAuth1AccessToken.Location = new System.Drawing.Point(173, 142);
       this.textBoxOAuth1AccessToken.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.textBoxOAuth1AccessToken.Name = "textBoxOAuth1AccessToken";
       this.textBoxOAuth1AccessToken.Size = new System.Drawing.Size(389, 23);
-      this.textBoxOAuth1AccessToken.TabIndex = 5;
+      this.textBoxOAuth1AccessToken.TabIndex = 10;
       // 
       // labelOAuth1AccessToken
       // 
       this.labelOAuth1AccessToken.AutoSize = true;
-      this.labelOAuth1AccessToken.Location = new System.Drawing.Point(15, 87);
+      this.labelOAuth1AccessToken.Location = new System.Drawing.Point(15, 145);
       this.labelOAuth1AccessToken.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.labelOAuth1AccessToken.Name = "labelOAuth1AccessToken";
       this.labelOAuth1AccessToken.Size = new System.Drawing.Size(79, 15);
-      this.labelOAuth1AccessToken.TabIndex = 4;
+      this.labelOAuth1AccessToken.TabIndex = 9;
       this.labelOAuth1AccessToken.Text = "Access token:";
       // 
       // textBoxOAuth1AccessTokenSecret
       // 
-      this.textBoxOAuth1AccessTokenSecret.Location = new System.Drawing.Point(173, 114);
+      this.textBoxOAuth1AccessTokenSecret.Location = new System.Drawing.Point(173, 172);
       this.textBoxOAuth1AccessTokenSecret.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
       this.textBoxOAuth1AccessTokenSecret.Name = "textBoxOAuth1AccessTokenSecret";
       this.textBoxOAuth1AccessTokenSecret.Size = new System.Drawing.Size(389, 23);
-      this.textBoxOAuth1AccessTokenSecret.TabIndex = 8;
+      this.textBoxOAuth1AccessTokenSecret.TabIndex = 12;
       // 
-      // buttonOAuth1PIN
+      // buttonOAuth1AccessToken
       // 
-      this.buttonOAuth1PIN.Location = new System.Drawing.Point(569, 83);
-      this.buttonOAuth1PIN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-      this.buttonOAuth1PIN.Name = "buttonOAuth1PIN";
-      this.buttonOAuth1PIN.Size = new System.Drawing.Size(130, 23);
-      this.buttonOAuth1PIN.TabIndex = 6;
-      this.buttonOAuth1PIN.Text = "With PIN";
-      this.buttonOAuth1PIN.UseVisualStyleBackColor = true;
-      this.buttonOAuth1PIN.Click += this.buttonOAuth1PIN_Click;
+      this.buttonOAuth1AccessToken.Location = new System.Drawing.Point(568, 112);
+      this.buttonOAuth1AccessToken.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+      this.buttonOAuth1AccessToken.Name = "buttonOAuth1AccessToken";
+      this.buttonOAuth1AccessToken.Size = new System.Drawing.Size(130, 23);
+      this.buttonOAuth1AccessToken.TabIndex = 8;
+      this.buttonOAuth1AccessToken.Text = "Acces Token";
+      this.buttonOAuth1AccessToken.UseVisualStyleBackColor = true;
+      this.buttonOAuth1AccessToken.Click += this.buttonOAuth1AccessToken_Click;
       // 
       // labelOAuth1ConsumerAPIKeySecret
       // 
@@ -463,11 +511,11 @@
       // labelOAuth1AccessTokenSecret
       // 
       this.labelOAuth1AccessTokenSecret.AutoSize = true;
-      this.labelOAuth1AccessTokenSecret.Location = new System.Drawing.Point(15, 117);
+      this.labelOAuth1AccessTokenSecret.Location = new System.Drawing.Point(15, 175);
       this.labelOAuth1AccessTokenSecret.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.labelOAuth1AccessTokenSecret.Name = "labelOAuth1AccessTokenSecret";
       this.labelOAuth1AccessTokenSecret.Size = new System.Drawing.Size(113, 15);
-      this.labelOAuth1AccessTokenSecret.TabIndex = 7;
+      this.labelOAuth1AccessTokenSecret.TabIndex = 11;
       this.labelOAuth1AccessTokenSecret.Text = "Access token secret:";
       // 
       // textBoxOAuth1ConsumerAPIKeySecret
@@ -511,7 +559,7 @@
       // groupBoxPlainHttp
       // 
       this.groupBoxPlainHttp.Controls.Add(this.buttonPlainHttpLookupUser);
-      this.groupBoxPlainHttp.Location = new System.Drawing.Point(402, 520);
+      this.groupBoxPlainHttp.Location = new System.Drawing.Point(402, 592);
       this.groupBoxPlainHttp.Name = "groupBoxPlainHttp";
       this.groupBoxPlainHttp.Size = new System.Drawing.Size(378, 178);
       this.groupBoxPlainHttp.TabIndex = 3;
@@ -533,7 +581,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(792, 712);
+      this.ClientSize = new System.Drawing.Size(792, 784);
       this.Controls.Add(this.groupBoxPlainHttp);
       this.Controls.Add(this.groupBoxConfig);
       this.Controls.Add(this.groupBoxKiota);
@@ -570,7 +618,7 @@
     private System.Windows.Forms.Label labelOAuth1ConsumerAPIKeySecret;
     private System.Windows.Forms.TextBox textBoxOAuth1ConsumerAPIKeySecret;
     private System.Windows.Forms.Button buttonKiotaLookupUser;
-    private System.Windows.Forms.Button buttonOAuth1PIN;
+    private System.Windows.Forms.Button buttonOAuth1AccessToken;
     private System.Windows.Forms.Button buttonDeleteTweet;
     private System.Windows.Forms.TextBox textBoxDeleteTweetId;
     private System.Windows.Forms.Label labelDeleteTweetId;
@@ -600,5 +648,9 @@
     private System.Windows.Forms.RadioButton radioButtonOAuth2CodeChallengeMethodSHA256;
     private System.Windows.Forms.RadioButton radioButtonOAuth2CodeChallengeMethodPlain;
     private System.Windows.Forms.Button buttonKiotaImageChunked;
+    private System.Windows.Forms.RadioButton radioButtonOAuth1EmbeddedBrowser;
+    private System.Windows.Forms.RadioButton radioButtonOAuth1PinBased;
+    private System.Windows.Forms.TextBox textBoxOAuth1RedirectUrl;
+    private System.Windows.Forms.Label labelOAuth1RedirectUrl;
   }
 }

@@ -23,6 +23,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.Kiota.Bundle" Version="1.21.2" />
+    <PackageReference Include="Microsoft.Kiota.Bundle"/>
   </ItemGroup>
 </Project>

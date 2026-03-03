@@ -116,6 +116,28 @@ Add a package reference to [XbyOpenApi.OAuth1.WinForms](https://www.nuget.org/pa
 
 ### Step 1: fetching an OAuth1 access token
 
+#### Fetching an access token by redirect url
+
+This is probably the preferred way. Authorization is done in a modal form using an embedded `WebView2` control.
+
+Make this call - those two steps will fetch access token and access token secret:
+
+```c#
+AccessTokenInfo accessTokenInfo = XClientOAuth1WinFormsUtil.GetAccessToken_EmbeddedBrowerOAuthFlowSync(parentForm, "MyConsumerApiKey", "MyConsumerApiKeySecret", "RedirectUrl");
+
+//"Null" means: user canceled the dialog.
+if (accessTokenInfo == null)
+{
+  return;
+}
+
+XClient client = XClientOAuth1Util.InitXClient( "MyConsumerApiKey", "MyConsumerApiKeySecret", accessTokenInfo.AccessToken, accessTokenInfo.AccessTokenSecret);
+```
+
+#### Fetching an access token with the PIN based flow
+
+*There is no reason to use this flow, but I implemented it first and later added the "redirect url" flow.*
+
 Make this call - those two steps will fetch access token and access token secret:
 
 ```c#
@@ -154,6 +176,8 @@ Not using WinForms? Then there is more work to do for you.
 
 Add a package reference to [XbyOpenApi.OAuth1](https://www.nuget.org/packages/XbyOpenApi.OAuth1/).
 
+#### Fetching an access token with the PIN based flow
+
 First build a OAuth1 authorization url:
 
 ```c#
@@ -178,8 +202,60 @@ AccessTokenInfo accessTokenInfo = tinyOAuth.GetAccessTokenAsync(requestTokenInfo
 XClient client = XClientOAuth1Util.InitXClient( "MyConsumerApiKey", "MyConsumerApiKeySecret", accessTokenInfo.AccessToken, accessTokenInfo.AccessTokenSecret);
 ```
 
+After having fetched this access token once, you can store access token and access token secret somewhere and reuse it, see above.
+
+#### Fetching an access token by redirect url
+
+First build a OAuth1 authorization url. Note that this is not a feature of `TinyOAuth1`, so I added an extension
+method and duplicated some code:
+
+```c#
+TinyOAuth tinyOAuth = XClientOAuth1Util.InitTinyOAuth("MyConsumerApiKey", "MyConsumerApiKeySecret");
+
+// Get the request token and request token secret
+RequestTokenInfo requestTokenInfo = await TinyOAuth1Extensions.GetRequestTokenAsync("MyRedirectUrl"));
+
+// Construct the authorization url
+var authorizationUrl = tinyOAuth.GetAuthorizationUrl(requestTokenInfo.RequestToken);
+```
+
+Next step is to launch this authorization url in browser, e.g. with a call to `Process.Start`.
+
+After completing the authorization process in the browser, you are redirected to this url, and the request url contains the authentication code
+parameter. There are two ways to handle it.
+* start a small webserver listening to this url. This is probably difficult to handle
+* better: use a embedded web browser control and intercept the redirection to this url.
+
+The redirect url looks like this:
+
+```
+http://localhost/?oauth_token=zvMauAAAAAABoVccAAABnLUCxCw&oauth_verifier=H2IZ2hifZs0W56C65ZDnpjqnrJltLvo2
+```
+  
+Parse the `oauth_verifier`, which is done i the method `XClientOAuth1Util.ParseAutorizationCode`. This method also checks that the `oauth_token` argument
+matches the one sent to the server as part of the authorization url:
+
+```c#
+GetAuthorizationResponse? authorizationResponse = XClientOAuth1Util.ParseAutorizationCode(redirectQuery, requestTokenInfo);
+
+if (authorizationResponse == null)
+{
+  //User canceled authorization...
+}
+
+string verifier = authorizationResponse.AuthorizationVerifier;
+```
+
+Finally, finish initialization:
+```c#
+AccessTokenInfo accessTokenInfo = tinyOAuth.GetAccessTokenAsync(requestTokenInfo.RequestToken, requestTokenInfo.RequestTokenSecret, verifier));
+
+XClient client = XClientOAuth1Util.InitXClient( "MyConsumerApiKey", "MyConsumerApiKeySecret", accessTokenInfo.AccessToken, accessTokenInfo.AccessTokenSecret);
+```
 
 After having fetched this access token once, you can store access token and access token secret somewhere and reuse it, see above.
+
+
 
 
 

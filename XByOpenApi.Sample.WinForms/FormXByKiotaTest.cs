@@ -53,6 +53,7 @@ namespace XByOpenApi.Sample.WinForms
       string targetFramework = ta?.FrameworkDisplayName ?? "--unknown--";
       this.Text += $" ({targetFramework})";
 
+      this.textBoxOAuth1RedirectUrl.Text = "http://localhost";
       this.textBoxOAuth2RedirectUrl.Text = "http://localhost";
     }
     #endregion
@@ -63,18 +64,44 @@ namespace XByOpenApi.Sample.WinForms
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void buttonOAuth1PIN_Click(object sender, EventArgs e)
+    private void buttonOAuth1AccessToken_Click(object sender, EventArgs e)
     {
-      AccessTokenInfo? accessTokenInfo = XClientOAuth1WinFormsUtil.GetAccessToken_PinBasedOAuthFlowSync(this, this.OAuth1ConsumerApiKey, this.OAuth1ConsumerApiKeySecret);
-
-      //"Null" means: user canceled the dialog.
-      if (accessTokenInfo == null)
+      try
       {
-        return;
-      }
+        AccessTokenInfo? accessTokenInfo;
+        if (this.radioButtonOAuth1PinBased.Checked == true)
+        {
+          accessTokenInfo = XClientOAuth1WinFormsUtil.GetAccessToken_PinBasedOAuthFlowSync(this, this.OAuth1ConsumerApiKey, this.OAuth1ConsumerApiKeySecret);
+        }
+        else
+        {
+          accessTokenInfo = XClientOAuth1WinFormsUtil.GetAccessToken_EmbeddedBrowerOAuthFlowSync(this, this.OAuth1ConsumerApiKey, this.OAuth1ConsumerApiKeySecret,
+            this.textBoxOAuth1RedirectUrl.Text);
+        }
 
-      this.textBoxOAuth1AccessToken.Text = accessTokenInfo.AccessToken;
-      this.textBoxOAuth1AccessTokenSecret.Text = accessTokenInfo.AccessTokenSecret;
+        //"Null" means: user canceled the dialog.
+        if (accessTokenInfo == null)
+        {
+          return;
+        }
+
+        this.textBoxOAuth1AccessToken.Text = accessTokenInfo.AccessToken;
+        this.textBoxOAuth1AccessTokenSecret.Text = accessTokenInfo.AccessTokenSecret;
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show(this, ex.ToString());
+      }
+    }
+
+    /// <summary>
+    /// Radiobutton "OAuth1: Embedded browser" is checked: enable dependant controls.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void radioButtonOAuth1EmbeddedBrowser_CheckedChanged(object sender, EventArgs e)
+    {
+      this.textBoxOAuth1RedirectUrl.Enabled = this.radioButtonOAuth1EmbeddedBrowser.Checked;
     }
 
     /// <summary>

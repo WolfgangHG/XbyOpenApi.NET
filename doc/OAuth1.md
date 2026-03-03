@@ -17,6 +17,8 @@ but it works and OAuth1 will probably not evolve any more.
 - [Initializing TinyOAuth1](#initializing-tinyoauth1)
 - [Preparation: signing a Kiota request](#preparation-signing-a-kiota-request)
 - [Fetching an access token on behalf of a user](#fetching-an-access-token-on-behalf-of-a-user)
+  - [PIN based authorization](#pin-based-authorization)
+  - [Authorization with a redirect url](#authorization-with-a-redirect-url)
 
 
 # Initializing TinyOAuth1
@@ -124,13 +126,11 @@ and https://docs.x.com/fundamentals/authentication/oauth-1-0a/obtaining-user-acc
 Note that this flow always resulted in the same access token - it does not seem to expire in comparison to the OAuth2 flow.
 As long as you don't revoke it in the X developer page, you can use it for offline access.
 
-There is a limitation in TinyOAuth1: it always uses the pseudo redirect url `oob` (out-of-band OAuth). 
+## PIN based authorization
+
+The TinyOAuth1 package is limited to always using the pseudo redirect url `oob` (out-of-band OAuth). 
 The user still visits X to login or authorize the app,  but they will not be automatically redirected to the application 
 upon approving access. Instead, they will see a numerical PIN code and have to return to the application and enter this value.
-
-If TinyOAuth1 supported a real redirect url, we could use an embedded web browser control and intercept the redirection from the X login
-page to our redirect url and parse the access token from there (see the OAuth2 sample).
-
 
 * Step 1: create the `TinyOAuth` instance and invoke `GetRequestTokenAsync` to fetch a request token:
 
@@ -175,3 +175,91 @@ page to our redirect url and parse the access token from there (see the OAuth2 s
   Again, this request contains an authorization header with OAuth signature.
 
   The result is finally the access token and the access token secret.
+  
+  
+  
+## Authorization with a redirect url
+
+By copying the method `TinyOAuth.GetRequestTokenAsync` and adding a parameter `redirectUrl` (and doing some ugly reflection to call a lot of private methods in TinyOAuth1), 
+I could implement authorization with a redirect url.
+
+The redirect url is configured as part of the X app settings, and for desktop applications it could be `http://localhost`:
+
+![Redirect url](images/oauth2_redirecturl.png)
+
+
+
+
+* Step 1: create the `TinyOAuth` instance. In my sample, you invoke the extension method `TinyOAuth1Extensions.GetRequestTokenAsync(string redirectUrl)` to fetch a request token:
+
+  ```c#
+  TinyOAuth tinyOAuth = ....;
+
+  RequestTokenInfo requestTokenInfo = await TinyOAuth1Extensions.GetRequestTokenAsync(tinyOAuth, redirectUrl);
+  ```
+  This sends a POST request to `https://api.x.com/oauth/request_token` containing among others a parameter `oauth_callback=...` (contains the redirect url).
+  This request contains an authorization header with OAuth signature.
+
+  The response looks like this
+  ```
+  oauth_token=zvMauAAAAAABoVccAAABnLUCxCw&oauth_token_secret=9fKAYDFrpahqrrOZLN9QW1YOjfHN0GQP&oauth_callback_confirmed=true
+  ```
+
+* Step 2: Build an authorization url using this request token:
+  ```c#
+  string authorizationUrl = tinyOAuth.GetAuthorizationUrl(requestTokenInfo.RequestToken);
+  ```
+
+  This URL looks like this:
+  ```
+  https://api.x.com/oauth/authorize?oauth_token=zvMauAAAAAABoVccAAABnLUCxCw
+  ```
+
+  Now start either an embedded browser and browse to this url or open the url in a browser and launch a small webserver that listens to the redirect url.  
+  
+  After the user has authorized, the redirect url will be called. You have to parse the arguments.
+  
+  The URLs looks like this:
+  ```
+  http://localhost/?oauth_token=zvMauAAAAAABoVccAAABnLUCxCw&oauth_verifier=H2IZ2hifZs0W56C65ZDnpjqnrJltLvo2
+  ```
+  
+  Note: you should check the parameter `oauth_token` - it must match the Request Token from the previous step.
+  
+  Here is sample code, where I used a `WebView2` browser:
+  
+  ```c#
+  private void webBrowser_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e)
+  {
+    if (this.webBrowser.Source.AbsoluteUri.StartsWith(redirectURL))
+    {
+      NameValueCollection queryArgs = HttpUtility.ParseQueryString(strQuery);
+
+      //This token must be identical to the request token used for creating the authorization url. You should check it.
+      string token = queryArgs["oauth_token"];
+      //... check the token ...
+      
+      string verifier = queryArgs["oauth_verifier"];
+      
+      this.AuthorizationVerifier = verifier;
+      
+      //Close the form...
+
+    }
+  }
+  ```
+  
+  Note: in the OAuth2 flow, there was also an argument that was set when the "Cancel" button was clicked during Authorization.
+  In the OAuth1 flow, this did not happen. Apparently, there is no easy way to detect cancellation.
+
+* Step 3: fetch  the access token using the `verifier` from the previous step:
+
+  ```c#
+  AccessTokenInfo accessTokenInfo = await tinyOAuth.GetAccessTokenAsync(requestTokenInfo.RequestToken, requestTokenInfo.RequestTokenSecret, verifier));
+  ```
+
+  This sends a POST request to `https://api.x.com/oauth/access_token` with the parameter `oauth_verifier` set to the PIN. 
+  Again, this request contains an authorization header with OAuth signature.
+
+  The result is finally the access token and the access token secret.
+  
