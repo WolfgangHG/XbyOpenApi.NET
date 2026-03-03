@@ -6,6 +6,7 @@ open source libraries were discontinued (e.g. [TweetInvi](https://github.com/lin
 to version 2, and the old libraries stopped working or needed workarounds.
 
 But there is hope: using the OpenAPI description at https://api.twitter.com/2/openapi.json, you can use tools like [Microsoft Kiota](https://github.com/microsoft/kiota/)
+and the [Kiota Libraries for dotnet](https://github.com/microsoft/kiota-dotnet)
 to generate a client which should (in theory) make it easy to call any endpoint.
 
 The only problem is authorization. X currently supports OAuth1 and OAuth2. Using either of those two protocols, you have to fetch an access token to make API calls.
