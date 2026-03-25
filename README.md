@@ -14,7 +14,6 @@ The only problem is authorization. X currently supports OAuth1 and OAuth2. Using
 Here comes this sample into play. You can use the sample code to implement your own X client (it is not much magic involved ;-)). Or you could use the Nuget packages that I created
 from the sample.
 
-To start: take a look at my [WinForms sample application](https://github.com/WolfgangHG/XbyOpenApi.NET/tree/main/XByOpenApi.Sample.WinForms). 
 
 I have only a free access X account, so if there are questions, maybe I cannot help.
 
@@ -46,6 +45,11 @@ The client must authorize. This can be done with OAuth1 (see [here](doc/OAuth1.m
 I focused on the flow to perform actions on behalf of a user. For OAuth2, there exists also an app-only Bearer Token,
 but this one is supported for only a few endpoints (that are not accessible with free access), so I didn't dig deeper.
 
+To start: take a look at my [WinForms sample application](https://github.com/WolfgangHG/XbyOpenApi.NET/tree/main/XByOpenApi.Sample.WinForms). 
+Note: the sample app saves some of the settings in "%LOCALAPPDATA%\XByOpenApi.Sample.WinForm". But it does not save private data like access tokens, it stops
+at the "ClientID".
+
+![Sample app](images/sampleapp.png)
 
 # How to use the Nuget packages
 
