@@ -22,6 +22,7 @@ using XbyOpenApi.OAuth1;
 using XbyOpenApi.OAuth1.WinForms;
 using XbyOpenApi.OAuth2;
 using XbyOpenApi.OAuth2.WinForms;
+using XByOpenApi.Sample.WinForms.Properties;
 
 namespace XByOpenApi.Sample.WinForms
 {
@@ -53,8 +54,79 @@ namespace XByOpenApi.Sample.WinForms
       string targetFramework = ta?.FrameworkDisplayName ?? "--unknown--";
       this.Text += $" ({targetFramework})";
 
-      this.textBoxOAuth1RedirectUrl.Text = "http://localhost";
-      this.textBoxOAuth2RedirectUrl.Text = "http://localhost";
+      //Load older versions if necessary. "Settings.Default.Upgrade" sounds simple but does not work. E.g. it discards all newly added settings.
+      //So check a boolean flag. It it has the default "false", we have to look for older settings.
+      if (Settings.Default.SettingsWrittenByCurrentVersion == true)
+      {
+        //Settings were saved once:
+        this.radioButtonOAuth1.Checked = Settings.Default.AuthorizationIsOAuth1;
+        this.radioButtonOAuth2.Checked = !Settings.Default.AuthorizationIsOAuth1;
+
+        this.textBoxOAuth1ConsumerAPIKey.Text = Settings.Default.OAuth1ConsumerAPIKey;
+        this.radioButtonOAuth1PinBased.Checked = Settings.Default.OAuth1PinBased;
+        this.radioButtonOAuth1EmbeddedBrowser.Checked = !Settings.Default.OAuth1PinBased;
+        this.textBoxOAuth1RedirectUrl.Text = Settings.Default.OAuth1RedirectUrl;
+
+        this.textBoxOAuth2ClientID.Text = Settings.Default.OAuth2ClientID;
+        this.radioButtonOAuth2PublicClient.Checked = Settings.Default.OAuth2PublicClient;
+        this.radioButtonOAuth2ConfidentialClient.Checked = !Settings.Default.OAuth2PublicClient;
+        this.checkBoxOAuth2FetchRefreshToken.Checked = Settings.Default.OAuth2FetchRefreshToken;
+        this.textBoxOAuth2RedirectUrl.Text = Settings.Default.OAuth2RedirectUrl;
+        this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked = Settings.Default.OAuth2CodeChallengeMethodSHA256;
+        this.radioButtonOAuth2CodeChallengeMethodPlain.Checked = !Settings.Default.OAuth2CodeChallengeMethodSHA256;
+      }
+      else
+      {
+        //Pick previous version (if it exists):
+        if (Settings.Default.GetPreviousVersion(nameof(Settings.SettingsWrittenByCurrentVersion)) != null &&
+          (bool)Settings.Default.GetPreviousVersion(nameof(Settings.SettingsWrittenByCurrentVersion)) == true)
+        {
+          this.radioButtonOAuth1.Checked = (bool)Settings.Default.GetPreviousVersion(nameof(Settings.AuthorizationIsOAuth1));
+          this.radioButtonOAuth2.Checked = !(bool)Settings.Default.GetPreviousVersion(nameof(Settings.AuthorizationIsOAuth1));
+
+          this.textBoxOAuth1ConsumerAPIKey.Text = (string)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth1ConsumerAPIKey));
+          this.radioButtonOAuth1PinBased.Checked = (bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth1PinBased));
+          this.radioButtonOAuth1EmbeddedBrowser.Checked = !(bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth1PinBased));
+          this.textBoxOAuth1RedirectUrl.Text = (string)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth1RedirectUrl));
+
+          this.textBoxOAuth2ClientID.Text = (string)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2ClientID));
+          this.radioButtonOAuth2PublicClient.Checked = (bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2PublicClient));
+          this.radioButtonOAuth2ConfidentialClient.Checked = !(bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2PublicClient));
+          this.checkBoxOAuth2FetchRefreshToken.Checked = (bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2FetchRefreshToken));
+          this.textBoxOAuth2RedirectUrl.Text = (string)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2RedirectUrl));
+          this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked = (bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2CodeChallengeMethodSHA256));
+          this.radioButtonOAuth2CodeChallengeMethodPlain.Checked = !(bool)Settings.Default.GetPreviousVersion(nameof(Settings.OAuth2CodeChallengeMethodSHA256));
+        }
+      }
+    }
+    #endregion
+
+    #region Overrides
+    /// <summary>
+    /// Save settings before the form is cloed.
+    /// </summary>
+    /// <param name="e"></param>
+    protected override void OnFormClosing(FormClosingEventArgs e)
+    {
+      base.OnFormClosing(e);
+
+      //First set the flag that the settings were written with the current program version:
+      Settings.Default.SettingsWrittenByCurrentVersion = true;
+
+      Settings.Default.AuthorizationIsOAuth1 = this.radioButtonOAuth1.Checked;
+
+
+      Settings.Default.OAuth1ConsumerAPIKey = this.textBoxOAuth1ConsumerAPIKey.Text;
+      Settings.Default.OAuth1PinBased = this.radioButtonOAuth1PinBased.Checked;;
+      Settings.Default.OAuth1RedirectUrl = this.textBoxOAuth1RedirectUrl.Text;
+
+      Settings.Default.OAuth2ClientID = this.textBoxOAuth2ClientID.Text;
+      Settings.Default.OAuth2PublicClient = this.radioButtonOAuth2PublicClient.Checked;
+      Settings.Default.OAuth2FetchRefreshToken = this.checkBoxOAuth2FetchRefreshToken.Checked;
+      Settings.Default.OAuth2RedirectUrl = this.textBoxOAuth2RedirectUrl.Text;
+      Settings.Default.OAuth2CodeChallengeMethodSHA256 = this.radioButtonOAuth2CodeChallengeMethodSHA256.Checked;
+
+      Settings.Default.Save();
     }
     #endregion
 
