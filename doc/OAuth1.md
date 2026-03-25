@@ -120,8 +120,9 @@ Get2UsersMeResponse response = await client.Two.Users.Me.GetAsync();
 # Fetching an access token on behalf of a user
 
 We concentrate on the so called "3-legged OAuth flow" to perform actions on behalf of a user, see
-https://developer.x.com/en/docs/tutorials/authenticating-with-twitter-api-for-enterprise/oauth1-0a-and-user-access-tokens
-and https://docs.x.com/fundamentals/authentication/oauth-1-0a/obtaining-user-access-tokens.
+https://docs.x.com/fundamentals/authentication/oauth-1-0a/obtaining-user-access-tokens and 
+[https://developer.x.com/en/docs/tutorials/authenticating-with-twitter-api-for-enterprise/oauth1-0a-and-user-access-tokens](https://web.archive.org/web/20260112202205/https://developer.x.com/en/docs/tutorials/authenticating-with-twitter-api-for-enterprise/oauth1-0a-and-user-access-tokens) 
+(this tutorial is no longer available on the X website, so the link points to archive.org).
 
 Note that this flow always resulted in the same access token - it does not seem to expire in comparison to the OAuth2 flow.
 As long as you don't revoke it in the X developer page, you can use it for offline access.
