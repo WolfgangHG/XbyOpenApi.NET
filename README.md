@@ -49,7 +49,7 @@ To start: take a look at my [WinForms sample application](https://github.com/Wol
 Note: the sample app saves some of the settings in "%LOCALAPPDATA%\XByOpenApi.Sample.WinForm". But it does not save private data like access tokens, it stops
 at the "ClientID".
 
-![Sample app](images/sampleapp.png)
+![Sample app](doc/images/sampleapp.png)
 
 # How to use the Nuget packages
 
