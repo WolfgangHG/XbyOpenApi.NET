@@ -10,6 +10,7 @@ using System.Threading;
 using System;
 using XbyOpenApi.Core.Client.Models;
 using XbyOpenApi.Core.Client.Two.Connections.All;
+using XbyOpenApi.Core.Client.Two.Connections.Item;
 namespace XbyOpenApi.Core.Client.Two.Connections
 {
   /// <summary>
@@ -22,6 +23,18 @@ namespace XbyOpenApi.Core.Client.Two.Connections
     public global::XbyOpenApi.Core.Client.Two.Connections.All.AllRequestBuilder All
     {
       get => new global::XbyOpenApi.Core.Client.Two.Connections.All.AllRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>Gets an item from the XbyOpenApi.Core.Client.Two.connections.item collection</summary>
+    /// <param name="position">The endpoint ID to terminate connections for.</param>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Two.Connections.Item.WithEndpoint_ItemRequestBuilder"/></returns>
+    public global::XbyOpenApi.Core.Client.Two.Connections.Item.WithEndpoint_ItemRequestBuilder this[string position]
+    {
+      get
+      {
+        var urlTplParams = new Dictionary<string, object>(PathParameters);
+        urlTplParams.Add("endpoint_id", position);
+        return new global::XbyOpenApi.Core.Client.Two.Connections.Item.WithEndpoint_ItemRequestBuilder(urlTplParams, RequestAdapter);
+      }
     }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Two.Connections.ConnectionsRequestBuilder"/> and sets the default values.
@@ -38,6 +51,31 @@ namespace XbyOpenApi.Core.Client.Two.Connections
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
     public ConnectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/connections{?connection%2Efields,endpoints,max_results*,pagination_token*,status*}", rawUrl)
     {
+    }
+    /// <summary>
+    /// Terminates multiple streaming connections by their UUIDs for the authenticated application.
+    /// </summary>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsResponse"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+    /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public async Task<global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsResponse?> DeleteAsync(global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#nullable restore
+#else
+    public async Task<global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsResponse> DeleteAsync(global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+      var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::XbyOpenApi.Core.Client.Models.Error.CreateFromDiscriminatorValue },
+            };
+      return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
     /// Returns active and historical streaming connections with disconnect reasons for the authenticated application.
@@ -61,6 +99,28 @@ namespace XbyOpenApi.Core.Client.Two.Connections
                 { "XXX", global::XbyOpenApi.Core.Client.Models.Error.CreateFromDiscriminatorValue },
             };
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.Get2ConnectionsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.Get2ConnectionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+    }
+    /// <summary>
+    /// Terminates multiple streaming connections by their UUIDs for the authenticated application.
+    /// </summary>
+    /// <returns>A <see cref="RequestInformation"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public RequestInformation ToDeleteRequestInformation(global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
+#nullable restore
+#else
+    public RequestInformation ToDeleteRequestInformation(global::XbyOpenApi.Core.Client.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+      requestInfo.Configure(requestConfiguration);
+      requestInfo.Headers.TryAdd("Accept", "application/json");
+      requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+      return requestInfo;
     }
     /// <summary>
     /// Returns active and historical streaming connections with disconnect reasons for the authenticated application.

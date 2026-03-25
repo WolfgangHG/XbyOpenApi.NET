@@ -40,6 +40,10 @@ namespace XbyOpenApi.Core.Client.Models
 #pragma warning disable CS1591
     ProfileUpdateAffiliate_badge,
 #pragma warning restore CS1591
+    [EnumMember(Value = "profile.update.handle")]
+#pragma warning disable CS1591
+    ProfileUpdateHandle,
+#pragma warning restore CS1591
     [EnumMember(Value = "news.new")]
 #pragma warning disable CS1591
     NewsNew,
@@ -68,33 +72,25 @@ namespace XbyOpenApi.Core.Client.Models
 #pragma warning disable CS1591
     ChatSent,
 #pragma warning restore CS1591
-    [EnumMember(Value = "ProfileBioUpdate")]
+    [EnumMember(Value = "chat.conversation_join")]
 #pragma warning disable CS1591
-    ProfileBioUpdate,
+    ChatConversation_join,
 #pragma warning restore CS1591
-    [EnumMember(Value = "ProfilePictureUpdate")]
+    [EnumMember(Value = "dm.sent")]
 #pragma warning disable CS1591
-    ProfilePictureUpdate,
+    DmSent,
 #pragma warning restore CS1591
-    [EnumMember(Value = "ProfileBannerPictureUpdate")]
+    [EnumMember(Value = "dm.received")]
 #pragma warning disable CS1591
-    ProfileBannerPictureUpdate,
+    DmReceived,
 #pragma warning restore CS1591
-    [EnumMember(Value = "ProfileScreennameUpdate")]
+    [EnumMember(Value = "dm.indicate_typing")]
 #pragma warning disable CS1591
-    ProfileScreennameUpdate,
+    DmIndicate_typing,
 #pragma warning restore CS1591
-    [EnumMember(Value = "ProfileGeoUpdate")]
+    [EnumMember(Value = "dm.read")]
 #pragma warning disable CS1591
-    ProfileGeoUpdate,
-#pragma warning restore CS1591
-    [EnumMember(Value = "ProfileUrlUpdate")]
-#pragma warning disable CS1591
-    ProfileUrlUpdate,
-#pragma warning restore CS1591
-    [EnumMember(Value = "ProfileVerifiedBadgeUpdate")]
-#pragma warning disable CS1591
-    ProfileVerifiedBadgeUpdate,
+    DmRead,
 #pragma warning restore CS1591
   }
 }

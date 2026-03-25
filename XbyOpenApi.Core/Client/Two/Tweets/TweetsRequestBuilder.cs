@@ -118,7 +118,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.Get2TweetsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.Get2TweetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided.
+    /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Supports paid partnership disclosure via the paid_partnership field.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.TweetCreateResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -162,7 +162,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets
       return requestInfo;
     }
     /// <summary>
-    /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided.
+    /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Supports paid partnership disclosure via the paid_partnership field.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

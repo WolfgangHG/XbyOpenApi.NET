@@ -14,8 +14,16 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData { get; set; }
-    /// <summary>Number of active subscriptions.</summary>
-    public int? TotalSubscriptions { get; set; }
+    /// <summary>Token to retrieve the next page of results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public string? NextToken { get; set; }
+#nullable restore
+#else
+    public string NextToken { get; set; }
+#endif
+    /// <summary>Number of active subscriptions returned in response.</summary>
+    public int? ResultCount { get; set; }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionGetResponse_meta"/> and sets the default values.
     /// </summary>
@@ -41,7 +49,8 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
-                { "total_subscriptions", n => { TotalSubscriptions = n.GetIntValue(); } },
+                { "next_token", n => { NextToken = n.GetStringValue(); } },
+                { "result_count", n => { ResultCount = n.GetIntValue(); } },
             };
     }
     /// <summary>
@@ -51,7 +60,8 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-      writer.WriteIntValue("total_subscriptions", TotalSubscriptions);
+      writer.WriteStringValue("next_token", NextToken);
+      writer.WriteIntValue("result_count", ResultCount);
       writer.WriteAdditionalData(AdditionalData);
     }
   }

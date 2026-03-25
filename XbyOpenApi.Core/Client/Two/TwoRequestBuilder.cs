@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System;
 using XbyOpenApi.Core.Client.Two.Account_activity;
 using XbyOpenApi.Core.Client.Two.Activity;
+using XbyOpenApi.Core.Client.Two.Chat;
 using XbyOpenApi.Core.Client.Two.Communities;
 using XbyOpenApi.Core.Client.Two.Compliance;
 using XbyOpenApi.Core.Client.Two.Connections;
@@ -44,6 +45,11 @@ namespace XbyOpenApi.Core.Client.Two
     public global::XbyOpenApi.Core.Client.Two.Activity.ActivityRequestBuilder Activity
     {
       get => new global::XbyOpenApi.Core.Client.Two.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The chat property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.ChatRequestBuilder Chat
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The communities property</summary>
     public global::XbyOpenApi.Core.Client.Two.Communities.CommunitiesRequestBuilder Communities

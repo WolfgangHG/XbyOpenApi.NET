@@ -54,6 +54,8 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo Geo { get; set; }
 #endif
+    /// <summary>Whether this Post contains AI-generated media. When true, the Post will be labeled accordingly.</summary>
+    public bool? MadeWithAi { get; set; }
     /// <summary>Media information being attached to created Tweet. This is mutually exclusive from Quote Tweet Id, Poll, and Card URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,8 @@ namespace XbyOpenApi.Core.Client.Models
 #endif
     /// <summary>Nullcasted (promoted-only) Posts do not appear in the public timeline and are not served to followers.</summary>
     public bool? Nullcast { get; set; }
+    /// <summary>Whether this Post is a paid partnership. When true, the Post will be labeled as a paid promotion.</summary>
+    public bool? PaidPartnership { get; set; }
     /// <summary>Poll options for a Tweet with a poll. This is mutually exclusive from Media, Quote Tweet Id, and Card URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,8 +128,10 @@ namespace XbyOpenApi.Core.Client.Models
                 { "edit_options", n => { EditOptions = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_edit_options>(global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_edit_options.CreateFromDiscriminatorValue); } },
                 { "for_super_followers_only", n => { ForSuperFollowersOnly = n.GetBoolValue(); } },
                 { "geo", n => { Geo = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo>(global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo.CreateFromDiscriminatorValue); } },
+                { "made_with_ai", n => { MadeWithAi = n.GetBoolValue(); } },
                 { "media", n => { Media = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_media>(global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_media.CreateFromDiscriminatorValue); } },
                 { "nullcast", n => { Nullcast = n.GetBoolValue(); } },
+                { "paid_partnership", n => { PaidPartnership = n.GetBoolValue(); } },
                 { "poll", n => { Poll = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_poll>(global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_poll.CreateFromDiscriminatorValue); } },
                 { "quote_tweet_id", n => { QuoteTweetId = n.GetStringValue(); } },
                 { "reply", n => { Reply = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_reply>(global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_reply.CreateFromDiscriminatorValue); } },
@@ -147,8 +153,10 @@ namespace XbyOpenApi.Core.Client.Models
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_edit_options>("edit_options", EditOptions);
       writer.WriteBoolValue("for_super_followers_only", ForSuperFollowersOnly);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_geo>("geo", Geo);
+      writer.WriteBoolValue("made_with_ai", MadeWithAi);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_media>("media", Media);
       writer.WriteBoolValue("nullcast", Nullcast);
+      writer.WriteBoolValue("paid_partnership", PaidPartnership);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_poll>("poll", Poll);
       writer.WriteStringValue("quote_tweet_id", QuoteTweetId);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.TweetCreateRequest_reply>("reply", Reply);

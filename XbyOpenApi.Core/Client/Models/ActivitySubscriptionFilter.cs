@@ -8,11 +8,13 @@ using System;
 namespace XbyOpenApi.Core.Client.Models
 {
   /// <summary>
-  /// An XAA subscription.
+  /// An XAA subscription filter.
   /// </summary>
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class ActivitySubscriptionFilter : IParsable
   {
+    /// <summary>Optional direction filter for directional events.</summary>
+    public global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter_direction? Direction { get; set; }
     /// <summary>A keyword to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,7 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
+                { "direction", n => { Direction = n.GetEnumValue<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter_direction>(); } },
                 { "keyword", n => { Keyword = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -58,6 +61,7 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+      writer.WriteEnumValue<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter_direction>("direction", Direction);
       writer.WriteStringValue("keyword", Keyword);
       writer.WriteStringValue("user_id", UserId);
     }

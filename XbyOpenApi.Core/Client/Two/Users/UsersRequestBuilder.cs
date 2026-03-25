@@ -14,6 +14,7 @@ using XbyOpenApi.Core.Client.Two.Users.Compliance;
 using XbyOpenApi.Core.Client.Two.Users.Item;
 using XbyOpenApi.Core.Client.Two.Users.Me;
 using XbyOpenApi.Core.Client.Two.Users.Personalized_trends;
+using XbyOpenApi.Core.Client.Two.Users.Public_keys;
 using XbyOpenApi.Core.Client.Two.Users.Reposts_of_me;
 using XbyOpenApi.Core.Client.Two.Users.Search;
 namespace XbyOpenApi.Core.Client.Two.Users
@@ -43,6 +44,11 @@ namespace XbyOpenApi.Core.Client.Two.Users
     public global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder Personalized_trends
     {
       get => new global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The public_keys property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Users.Public_keys.Public_keysRequestBuilder Public_keys
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Users.Public_keys.Public_keysRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The reposts_of_me property</summary>
     public global::XbyOpenApi.Core.Client.Two.Users.Reposts_of_me.Reposts_of_meRequestBuilder Reposts_of_me

@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     /// </summary>
     /// <param name="pathParameters">Path parameters for the request</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions", pathParameters)
+    public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", pathParameters)
     {
     }
     /// <summary>
@@ -43,7 +43,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     /// </summary>
     /// <param name="rawUrl">The raw URL to use for the request builder.</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions", rawUrl)
+    public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", rawUrl)
     {
     }
     /// <summary>
@@ -55,11 +55,11 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public async Task<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionGetResponse?> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
     {
 #nullable restore
 #else
-    public async Task<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+    public async Task<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionGetResponse> GetAsync(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
     {
 #endif
       var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -101,11 +101,11 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
     {
 #nullable restore
 #else
-    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+    public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::XbyOpenApi.Core.Client.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
     {
 #endif
       var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,6 +143,26 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     public global::XbyOpenApi.Core.Client.Two.Activity.Subscriptions.SubscriptionsRequestBuilder WithUrl(string rawUrl)
     {
       return new global::XbyOpenApi.Core.Client.Two.Activity.Subscriptions.SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
+    }
+    /// <summary>
+    /// Get a list of active subscriptions for XAA
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    public partial class SubscriptionsRequestBuilderGetQueryParameters
+    {
+      /// <summary>The maximum number of results to return per page.</summary>
+      [QueryParameter("max_results")]
+      public int? MaxResults { get; set; }
+      /// <summary>This parameter is used to get the next &apos;page&apos; of results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+      [QueryParameter("pagination_token")]
+      public string? PaginationToken { get; set; }
+#nullable restore
+#else
+      [QueryParameter("pagination_token")]
+      public string PaginationToken { get; set; }
+#endif
     }
   }
 }
