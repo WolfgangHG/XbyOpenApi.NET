@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events
     {
     }
     /// <summary>
-    /// Retrieves messages and key change events for a specific Chat conversation with pagination support. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Retrieves the events of a specific Chat conversation, newest first, with pagination support: messages, key changes, group changes, and read receipts. Events with an id above the conversation&apos;s last_read_event_id are unread: they come after the point you read up to. To collect them, page until an event&apos;s id is at or below it. Only `id` and `encoded_event` are always present. Events are either end-to-end encrypted or unencrypted, such as messages sent before the conversation was encrypted. Encrypted events carry `conversation_key_version`, and usually `conversation_token` and `message_event_signature`; treat an encrypted event without `message_event_signature` as unverified. An event without `conversation_key_version` is unencrypted. Decode each `encoded_event` client-side, and decrypt it with the conversation key named by `conversation_key_version` when that is present. A page holds up to `max_results` events and can hold fewer while `has_more` is true. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetChatConversationEventsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetChatConversationEventsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetChatConversationEventsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Retrieves messages and key change events for a specific Chat conversation with pagination support. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Retrieves the events of a specific Chat conversation, newest first, with pagination support: messages, key changes, group changes, and read receipts. Events with an id above the conversation&apos;s last_read_event_id are unread: they come after the point you read up to. To collect them, page until an event&apos;s id is at or below it. Only `id` and `encoded_event` are always present. Events are either end-to-end encrypted or unencrypted, such as messages sent before the conversation was encrypted. Encrypted events carry `conversation_key_version`, and usually `conversation_token` and `message_event_signature`; treat an encrypted event without `message_event_signature` as unverified. An event without `conversation_key_version` is unencrypted. Decode each `encoded_event` client-side, and decrypt it with the conversation key named by `conversation_key_version` when that is present. A page holds up to `max_results` events and can hold fewer while `has_more` is true. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events
       return new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Retrieves messages and key change events for a specific Chat conversation with pagination support. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Retrieves the events of a specific Chat conversation, newest first, with pagination support: messages, key changes, group changes, and read receipts. Events with an id above the conversation&apos;s last_read_event_id are unread: they come after the point you read up to. To collect them, page until an event&apos;s id is at or below it. Only `id` and `encoded_event` are always present. Events are either end-to-end encrypted or unencrypted, such as messages sent before the conversation was encrypted. Encrypted events carry `conversation_key_version`, and usually `conversation_token` and `message_event_signature`; treat an encrypted event without `message_event_signature` as unverified. An event without `conversation_key_version` is unencrypted. Decode each `encoded_event` client-side, and decrypt it with the conversation key named by `conversation_key_version` when that is present. A page holds up to `max_results` events and can hold fewer while `has_more` is true. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilderGetQueryParameters
@@ -100,22 +100,18 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events
       [QueryParameter("chat_message_event%2Efields")]
       public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events.GetChat_message_eventFieldsQueryParameterType[] ChatMessageEventFields { get; set; }
 #endif
-#pragma warning disable CS1591
+      /// <summary>The maximum number of events to return.</summary>
       [QueryParameter("max_results")]
       public int? MaxResults { get; set; }
-#pragma warning restore CS1591
+      /// <summary>The next_token from a previous response, to fetch the next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-#pragma warning disable CS1591
       [QueryParameter("pagination_token")]
       public string? PaginationToken { get; set; }
-#pragma warning restore CS1591
 #nullable restore
 #else
-#pragma warning disable CS1591
       [QueryParameter("pagination_token")]
       public string PaginationToken { get; set; }
-#pragma warning restore CS1591
 #endif
     }
   }

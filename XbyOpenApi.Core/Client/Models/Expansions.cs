@@ -14,6 +14,14 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData { get; set; }
+    /// <summary>The calls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public List<global::XbyOpenApi.Core.Client.Models.Call>? Calls { get; set; }
+#nullable restore
+#else
+    public List<global::XbyOpenApi.Core.Client.Models.Call> Calls { get; set; }
+#endif
     /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
+                { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Call>(global::XbyOpenApi.Core.Client.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Media>(global::XbyOpenApi.Core.Client.Models.Media.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "places", n => { Places = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Place>(global::XbyOpenApi.Core.Client.Models.Place.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "polls", n => { Polls = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Poll>(global::XbyOpenApi.Core.Client.Models.Poll.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -102,6 +111,7 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Call>("calls", Calls);
       writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Media>("media", Media);
       writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Place>("places", Places);
       writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Poll>("polls", Polls);

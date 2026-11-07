@@ -35,7 +35,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     /// </summary>
     /// <param name="pathParameters">Path parameters for the request</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", pathParameters)
+    public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*,user_id*}", pathParameters)
     {
     }
     /// <summary>
@@ -43,7 +43,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
     /// </summary>
     /// <param name="rawUrl">The raw URL to use for the request builder.</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", rawUrl)
+    public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*,user_id*}", rawUrl)
     {
     }
     /// <summary>
@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.DeleteActivitySubscriptionsByIdsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.DeleteActivitySubscriptionsByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get a list of active subscriptions for XAA
+    /// Get a list of active subscriptions for XAA. Optional user_id narrows the list to subscriptions whose filter.user_id matches; with a user-context token it must identify the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetActivitySubscriptionsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +93,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetActivitySubscriptionsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetActivitySubscriptionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. Optional filter.qualifiers further narrow supported chat, follow, unfollow, and like events.
+    /// Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, follows.read for subscriptions.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. subscriptions.* events require a user-context token and filter.user_id must identify the authenticated user. Optional filter.qualifiers further narrow supported chat, follow, unfollow, like, and subscriptions events.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
       return requestInfo;
     }
     /// <summary>
-    /// Get a list of active subscriptions for XAA
+    /// Get a list of active subscriptions for XAA. Optional user_id narrows the list to subscriptions whose filter.user_id matches; with a user-context token it must identify the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +156,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
       return requestInfo;
     }
     /// <summary>
-    /// Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. Optional filter.qualifiers further narrow supported chat, follow, unfollow, and like events.
+    /// Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, follows.read for subscriptions.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. subscriptions.* events require a user-context token and filter.user_id must identify the authenticated user. Optional filter.qualifiers further narrow supported chat, follow, unfollow, like, and subscriptions events.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>
@@ -207,7 +207,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
 #endif
     }
     /// <summary>
-    /// Get a list of active subscriptions for XAA
+    /// Get a list of active subscriptions for XAA. Optional user_id narrows the list to subscriptions whose filter.user_id matches; with a user-context token it must identify the authenticated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionsRequestBuilderGetQueryParameters
@@ -216,7 +216,7 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
       [QueryParameter("max_results")]
       public int? MaxResults { get; set; }
 #pragma warning restore CS1591
-      /// <summary>A base32hex-encoded pagination token.</summary>
+      /// <summary>A base32hex-encoded pagination token that decodes to 9 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
       [QueryParameter("pagination_token")]
@@ -225,6 +225,16 @@ namespace XbyOpenApi.Core.Client.Two.Activity.Subscriptions
 #else
       [QueryParameter("pagination_token")]
       public string PaginationToken { get; set; }
+#endif
+      /// <summary>Only return subscriptions whose filter.user_id matches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+      [QueryParameter("user_id")]
+      public string? UserId { get; set; }
+#nullable restore
+#else
+      [QueryParameter("user_id")]
+      public string UserId { get; set; }
 #endif
     }
   }

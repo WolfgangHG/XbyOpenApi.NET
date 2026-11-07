@@ -12,6 +12,7 @@ using XbyOpenApi.Core.Client.Two.Activity;
 using XbyOpenApi.Core.Client.Two.Articles;
 using XbyOpenApi.Core.Client.Two.Bots;
 using XbyOpenApi.Core.Client.Two.Broadcasts;
+using XbyOpenApi.Core.Client.Two.Calls;
 using XbyOpenApi.Core.Client.Two.Chat;
 using XbyOpenApi.Core.Client.Two.Communities;
 using XbyOpenApi.Core.Client.Two.Compliance;
@@ -24,6 +25,8 @@ using XbyOpenApi.Core.Client.Two.Media;
 using XbyOpenApi.Core.Client.Two.News;
 using XbyOpenApi.Core.Client.Two.Notes;
 using XbyOpenApi.Core.Client.Two.OpenapiJson;
+using XbyOpenApi.Core.Client.Two.Region;
+using XbyOpenApi.Core.Client.Two.Sources;
 using XbyOpenApi.Core.Client.Two.Spaces;
 using XbyOpenApi.Core.Client.Two.Trends;
 using XbyOpenApi.Core.Client.Two.Tweets;
@@ -67,6 +70,11 @@ namespace XbyOpenApi.Core.Client.Two
     public global::XbyOpenApi.Core.Client.Two.Broadcasts.BroadcastsRequestBuilder Broadcasts
     {
       get => new global::XbyOpenApi.Core.Client.Two.Broadcasts.BroadcastsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The calls property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Calls.CallsRequestBuilder Calls
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Calls.CallsRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The chat property</summary>
     public global::XbyOpenApi.Core.Client.Two.Chat.ChatRequestBuilder Chat
@@ -127,6 +135,16 @@ namespace XbyOpenApi.Core.Client.Two
     public global::XbyOpenApi.Core.Client.Two.OpenapiJson.OpenapiJsonRequestBuilder OpenapiJson
     {
       get => new global::XbyOpenApi.Core.Client.Two.OpenapiJson.OpenapiJsonRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The region property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Region.RegionRequestBuilder Region
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Region.RegionRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The sources property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Sources.SourcesRequestBuilder Sources
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Sources.SourcesRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The spaces property</summary>
     public global::XbyOpenApi.Core.Client.Two.Spaces.SpacesRequestBuilder Spaces

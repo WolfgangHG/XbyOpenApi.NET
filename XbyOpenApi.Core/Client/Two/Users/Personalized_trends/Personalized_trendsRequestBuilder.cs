@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Personalized_trends
     {
     }
     /// <summary>
-    /// Get Trends Personalized Trends
+    /// Retrieves personalized trending topics for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetTrendsPersonalizedTrendsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Personalized_trends
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetTrendsPersonalizedTrendsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetTrendsPersonalizedTrendsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Trends Personalized Trends
+    /// Retrieves personalized trending topics for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Personalized_trends
       return new global::XbyOpenApi.Core.Client.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Trends Personalized Trends
+    /// Retrieves personalized trending topics for the authenticated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Personalized_trendsRequestBuilderGetQueryParameters

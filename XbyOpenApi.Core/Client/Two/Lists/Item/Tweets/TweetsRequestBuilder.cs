@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Tweets
     {
     }
     /// <summary>
-    /// Get Lists Posts
+    /// Retrieves a list of Posts associated with a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetListsPostsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Tweets
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetListsPostsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetListsPostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Lists Posts
+    /// Retrieves a list of Posts associated with a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Tweets
       return new global::XbyOpenApi.Core.Client.Two.Lists.Item.Tweets.TweetsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Lists Posts
+    /// Retrieves a list of Posts associated with a specific List by its ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetsRequestBuilderGetQueryParameters

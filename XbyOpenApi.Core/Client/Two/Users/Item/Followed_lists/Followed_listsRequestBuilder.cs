@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists
     {
     }
     /// <summary>
-    /// Get Users Followed Lists
+    /// Retrieves a list of Lists followed by a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersFollowedListsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersFollowedListsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersFollowedListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Follow List
+    /// Causes the authenticated user to follow a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.FollowListResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.FollowListResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.FollowListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Followed Lists
+    /// Retrieves a list of Lists followed by a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists
       return requestInfo;
     }
     /// <summary>
-    /// Follow List
+    /// Causes the authenticated user to follow a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists.Followed_listsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Followed Lists
+    /// Retrieves a list of Lists followed by a specific User by their ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Followed_listsRequestBuilderGetQueryParameters

@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
     {
     }
     /// <summary>
-    /// Get Users Following
+    /// Retrieves a list of Users followed by a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersFollowingResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersFollowingResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersFollowingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Follow User
+    /// Causes the authenticated user to follow a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.FollowUserResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.FollowUserResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.FollowUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Following
+    /// Retrieves a list of Users followed by a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
       return requestInfo;
     }
     /// <summary>
-    /// Follow User
+    /// Causes the authenticated user to follow a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Following.FollowingRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Following
+    /// Retrieves a list of Users followed by a specific User by their ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowingRequestBuilderGetQueryParameters
@@ -160,11 +160,10 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
       [QueryParameter("expansions")]
       public global::XbyOpenApi.Core.Client.Two.Users.Item.Following.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
-#pragma warning disable CS1591
+      /// <summary>The maximum number of users to return.</summary>
       [QueryParameter("max_results")]
       public int? MaxResults { get; set; }
-#pragma warning restore CS1591
-      /// <summary>A base32hex-encoded pagination token.</summary>
+      /// <summary>The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
       [QueryParameter("pagination_token")]

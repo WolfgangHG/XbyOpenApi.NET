@@ -14,6 +14,14 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Activity event type in dot notation. `chat.conversation_join` is a deprecated alias of `chat.conversation.join`; responses always use the canonical name.</summary>
     public global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionRequest_event_type? EventType { get; set; }
+    /// <summary>Optional RFC 3339 expiration time. Re-creating the same subscription refreshes this value; omitting it makes the subscription permanent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public string? ExpiresAt { get; set; }
+#nullable restore
+#else
+    public string ExpiresAt { get; set; }
+#endif
     /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace XbyOpenApi.Core.Client.Models
       return new Dictionary<string, Action<IParseNode>>
             {
                 { "event_type", n => { EventType = n.GetEnumValue<global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionRequest_event_type>(); } },
+                { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionFilter>(global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionFilter.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -70,6 +79,7 @@ namespace XbyOpenApi.Core.Client.Models
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
       writer.WriteEnumValue<global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionRequest_event_type>("event_type", EventType);
+      writer.WriteStringValue("expires_at", ExpiresAt);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.CreateActivitySubscriptionFilter>("filter", Filter);
       writer.WriteStringValue("tag", Tag);
       writer.WriteStringValue("webhook_id", WebhookId);

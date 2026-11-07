@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using XbyOpenApi.Core.Client.Models;
+using XbyOpenApi.Core.Client.Two.Users.Me.Followers;
+using XbyOpenApi.Core.Client.Two.Users.Me.Following;
 namespace XbyOpenApi.Core.Client.Two.Users.Me
 {
   /// <summary>
@@ -17,6 +19,16 @@ namespace XbyOpenApi.Core.Client.Two.Users.Me
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class MeRequestBuilder : BaseRequestBuilder
   {
+    /// <summary>The followers property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Users.Me.Followers.FollowersRequestBuilder Followers
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Users.Me.Followers.FollowersRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The following property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Users.Me.Following.FollowingRequestBuilder Following
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Users.Me.Following.FollowingRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Two.Users.Me.MeRequestBuilder"/> and sets the default values.
     /// </summary>
@@ -34,7 +46,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Me
     {
     }
     /// <summary>
-    /// Get Users Me
+    /// Retrieves details of the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersMeResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +69,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Me
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersMeResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersMeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Me
+    /// Retrieves details of the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +97,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Me
       return new global::XbyOpenApi.Core.Client.Two.Users.Me.MeRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Me
+    /// Retrieves details of the authenticated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeRequestBuilderGetQueryParameters

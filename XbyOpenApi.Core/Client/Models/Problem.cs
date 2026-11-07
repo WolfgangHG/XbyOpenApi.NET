@@ -8,11 +8,19 @@ using System;
 namespace XbyOpenApi.Core.Client.Models
 {
   /// <summary>
-  /// Composed type wrapper for classes <see cref="global::XbyOpenApi.Core.Client.Models.DisallowedResourceProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.FieldHydrationFailureProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.FieldUnauthorizedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.InternalErrorProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.ResourceNotFoundProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.ResourceUnavailableProblem"/>
+  /// Composed type wrapper for classes <see cref="global::XbyOpenApi.Core.Client.Models.ChatPermissionsUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DisallowedResourceProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmBadAttachmentProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmBadCtaProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmBadCustomProfileProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmBadMediaProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmBadQuickReplyProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmBadUrlProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmConversationNameTooLongProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmConversationNotFoundProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmDuplicateProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmInactiveDeviceProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmNotDeliveredProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmNotFoundProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmNotOwnerProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantNotAddedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantNotFoundProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantRestrictedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRateLimitedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientBlocksSenderProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientCannotReceiveProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientEncryptedUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientNotAcceptingProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientNotFoundProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientRestrictsGroupsProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmRequestInProgressProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSafetyLimitedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSafetyRejectedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderBlocksRecipientProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderDeclinedDmsProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderDmsClosedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderEncryptedUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderNotInConversationProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderNotPermittedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderNotVerifiedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderPhoneRequiredProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderReadOnlyProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmTextEmptyProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmTextTooLongProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmTooFewParticipantsProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmTooManyParticipantsProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DmUnsupportedMessageProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.DuplicateRuleProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.EncryptionRequiredProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.FieldHydrationFailureProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.FieldUnauthorizedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.InternalErrorProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.InvalidRuleProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.MessageRequestNotSupportedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.RecipientNotMessageableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.RecipientXchatSetupRequiredProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.ResourceNotFoundProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.ResourceUnavailableProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.UnencryptedSendNotAllowedProblem"/>, <see cref="global::XbyOpenApi.Core.Client.Models.XchatSetupRequiredProblem"/>
   /// </summary>
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class Problem : IComposedTypeWrapper, IParsable
   {
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.ChatPermissionsUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.ChatPermissionsUnavailableProblem? ChatPermissionsUnavailableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.ChatPermissionsUnavailableProblem ChatPermissionsUnavailableProblem { get; set; }
+#endif
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DisallowedResourceProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +28,366 @@ namespace XbyOpenApi.Core.Client.Models
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.DisallowedResourceProblem DisallowedResourceProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmBadAttachmentProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmBadAttachmentProblem? DmBadAttachmentProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmBadAttachmentProblem DmBadAttachmentProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmBadCtaProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmBadCtaProblem? DmBadCtaProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmBadCtaProblem DmBadCtaProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmBadCustomProfileProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmBadCustomProfileProblem? DmBadCustomProfileProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmBadCustomProfileProblem DmBadCustomProfileProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmBadMediaProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmBadMediaProblem? DmBadMediaProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmBadMediaProblem DmBadMediaProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmBadQuickReplyProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmBadQuickReplyProblem? DmBadQuickReplyProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmBadQuickReplyProblem DmBadQuickReplyProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmBadUrlProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmBadUrlProblem? DmBadUrlProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmBadUrlProblem DmBadUrlProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmConversationNameTooLongProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmConversationNameTooLongProblem? DmConversationNameTooLongProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmConversationNameTooLongProblem DmConversationNameTooLongProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmConversationNotFoundProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmConversationNotFoundProblem? DmConversationNotFoundProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmConversationNotFoundProblem DmConversationNotFoundProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmDuplicateProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmDuplicateProblem? DmDuplicateProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmDuplicateProblem DmDuplicateProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmInactiveDeviceProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmInactiveDeviceProblem? DmInactiveDeviceProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmInactiveDeviceProblem DmInactiveDeviceProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmNotDeliveredProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmNotDeliveredProblem? DmNotDeliveredProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmNotDeliveredProblem DmNotDeliveredProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmNotFoundProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmNotFoundProblem? DmNotFoundProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmNotFoundProblem DmNotFoundProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmNotOwnerProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmNotOwnerProblem? DmNotOwnerProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmNotOwnerProblem DmNotOwnerProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantNotAddedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantNotAddedProblem? DmParticipantNotAddedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantNotAddedProblem DmParticipantNotAddedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantNotFoundProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantNotFoundProblem? DmParticipantNotFoundProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantNotFoundProblem DmParticipantNotFoundProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantRestrictedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantRestrictedProblem? DmParticipantRestrictedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantRestrictedProblem DmParticipantRestrictedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmParticipantUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantUnavailableProblem? DmParticipantUnavailableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmParticipantUnavailableProblem DmParticipantUnavailableProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRateLimitedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRateLimitedProblem? DmRateLimitedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRateLimitedProblem DmRateLimitedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientBlocksSenderProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientBlocksSenderProblem? DmRecipientBlocksSenderProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientBlocksSenderProblem DmRecipientBlocksSenderProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientCannotReceiveProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientCannotReceiveProblem? DmRecipientCannotReceiveProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientCannotReceiveProblem DmRecipientCannotReceiveProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientEncryptedUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientEncryptedUnavailableProblem? DmRecipientEncryptedUnavailableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientEncryptedUnavailableProblem DmRecipientEncryptedUnavailableProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientNotAcceptingProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientNotAcceptingProblem? DmRecipientNotAcceptingProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientNotAcceptingProblem DmRecipientNotAcceptingProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientNotFoundProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientNotFoundProblem? DmRecipientNotFoundProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientNotFoundProblem DmRecipientNotFoundProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientRestrictsGroupsProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientRestrictsGroupsProblem? DmRecipientRestrictsGroupsProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientRestrictsGroupsProblem DmRecipientRestrictsGroupsProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRecipientUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientUnavailableProblem? DmRecipientUnavailableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRecipientUnavailableProblem DmRecipientUnavailableProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmRequestInProgressProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmRequestInProgressProblem? DmRequestInProgressProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmRequestInProgressProblem DmRequestInProgressProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSafetyLimitedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSafetyLimitedProblem? DmSafetyLimitedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSafetyLimitedProblem DmSafetyLimitedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSafetyRejectedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSafetyRejectedProblem? DmSafetyRejectedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSafetyRejectedProblem DmSafetyRejectedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderBlocksRecipientProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderBlocksRecipientProblem? DmSenderBlocksRecipientProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderBlocksRecipientProblem DmSenderBlocksRecipientProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderDeclinedDmsProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderDeclinedDmsProblem? DmSenderDeclinedDmsProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderDeclinedDmsProblem DmSenderDeclinedDmsProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderDmsClosedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderDmsClosedProblem? DmSenderDmsClosedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderDmsClosedProblem DmSenderDmsClosedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderEncryptedUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderEncryptedUnavailableProblem? DmSenderEncryptedUnavailableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderEncryptedUnavailableProblem DmSenderEncryptedUnavailableProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderNotInConversationProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderNotInConversationProblem? DmSenderNotInConversationProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderNotInConversationProblem DmSenderNotInConversationProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderNotPermittedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderNotPermittedProblem? DmSenderNotPermittedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderNotPermittedProblem DmSenderNotPermittedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderNotVerifiedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderNotVerifiedProblem? DmSenderNotVerifiedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderNotVerifiedProblem DmSenderNotVerifiedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderPhoneRequiredProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderPhoneRequiredProblem? DmSenderPhoneRequiredProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderPhoneRequiredProblem DmSenderPhoneRequiredProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderReadOnlyProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderReadOnlyProblem? DmSenderReadOnlyProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderReadOnlyProblem DmSenderReadOnlyProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmSenderUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmSenderUnavailableProblem? DmSenderUnavailableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmSenderUnavailableProblem DmSenderUnavailableProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmTextEmptyProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmTextEmptyProblem? DmTextEmptyProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmTextEmptyProblem DmTextEmptyProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmTextTooLongProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmTextTooLongProblem? DmTextTooLongProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmTextTooLongProblem DmTextTooLongProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmTooFewParticipantsProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmTooFewParticipantsProblem? DmTooFewParticipantsProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmTooFewParticipantsProblem DmTooFewParticipantsProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmTooManyParticipantsProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmTooManyParticipantsProblem? DmTooManyParticipantsProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmTooManyParticipantsProblem DmTooManyParticipantsProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DmUnsupportedMessageProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DmUnsupportedMessageProblem? DmUnsupportedMessageProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DmUnsupportedMessageProblem DmUnsupportedMessageProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.DuplicateRuleProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.DuplicateRuleProblem? DuplicateRuleProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.DuplicateRuleProblem DuplicateRuleProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.EncryptionRequiredProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.EncryptionRequiredProblem? EncryptionRequiredProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.EncryptionRequiredProblem EncryptionRequiredProblem { get; set; }
 #endif
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.FieldHydrationFailureProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +421,22 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem InvalidRequestProblem { get; set; }
 #endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.InvalidRuleProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.InvalidRuleProblem? InvalidRuleProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.InvalidRuleProblem InvalidRuleProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.MessageRequestNotSupportedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.MessageRequestNotSupportedProblem? MessageRequestNotSupportedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.MessageRequestNotSupportedProblem MessageRequestNotSupportedProblem { get; set; }
+#endif
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.NotAuthorizedForFieldProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +452,22 @@ namespace XbyOpenApi.Core.Client.Models
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.NotAuthorizedForResourceProblem NotAuthorizedForResourceProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.RecipientNotMessageableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.RecipientNotMessageableProblem? RecipientNotMessageableProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.RecipientNotMessageableProblem RecipientNotMessageableProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.RecipientXchatSetupRequiredProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.RecipientXchatSetupRequiredProblem? RecipientXchatSetupRequiredProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.RecipientXchatSetupRequiredProblem RecipientXchatSetupRequiredProblem { get; set; }
 #endif
     /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.ResourceNotFoundProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,6 +485,22 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public global::XbyOpenApi.Core.Client.Models.ResourceUnavailableProblem ResourceUnavailableProblem { get; set; }
 #endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.UnencryptedSendNotAllowedProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.UnencryptedSendNotAllowedProblem? UnencryptedSendNotAllowedProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.UnencryptedSendNotAllowedProblem UnencryptedSendNotAllowedProblem { get; set; }
+#endif
+    /// <summary>Composed type representation for type <see cref="global::XbyOpenApi.Core.Client.Models.XchatSetupRequiredProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.XchatSetupRequiredProblem? XchatSetupRequiredProblem { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.XchatSetupRequiredProblem XchatSetupRequiredProblem { get; set; }
+#endif
     /// <summary>
     /// Creates a new instance of the appropriate class based on discriminator value
     /// </summary>
@@ -95,9 +511,193 @@ namespace XbyOpenApi.Core.Client.Models
       if (ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
       var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
       var result = new global::XbyOpenApi.Core.Client.Models.Problem();
-      if ("https://api.x.com/2/problems/disallowed-resource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      if ("https://api.x.com/2/problems/chat-permissions-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.ChatPermissionsUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.ChatPermissionsUnavailableProblem();
+      }
+      else if ("https://api.x.com/2/problems/disallowed-resource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
       {
         result.DisallowedResourceProblem = new global::XbyOpenApi.Core.Client.Models.DisallowedResourceProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-bad-attachment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmBadAttachmentProblem = new global::XbyOpenApi.Core.Client.Models.DmBadAttachmentProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-bad-cta".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmBadCtaProblem = new global::XbyOpenApi.Core.Client.Models.DmBadCtaProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-bad-custom-profile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmBadCustomProfileProblem = new global::XbyOpenApi.Core.Client.Models.DmBadCustomProfileProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-bad-media".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmBadMediaProblem = new global::XbyOpenApi.Core.Client.Models.DmBadMediaProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-bad-quick-reply".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmBadQuickReplyProblem = new global::XbyOpenApi.Core.Client.Models.DmBadQuickReplyProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-bad-url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmBadUrlProblem = new global::XbyOpenApi.Core.Client.Models.DmBadUrlProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-conversation-name-too-long".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmConversationNameTooLongProblem = new global::XbyOpenApi.Core.Client.Models.DmConversationNameTooLongProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-conversation-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmConversationNotFoundProblem = new global::XbyOpenApi.Core.Client.Models.DmConversationNotFoundProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-duplicate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmDuplicateProblem = new global::XbyOpenApi.Core.Client.Models.DmDuplicateProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-inactive-device".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmInactiveDeviceProblem = new global::XbyOpenApi.Core.Client.Models.DmInactiveDeviceProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-not-delivered".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmNotDeliveredProblem = new global::XbyOpenApi.Core.Client.Models.DmNotDeliveredProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmNotFoundProblem = new global::XbyOpenApi.Core.Client.Models.DmNotFoundProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-not-owner".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmNotOwnerProblem = new global::XbyOpenApi.Core.Client.Models.DmNotOwnerProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-participant-not-added".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmParticipantNotAddedProblem = new global::XbyOpenApi.Core.Client.Models.DmParticipantNotAddedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-participant-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmParticipantNotFoundProblem = new global::XbyOpenApi.Core.Client.Models.DmParticipantNotFoundProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-participant-restricted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmParticipantRestrictedProblem = new global::XbyOpenApi.Core.Client.Models.DmParticipantRestrictedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-participant-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmParticipantUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.DmParticipantUnavailableProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-rate-limited".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRateLimitedProblem = new global::XbyOpenApi.Core.Client.Models.DmRateLimitedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-blocks-sender".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientBlocksSenderProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientBlocksSenderProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-cannot-receive".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientCannotReceiveProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientCannotReceiveProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-encrypted-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientEncryptedUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientEncryptedUnavailableProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-not-accepting".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientNotAcceptingProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientNotAcceptingProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientNotFoundProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientNotFoundProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-restricts-groups".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientRestrictsGroupsProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientRestrictsGroupsProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-recipient-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRecipientUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.DmRecipientUnavailableProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-request-in-progress".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmRequestInProgressProblem = new global::XbyOpenApi.Core.Client.Models.DmRequestInProgressProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-safety-limited".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSafetyLimitedProblem = new global::XbyOpenApi.Core.Client.Models.DmSafetyLimitedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-safety-rejected".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSafetyRejectedProblem = new global::XbyOpenApi.Core.Client.Models.DmSafetyRejectedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-blocks-recipient".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderBlocksRecipientProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderBlocksRecipientProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-declined-dms".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderDeclinedDmsProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderDeclinedDmsProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-dms-closed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderDmsClosedProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderDmsClosedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-encrypted-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderEncryptedUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderEncryptedUnavailableProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-not-in-conversation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderNotInConversationProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderNotInConversationProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-not-permitted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderNotPermittedProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderNotPermittedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-not-verified".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderNotVerifiedProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderNotVerifiedProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-phone-required".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderPhoneRequiredProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderPhoneRequiredProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-read-only".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderReadOnlyProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderReadOnlyProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-sender-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmSenderUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.DmSenderUnavailableProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-text-empty".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmTextEmptyProblem = new global::XbyOpenApi.Core.Client.Models.DmTextEmptyProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-text-too-long".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmTextTooLongProblem = new global::XbyOpenApi.Core.Client.Models.DmTextTooLongProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-too-few-participants".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmTooFewParticipantsProblem = new global::XbyOpenApi.Core.Client.Models.DmTooFewParticipantsProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-too-many-participants".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmTooManyParticipantsProblem = new global::XbyOpenApi.Core.Client.Models.DmTooManyParticipantsProblem();
+      }
+      else if ("https://api.x.com/2/problems/dm-unsupported-message".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DmUnsupportedMessageProblem = new global::XbyOpenApi.Core.Client.Models.DmUnsupportedMessageProblem();
+      }
+      else if ("https://api.twitter.com/2/problems/duplicate-rules".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.DuplicateRuleProblem = new global::XbyOpenApi.Core.Client.Models.DuplicateRuleProblem();
+      }
+      else if ("https://api.x.com/2/problems/encryption-required".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.EncryptionRequiredProblem = new global::XbyOpenApi.Core.Client.Models.EncryptionRequiredProblem();
       }
       else if ("https://api.x.com/2/problems/field-hydration-failure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
       {
@@ -115,6 +715,14 @@ namespace XbyOpenApi.Core.Client.Models
       {
         result.InvalidRequestProblem = new global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem();
       }
+      else if ("https://api.twitter.com/2/problems/invalid-rules".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.InvalidRuleProblem = new global::XbyOpenApi.Core.Client.Models.InvalidRuleProblem();
+      }
+      else if ("https://api.x.com/2/problems/message-request-not-supported".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.MessageRequestNotSupportedProblem = new global::XbyOpenApi.Core.Client.Models.MessageRequestNotSupportedProblem();
+      }
       else if ("https://api.x.com/2/problems/not-authorized-for-field".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
       {
         result.NotAuthorizedForFieldProblem = new global::XbyOpenApi.Core.Client.Models.NotAuthorizedForFieldProblem();
@@ -122,6 +730,14 @@ namespace XbyOpenApi.Core.Client.Models
       else if ("https://api.x.com/2/problems/not-authorized-for-resource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
       {
         result.NotAuthorizedForResourceProblem = new global::XbyOpenApi.Core.Client.Models.NotAuthorizedForResourceProblem();
+      }
+      else if ("https://api.x.com/2/problems/recipient-not-messageable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.RecipientNotMessageableProblem = new global::XbyOpenApi.Core.Client.Models.RecipientNotMessageableProblem();
+      }
+      else if ("https://api.x.com/2/problems/recipient-xchat-setup-required".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.RecipientXchatSetupRequiredProblem = new global::XbyOpenApi.Core.Client.Models.RecipientXchatSetupRequiredProblem();
       }
       else if ("https://api.x.com/2/problems/resource-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
       {
@@ -131,6 +747,14 @@ namespace XbyOpenApi.Core.Client.Models
       {
         result.ResourceUnavailableProblem = new global::XbyOpenApi.Core.Client.Models.ResourceUnavailableProblem();
       }
+      else if ("https://api.x.com/2/problems/unencrypted-send-not-allowed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.UnencryptedSendNotAllowedProblem = new global::XbyOpenApi.Core.Client.Models.UnencryptedSendNotAllowedProblem();
+      }
+      else if ("https://api.x.com/2/problems/xchat-setup-required".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+      {
+        result.XchatSetupRequiredProblem = new global::XbyOpenApi.Core.Client.Models.XchatSetupRequiredProblem();
+      }
       return result;
     }
     /// <summary>
@@ -139,9 +763,193 @@ namespace XbyOpenApi.Core.Client.Models
     /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
     public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
     {
-      if (DisallowedResourceProblem != null)
+      if (ChatPermissionsUnavailableProblem != null)
+      {
+        return ChatPermissionsUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (DisallowedResourceProblem != null)
       {
         return DisallowedResourceProblem.GetFieldDeserializers();
+      }
+      else if (DmBadAttachmentProblem != null)
+      {
+        return DmBadAttachmentProblem.GetFieldDeserializers();
+      }
+      else if (DmBadCtaProblem != null)
+      {
+        return DmBadCtaProblem.GetFieldDeserializers();
+      }
+      else if (DmBadCustomProfileProblem != null)
+      {
+        return DmBadCustomProfileProblem.GetFieldDeserializers();
+      }
+      else if (DmBadMediaProblem != null)
+      {
+        return DmBadMediaProblem.GetFieldDeserializers();
+      }
+      else if (DmBadQuickReplyProblem != null)
+      {
+        return DmBadQuickReplyProblem.GetFieldDeserializers();
+      }
+      else if (DmBadUrlProblem != null)
+      {
+        return DmBadUrlProblem.GetFieldDeserializers();
+      }
+      else if (DmConversationNameTooLongProblem != null)
+      {
+        return DmConversationNameTooLongProblem.GetFieldDeserializers();
+      }
+      else if (DmConversationNotFoundProblem != null)
+      {
+        return DmConversationNotFoundProblem.GetFieldDeserializers();
+      }
+      else if (DmDuplicateProblem != null)
+      {
+        return DmDuplicateProblem.GetFieldDeserializers();
+      }
+      else if (DmInactiveDeviceProblem != null)
+      {
+        return DmInactiveDeviceProblem.GetFieldDeserializers();
+      }
+      else if (DmNotDeliveredProblem != null)
+      {
+        return DmNotDeliveredProblem.GetFieldDeserializers();
+      }
+      else if (DmNotFoundProblem != null)
+      {
+        return DmNotFoundProblem.GetFieldDeserializers();
+      }
+      else if (DmNotOwnerProblem != null)
+      {
+        return DmNotOwnerProblem.GetFieldDeserializers();
+      }
+      else if (DmParticipantNotAddedProblem != null)
+      {
+        return DmParticipantNotAddedProblem.GetFieldDeserializers();
+      }
+      else if (DmParticipantNotFoundProblem != null)
+      {
+        return DmParticipantNotFoundProblem.GetFieldDeserializers();
+      }
+      else if (DmParticipantRestrictedProblem != null)
+      {
+        return DmParticipantRestrictedProblem.GetFieldDeserializers();
+      }
+      else if (DmParticipantUnavailableProblem != null)
+      {
+        return DmParticipantUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (DmRateLimitedProblem != null)
+      {
+        return DmRateLimitedProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientBlocksSenderProblem != null)
+      {
+        return DmRecipientBlocksSenderProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientCannotReceiveProblem != null)
+      {
+        return DmRecipientCannotReceiveProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientEncryptedUnavailableProblem != null)
+      {
+        return DmRecipientEncryptedUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientNotAcceptingProblem != null)
+      {
+        return DmRecipientNotAcceptingProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientNotFoundProblem != null)
+      {
+        return DmRecipientNotFoundProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientRestrictsGroupsProblem != null)
+      {
+        return DmRecipientRestrictsGroupsProblem.GetFieldDeserializers();
+      }
+      else if (DmRecipientUnavailableProblem != null)
+      {
+        return DmRecipientUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (DmRequestInProgressProblem != null)
+      {
+        return DmRequestInProgressProblem.GetFieldDeserializers();
+      }
+      else if (DmSafetyLimitedProblem != null)
+      {
+        return DmSafetyLimitedProblem.GetFieldDeserializers();
+      }
+      else if (DmSafetyRejectedProblem != null)
+      {
+        return DmSafetyRejectedProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderBlocksRecipientProblem != null)
+      {
+        return DmSenderBlocksRecipientProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderDeclinedDmsProblem != null)
+      {
+        return DmSenderDeclinedDmsProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderDmsClosedProblem != null)
+      {
+        return DmSenderDmsClosedProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderEncryptedUnavailableProblem != null)
+      {
+        return DmSenderEncryptedUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderNotInConversationProblem != null)
+      {
+        return DmSenderNotInConversationProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderNotPermittedProblem != null)
+      {
+        return DmSenderNotPermittedProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderNotVerifiedProblem != null)
+      {
+        return DmSenderNotVerifiedProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderPhoneRequiredProblem != null)
+      {
+        return DmSenderPhoneRequiredProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderReadOnlyProblem != null)
+      {
+        return DmSenderReadOnlyProblem.GetFieldDeserializers();
+      }
+      else if (DmSenderUnavailableProblem != null)
+      {
+        return DmSenderUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (DmTextEmptyProblem != null)
+      {
+        return DmTextEmptyProblem.GetFieldDeserializers();
+      }
+      else if (DmTextTooLongProblem != null)
+      {
+        return DmTextTooLongProblem.GetFieldDeserializers();
+      }
+      else if (DmTooFewParticipantsProblem != null)
+      {
+        return DmTooFewParticipantsProblem.GetFieldDeserializers();
+      }
+      else if (DmTooManyParticipantsProblem != null)
+      {
+        return DmTooManyParticipantsProblem.GetFieldDeserializers();
+      }
+      else if (DmUnsupportedMessageProblem != null)
+      {
+        return DmUnsupportedMessageProblem.GetFieldDeserializers();
+      }
+      else if (DuplicateRuleProblem != null)
+      {
+        return DuplicateRuleProblem.GetFieldDeserializers();
+      }
+      else if (EncryptionRequiredProblem != null)
+      {
+        return EncryptionRequiredProblem.GetFieldDeserializers();
       }
       else if (FieldHydrationFailureProblem != null)
       {
@@ -159,6 +967,14 @@ namespace XbyOpenApi.Core.Client.Models
       {
         return InvalidRequestProblem.GetFieldDeserializers();
       }
+      else if (InvalidRuleProblem != null)
+      {
+        return InvalidRuleProblem.GetFieldDeserializers();
+      }
+      else if (MessageRequestNotSupportedProblem != null)
+      {
+        return MessageRequestNotSupportedProblem.GetFieldDeserializers();
+      }
       else if (NotAuthorizedForFieldProblem != null)
       {
         return NotAuthorizedForFieldProblem.GetFieldDeserializers();
@@ -167,6 +983,14 @@ namespace XbyOpenApi.Core.Client.Models
       {
         return NotAuthorizedForResourceProblem.GetFieldDeserializers();
       }
+      else if (RecipientNotMessageableProblem != null)
+      {
+        return RecipientNotMessageableProblem.GetFieldDeserializers();
+      }
+      else if (RecipientXchatSetupRequiredProblem != null)
+      {
+        return RecipientXchatSetupRequiredProblem.GetFieldDeserializers();
+      }
       else if (ResourceNotFoundProblem != null)
       {
         return ResourceNotFoundProblem.GetFieldDeserializers();
@@ -174,6 +998,14 @@ namespace XbyOpenApi.Core.Client.Models
       else if (ResourceUnavailableProblem != null)
       {
         return ResourceUnavailableProblem.GetFieldDeserializers();
+      }
+      else if (UnencryptedSendNotAllowedProblem != null)
+      {
+        return UnencryptedSendNotAllowedProblem.GetFieldDeserializers();
+      }
+      else if (XchatSetupRequiredProblem != null)
+      {
+        return XchatSetupRequiredProblem.GetFieldDeserializers();
       }
       return new Dictionary<string, Action<IParseNode>>();
     }
@@ -184,9 +1016,193 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-      if (DisallowedResourceProblem != null)
+      if (ChatPermissionsUnavailableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.ChatPermissionsUnavailableProblem>(null, ChatPermissionsUnavailableProblem);
+      }
+      else if (DisallowedResourceProblem != null)
       {
         writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DisallowedResourceProblem>(null, DisallowedResourceProblem);
+      }
+      else if (DmBadAttachmentProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmBadAttachmentProblem>(null, DmBadAttachmentProblem);
+      }
+      else if (DmBadCtaProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmBadCtaProblem>(null, DmBadCtaProblem);
+      }
+      else if (DmBadCustomProfileProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmBadCustomProfileProblem>(null, DmBadCustomProfileProblem);
+      }
+      else if (DmBadMediaProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmBadMediaProblem>(null, DmBadMediaProblem);
+      }
+      else if (DmBadQuickReplyProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmBadQuickReplyProblem>(null, DmBadQuickReplyProblem);
+      }
+      else if (DmBadUrlProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmBadUrlProblem>(null, DmBadUrlProblem);
+      }
+      else if (DmConversationNameTooLongProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmConversationNameTooLongProblem>(null, DmConversationNameTooLongProblem);
+      }
+      else if (DmConversationNotFoundProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmConversationNotFoundProblem>(null, DmConversationNotFoundProblem);
+      }
+      else if (DmDuplicateProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmDuplicateProblem>(null, DmDuplicateProblem);
+      }
+      else if (DmInactiveDeviceProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmInactiveDeviceProblem>(null, DmInactiveDeviceProblem);
+      }
+      else if (DmNotDeliveredProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmNotDeliveredProblem>(null, DmNotDeliveredProblem);
+      }
+      else if (DmNotFoundProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmNotFoundProblem>(null, DmNotFoundProblem);
+      }
+      else if (DmNotOwnerProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmNotOwnerProblem>(null, DmNotOwnerProblem);
+      }
+      else if (DmParticipantNotAddedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmParticipantNotAddedProblem>(null, DmParticipantNotAddedProblem);
+      }
+      else if (DmParticipantNotFoundProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmParticipantNotFoundProblem>(null, DmParticipantNotFoundProblem);
+      }
+      else if (DmParticipantRestrictedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmParticipantRestrictedProblem>(null, DmParticipantRestrictedProblem);
+      }
+      else if (DmParticipantUnavailableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmParticipantUnavailableProblem>(null, DmParticipantUnavailableProblem);
+      }
+      else if (DmRateLimitedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRateLimitedProblem>(null, DmRateLimitedProblem);
+      }
+      else if (DmRecipientBlocksSenderProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientBlocksSenderProblem>(null, DmRecipientBlocksSenderProblem);
+      }
+      else if (DmRecipientCannotReceiveProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientCannotReceiveProblem>(null, DmRecipientCannotReceiveProblem);
+      }
+      else if (DmRecipientEncryptedUnavailableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientEncryptedUnavailableProblem>(null, DmRecipientEncryptedUnavailableProblem);
+      }
+      else if (DmRecipientNotAcceptingProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientNotAcceptingProblem>(null, DmRecipientNotAcceptingProblem);
+      }
+      else if (DmRecipientNotFoundProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientNotFoundProblem>(null, DmRecipientNotFoundProblem);
+      }
+      else if (DmRecipientRestrictsGroupsProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientRestrictsGroupsProblem>(null, DmRecipientRestrictsGroupsProblem);
+      }
+      else if (DmRecipientUnavailableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRecipientUnavailableProblem>(null, DmRecipientUnavailableProblem);
+      }
+      else if (DmRequestInProgressProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmRequestInProgressProblem>(null, DmRequestInProgressProblem);
+      }
+      else if (DmSafetyLimitedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSafetyLimitedProblem>(null, DmSafetyLimitedProblem);
+      }
+      else if (DmSafetyRejectedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSafetyRejectedProblem>(null, DmSafetyRejectedProblem);
+      }
+      else if (DmSenderBlocksRecipientProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderBlocksRecipientProblem>(null, DmSenderBlocksRecipientProblem);
+      }
+      else if (DmSenderDeclinedDmsProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderDeclinedDmsProblem>(null, DmSenderDeclinedDmsProblem);
+      }
+      else if (DmSenderDmsClosedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderDmsClosedProblem>(null, DmSenderDmsClosedProblem);
+      }
+      else if (DmSenderEncryptedUnavailableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderEncryptedUnavailableProblem>(null, DmSenderEncryptedUnavailableProblem);
+      }
+      else if (DmSenderNotInConversationProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderNotInConversationProblem>(null, DmSenderNotInConversationProblem);
+      }
+      else if (DmSenderNotPermittedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderNotPermittedProblem>(null, DmSenderNotPermittedProblem);
+      }
+      else if (DmSenderNotVerifiedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderNotVerifiedProblem>(null, DmSenderNotVerifiedProblem);
+      }
+      else if (DmSenderPhoneRequiredProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderPhoneRequiredProblem>(null, DmSenderPhoneRequiredProblem);
+      }
+      else if (DmSenderReadOnlyProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderReadOnlyProblem>(null, DmSenderReadOnlyProblem);
+      }
+      else if (DmSenderUnavailableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmSenderUnavailableProblem>(null, DmSenderUnavailableProblem);
+      }
+      else if (DmTextEmptyProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmTextEmptyProblem>(null, DmTextEmptyProblem);
+      }
+      else if (DmTextTooLongProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmTextTooLongProblem>(null, DmTextTooLongProblem);
+      }
+      else if (DmTooFewParticipantsProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmTooFewParticipantsProblem>(null, DmTooFewParticipantsProblem);
+      }
+      else if (DmTooManyParticipantsProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmTooManyParticipantsProblem>(null, DmTooManyParticipantsProblem);
+      }
+      else if (DmUnsupportedMessageProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DmUnsupportedMessageProblem>(null, DmUnsupportedMessageProblem);
+      }
+      else if (DuplicateRuleProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.DuplicateRuleProblem>(null, DuplicateRuleProblem);
+      }
+      else if (EncryptionRequiredProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.EncryptionRequiredProblem>(null, EncryptionRequiredProblem);
       }
       else if (FieldHydrationFailureProblem != null)
       {
@@ -204,6 +1220,14 @@ namespace XbyOpenApi.Core.Client.Models
       {
         writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.InvalidRequestProblem>(null, InvalidRequestProblem);
       }
+      else if (InvalidRuleProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.InvalidRuleProblem>(null, InvalidRuleProblem);
+      }
+      else if (MessageRequestNotSupportedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.MessageRequestNotSupportedProblem>(null, MessageRequestNotSupportedProblem);
+      }
       else if (NotAuthorizedForFieldProblem != null)
       {
         writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.NotAuthorizedForFieldProblem>(null, NotAuthorizedForFieldProblem);
@@ -212,6 +1236,14 @@ namespace XbyOpenApi.Core.Client.Models
       {
         writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.NotAuthorizedForResourceProblem>(null, NotAuthorizedForResourceProblem);
       }
+      else if (RecipientNotMessageableProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.RecipientNotMessageableProblem>(null, RecipientNotMessageableProblem);
+      }
+      else if (RecipientXchatSetupRequiredProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.RecipientXchatSetupRequiredProblem>(null, RecipientXchatSetupRequiredProblem);
+      }
       else if (ResourceNotFoundProblem != null)
       {
         writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.ResourceNotFoundProblem>(null, ResourceNotFoundProblem);
@@ -219,6 +1251,14 @@ namespace XbyOpenApi.Core.Client.Models
       else if (ResourceUnavailableProblem != null)
       {
         writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.ResourceUnavailableProblem>(null, ResourceUnavailableProblem);
+      }
+      else if (UnencryptedSendNotAllowedProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.UnencryptedSendNotAllowedProblem>(null, UnencryptedSendNotAllowedProblem);
+      }
+      else if (XchatSetupRequiredProblem != null)
+      {
+        writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.XchatSetupRequiredProblem>(null, XchatSetupRequiredProblem);
       }
     }
   }

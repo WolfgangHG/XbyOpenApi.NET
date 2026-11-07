@@ -28,7 +28,9 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string Handle { get; set; }
 #endif
-    /// <summary>Scopes for the bot&apos;s bearer token; defaults to the standard bot scope set (dm.read, dm.write, tweet.read, users.read, media.write).</summary>
+    /// <summary>Whether only members of the bot&apos;s developer account can add it to group chats. An org-only bot has no public profile and doesn&apos;t appear in public search. Everyone in its developer account should be able to message it, so leave its Direct Messages open to everyone rather than premium senders only. Defaults to false. Applies only when the request creates the bot: a handle that already names one of the project&apos;s bots keeps that bot&apos;s setting.</summary>
+    public bool? OrgOnly { get; set; }
+    /// <summary>Scopes for the bot&apos;s bearer token. Broadcast moderation additionally supports broadcast.read and broadcast.write. Defaults to the XChat scope set (dm.read, dm.write, tweet.read, users.read, media.write).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public List<string>? Scopes { get; set; }
@@ -56,6 +58,7 @@ namespace XbyOpenApi.Core.Client.Models
             {
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "handle", n => { Handle = n.GetStringValue(); } },
+                { "org_only", n => { OrgOnly = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
     }
@@ -68,6 +71,7 @@ namespace XbyOpenApi.Core.Client.Models
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
       writer.WriteStringValue("display_name", DisplayName);
       writer.WriteStringValue("handle", Handle);
+      writer.WriteBoolValue("org_only", OrgOnly);
       writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
     }
   }

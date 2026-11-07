@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace XbyOpenApi.Core.Client.Models
 {
-  /// <summary>Who may send Direct Messages to the bot.</summary>
+  /// <summary>Who may send the bot Direct Messages: everyone, or premium for verified senders only. Premium isn&apos;t meant for org-only bots, since everyone in an org-only bot&apos;s developer account should be able to message it, verified or not; requesting premium for one may be refused with a 400. The no_one value is deprecated and kept only so bots that already use it can keep it; choosing it for any other bot may be refused with a 400.</summary>
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public enum UpdateBotRequest_dm_permission
   {

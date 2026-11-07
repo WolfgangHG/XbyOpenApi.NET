@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Usage.Tweets
     {
     }
     /// <summary>
-    /// Get Usage
+    /// Retrieves usage statistics for Posts over a specified number of days.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsageResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Usage.Tweets
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsageResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Usage
+    /// Retrieves usage statistics for Posts over a specified number of days.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Usage.Tweets
       return new global::XbyOpenApi.Core.Client.Two.Usage.Tweets.TweetsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Usage
+    /// Retrieves usage statistics for Posts over a specified number of days.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetsRequestBuilderGetQueryParameters

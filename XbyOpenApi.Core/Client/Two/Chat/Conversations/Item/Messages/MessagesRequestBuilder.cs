@@ -40,10 +40,10 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Messages
     {
     }
     /// <summary>
-    /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Sends a message or reaction to a specific Chat conversation, which you can find with `participant_query` on Get Chat Conversations. Send `encoded_message_create_event`, an end-to-end encrypted event built with the Chat XDK. `content`, a plaintext message or reaction sent unencrypted, is only a fallback for a 1:1 conversation that X Chat can&apos;t encrypt because one of the two users has connected an enterprise app that reads their DMs; check that the recipient&apos;s `receives_your_chat` user field is `unencrypted` before using it. Otherwise a `content` send is refused, and retrying it won&apos;t help: HTTP 400 https://api.x.com/2/problems/encryption-required when the conversation can be encrypted or is a group (send `encoded_message_create_event` instead), 400 https://api.x.com/2/problems/xchat-setup-required when you haven&apos;t set up X Chat, 400 https://api.x.com/2/problems/recipient-xchat-setup-required when the recipient hasn&apos;t, and 403 https://api.x.com/2/problems/message-request-not-supported when it would be a message request. HTTP 503 https://api.x.com/2/problems/chat-permissions-unavailable means the check failed and nothing was sent; retry it. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.SendChatMessageResponse"/></returns>
-    /// <param name="body">The request body</param>
+    /// <param name="body">At least one of `encoded_message_create_event`, `content` is required.</param>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
     /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -65,10 +65,10 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Messages
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.SendChatMessageResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.SendChatMessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Sends a message or reaction to a specific Chat conversation, which you can find with `participant_query` on Get Chat Conversations. Send `encoded_message_create_event`, an end-to-end encrypted event built with the Chat XDK. `content`, a plaintext message or reaction sent unencrypted, is only a fallback for a 1:1 conversation that X Chat can&apos;t encrypt because one of the two users has connected an enterprise app that reads their DMs; check that the recipient&apos;s `receives_your_chat` user field is `unencrypted` before using it. Otherwise a `content` send is refused, and retrying it won&apos;t help: HTTP 400 https://api.x.com/2/problems/encryption-required when the conversation can be encrypted or is a group (send `encoded_message_create_event` instead), 400 https://api.x.com/2/problems/xchat-setup-required when you haven&apos;t set up X Chat, 400 https://api.x.com/2/problems/recipient-xchat-setup-required when the recipient hasn&apos;t, and 403 https://api.x.com/2/problems/message-request-not-supported when it would be a message request. HTTP 503 https://api.x.com/2/problems/chat-permissions-unavailable means the check failed and nothing was sent; retry it. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
-    /// <param name="body">The request body</param>
+    /// <param name="body">At least one of `encoded_message_create_event`, `content` is required.</param>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

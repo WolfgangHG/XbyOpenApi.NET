@@ -12,6 +12,10 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events
 #pragma warning disable CS1591
     Conversation_id,
 #pragma warning restore CS1591
+    [EnumMember(Value = "conversation_key_version")]
+#pragma warning disable CS1591
+    Conversation_key_version,
+#pragma warning restore CS1591
     [EnumMember(Value = "conversation_token")]
 #pragma warning disable CS1591
     Conversation_token,

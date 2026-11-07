@@ -8,6 +8,10 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
   public enum GetChat_conversationFieldsQueryParameterType
 #pragma warning restore CS1591
   {
+    [EnumMember(Value = "admin_settings")]
+#pragma warning disable CS1591
+    Admin_settings,
+#pragma warning restore CS1591
     [EnumMember(Value = "created_at")]
 #pragma warning disable CS1591
     Created_at,
@@ -15,6 +19,14 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
     [EnumMember(Value = "group_avatar_url")]
 #pragma warning disable CS1591
     Group_avatar_url,
+#pragma warning restore CS1591
+    [EnumMember(Value = "group_description")]
+#pragma warning disable CS1591
+    Group_description,
+#pragma warning restore CS1591
+    [EnumMember(Value = "group_description_key_version")]
+#pragma warning disable CS1591
+    Group_description_key_version,
 #pragma warning restore CS1591
     [EnumMember(Value = "group_name")]
 #pragma warning disable CS1591
@@ -24,13 +36,33 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
 #pragma warning disable CS1591
     Id,
 #pragma warning restore CS1591
+    [EnumMember(Value = "invite")]
+#pragma warning disable CS1591
+    Invite,
+#pragma warning restore CS1591
+    [EnumMember(Value = "is_archived")]
+#pragma warning disable CS1591
+    Is_archived,
+#pragma warning restore CS1591
     [EnumMember(Value = "is_muted")]
 #pragma warning disable CS1591
     Is_muted,
 #pragma warning restore CS1591
+    [EnumMember(Value = "last_read_event_id")]
+#pragma warning disable CS1591
+    Last_read_event_id,
+#pragma warning restore CS1591
     [EnumMember(Value = "message_ttl_ms")]
 #pragma warning disable CS1591
     Message_ttl_ms,
+#pragma warning restore CS1591
+    [EnumMember(Value = "newest_event_id")]
+#pragma warning disable CS1591
+    Newest_event_id,
+#pragma warning restore CS1591
+    [EnumMember(Value = "pending_member_ids")]
+#pragma warning disable CS1591
+    Pending_member_ids,
 #pragma warning restore CS1591
     [EnumMember(Value = "screen_capture_blocking_enabled")]
 #pragma warning disable CS1591
@@ -43,6 +75,10 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
     [EnumMember(Value = "type")]
 #pragma warning disable CS1591
     Type,
+#pragma warning restore CS1591
+    [EnumMember(Value = "unread")]
+#pragma warning disable CS1591
+    Unread,
 #pragma warning restore CS1591
     [EnumMember(Value = "updated_at")]
 #pragma warning disable CS1591

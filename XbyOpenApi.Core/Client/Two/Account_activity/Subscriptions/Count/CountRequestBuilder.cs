@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Subscriptions.Count
     {
     }
     /// <summary>
-    /// Get Account Activity Subscription Count
+    /// Retrieves a count of currently active Account Activity subscriptions.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetAccountActivitySubscriptionCountResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Subscriptions.Count
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetAccountActivitySubscriptionCountResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetAccountActivitySubscriptionCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Account Activity Subscription Count
+    /// Retrieves a count of currently active Account Activity subscriptions.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.All
     {
     }
     /// <summary>
-    /// At most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.
+    /// Retrieves Posts from the full archive matching a search query.At most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.SearchPostsAllResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.All
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.SearchPostsAllResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.SearchPostsAllResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// At most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.
+    /// Retrieves Posts from the full archive matching a search query.At most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.All
       return new global::XbyOpenApi.Core.Client.Two.Tweets.Search.All.AllRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// At most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.
+    /// Retrieves Posts from the full archive matching a search query.At most one of `start_time`, `since_id` may be provided. At most one of `end_time`, `until_id` may be provided. At most one of `pagination_token`, `next_token` may be provided.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AllRequestBuilderGetQueryParameters

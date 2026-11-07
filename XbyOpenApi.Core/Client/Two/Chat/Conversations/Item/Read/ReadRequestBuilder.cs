@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Read
     {
     }
     /// <summary>
-    /// Marks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Marks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Without action_signatures the conversation is marked read up to its newest event and the read receipt is unsigned. With one action signature over a MarkConversationReadEvent, the server sends that signed read receipt, marking the conversation read up to the event it names.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Read
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Marks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+    /// Marks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Without action_signatures the conversation is marked read up to its newest event and the read receipt is unsigned. With one action signature over a MarkConversationReadEvent, the server sends that signed read receipt, marking the conversation read up to the event it names.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

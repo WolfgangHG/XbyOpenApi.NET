@@ -40,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
     {
     }
     /// <summary>
-    /// Deletes a scheduled broadcast by its alphanumeric UBS broadcast id.
+    /// Deletes a scheduled broadcast by its alphanumeric broadcast id.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.DeleteScheduledBroadcastResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.DeleteScheduledBroadcastResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.DeleteScheduledBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Returns a single scheduled broadcast by its alphanumeric UBS broadcast id.
+    /// Returns a single scheduled broadcast by its alphanumeric broadcast id.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetScheduledBroadcastResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetScheduledBroadcastResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetScheduledBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Fully replaces schedule fields for a broadcast. Path `:id` is the UBS broadcast id; the body must include `scheduled_broadcast_id` and re-send any fields that should be kept.
+    /// Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source&apos;s `id` from GET /2/sources instead.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UpdateScheduledBroadcastResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UpdateScheduledBroadcastResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UpdateScheduledBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Deletes a scheduled broadcast by its alphanumeric UBS broadcast id.
+    /// Deletes a scheduled broadcast by its alphanumeric broadcast id.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
       return requestInfo;
     }
     /// <summary>
-    /// Returns a single scheduled broadcast by its alphanumeric UBS broadcast id.
+    /// Returns a single scheduled broadcast by its alphanumeric broadcast id.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
       return requestInfo;
     }
     /// <summary>
-    /// Fully replaces schedule fields for a broadcast. Path `:id` is the UBS broadcast id; the body must include `scheduled_broadcast_id` and re-send any fields that should be kept.
+    /// Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source&apos;s `id` from GET /2/sources instead.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>
@@ -180,15 +180,14 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item
       return new global::XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.Item.ScheduledItemRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Deletes a scheduled broadcast by its alphanumeric UBS broadcast id.
+    /// Deletes a scheduled broadcast by its alphanumeric broadcast id.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduledItemRequestBuilderDeleteQueryParameters
     {
-#pragma warning disable CS1591
+      /// <summary>Deprecated: recurring schedules are being retired and `true` will be rejected.</summary>
       [QueryParameter("roll_forward")]
       public bool? RollForward { get; set; }
-#pragma warning restore CS1591
     }
   }
 }

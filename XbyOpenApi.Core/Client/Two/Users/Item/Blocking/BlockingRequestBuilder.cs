@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using XbyOpenApi.Core.Client.Models;
+using XbyOpenApi.Core.Client.Two.Users.Item.Blocking.Item;
 namespace XbyOpenApi.Core.Client.Two.Users.Item.Blocking
 {
   /// <summary>
@@ -17,6 +18,18 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Blocking
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class BlockingRequestBuilder : BaseRequestBuilder
   {
+    /// <summary>Gets an item from the XbyOpenApi.Core.Client.Two.users.item.blocking.item collection</summary>
+    /// <param name="position">Unique identifier of the item</param>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Two.Users.Item.Blocking.Item.WithTarget_user_ItemRequestBuilder"/></returns>
+    public global::XbyOpenApi.Core.Client.Two.Users.Item.Blocking.Item.WithTarget_user_ItemRequestBuilder this[string position]
+    {
+      get
+      {
+        var urlTplParams = new Dictionary<string, object>(PathParameters);
+        urlTplParams.Add("target_user_id", position);
+        return new global::XbyOpenApi.Core.Client.Two.Users.Item.Blocking.Item.WithTarget_user_ItemRequestBuilder(urlTplParams, RequestAdapter);
+      }
+    }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Two.Users.Item.Blocking.BlockingRequestBuilder"/> and sets the default values.
     /// </summary>
@@ -34,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Blocking
     {
     }
     /// <summary>
-    /// Get Users Blocking
+    /// Returns the Users that the given User is blocking.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersBlockingResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +70,32 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Blocking
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersBlockingResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersBlockingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Blocking
+    /// Causes the source User to block the target User.
+    /// </summary>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UsersIdBlockResponse"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+    /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public async Task<global::XbyOpenApi.Core.Client.Models.UsersIdBlockResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.UsersIdBlockRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#nullable restore
+#else
+    public async Task<global::XbyOpenApi.Core.Client.Models.UsersIdBlockResponse> PostAsync(global::XbyOpenApi.Core.Client.Models.UsersIdBlockRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+      var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::XbyOpenApi.Core.Client.Models.Error.CreateFromDiscriminatorValue },
+            };
+      return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UsersIdBlockResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UsersIdBlockResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+    }
+    /// <summary>
+    /// Returns the Users that the given User is blocking.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,6 +114,28 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Blocking
       return requestInfo;
     }
     /// <summary>
+    /// Causes the source User to block the target User.
+    /// </summary>
+    /// <returns>A <see cref="RequestInformation"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.UsersIdBlockRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
+#nullable restore
+#else
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.UsersIdBlockRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+      requestInfo.Configure(requestConfiguration);
+      requestInfo.Headers.TryAdd("Accept", "application/json");
+      requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+      return requestInfo;
+    }
+    /// <summary>
     /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Two.Users.Item.Blocking.BlockingRequestBuilder"/></returns>
@@ -85,7 +145,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Blocking
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Blocking.BlockingRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Blocking
+    /// Returns the Users that the given User is blocking.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlockingRequestBuilderGetQueryParameters

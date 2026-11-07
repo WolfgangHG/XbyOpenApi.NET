@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Muting
     {
     }
     /// <summary>
-    /// Get Users Muting
+    /// Retrieves a list of Users muted by the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersMutingResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Muting
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersMutingResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersMutingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Mute User
+    /// Causes the authenticated user to mute a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.MuteUserResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Muting
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.MuteUserResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.MuteUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Muting
+    /// Retrieves a list of Users muted by the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Muting
       return requestInfo;
     }
     /// <summary>
-    /// Mute User
+    /// Causes the authenticated user to mute a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Muting
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Muting.MutingRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Muting
+    /// Retrieves a list of Users muted by the authenticated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MutingRequestBuilderGetQueryParameters

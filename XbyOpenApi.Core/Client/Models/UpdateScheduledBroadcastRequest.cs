@@ -14,7 +14,7 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Enable replay.</summary>
     public bool? AvailableForReplay { get; set; }
-    /// <summary>Chat permission option (numeric string).</summary>
+    /// <summary>Who can chat (numeric string): `0` default, `1` chat off, `2` everyone, `3` verified accounts, `4` accounts the host follows, `5` the host&apos;s subscribers, `6` accounts followed by an account the host follows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? ChatOption { get; set; }
@@ -42,7 +42,7 @@ namespace XbyOpenApi.Core.Client.Models
 #endif
     /// <summary>If true, do not auto-publish at start; call POST .../live when ready.</summary>
     public bool? ManualPublish { get; set; }
-    /// <summary>When true, shift the head of a recurring series.</summary>
+    /// <summary>Deprecated: recurring schedules are being retired and `true` will be rejected.</summary>
     public bool? RollForward { get; set; }
     /// <summary>Numeric scheduler id from create/list/get.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string ScheduledStartMs { get; set; }
 #endif
-    /// <summary>Ingest / source id.</summary>
+    /// <summary>Source to bind: a source&apos;s `id` from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? SourceId { get; set; }

@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.Folders.Item
     {
     }
     /// <summary>
-    /// Get Users Bookmarks by Folder ID
+    /// Retrieves Posts in a specific Bookmark folder by its ID for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersBookmarksByFolderIdResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.Folders.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersBookmarksByFolderIdResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersBookmarksByFolderIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Bookmarks by Folder ID
+    /// Retrieves Posts in a specific Bookmark folder by its ID for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.Folders.Item
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.Folders.Item.WithFolder_ItemRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Bookmarks by Folder ID
+    /// Retrieves Posts in a specific Bookmark folder by its ID for the authenticated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFolder_ItemRequestBuilderGetQueryParameters

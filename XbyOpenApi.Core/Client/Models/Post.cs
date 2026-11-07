@@ -65,10 +65,10 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Annotations inferred about the Post (domain and entity context).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject>? ContextAnnotations { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets>? ContextAnnotations { get; set; }
 #nullable restore
 #else
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject> ContextAnnotations { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets> ContextAnnotations { get; set; }
 #endif
     /// <summary>The ID of the conversation this Post belongs to (matches the root Post&apos;s ID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,18 +147,18 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Community-Notes media matches for this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject>? MatchedMediaNotes { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets>? MatchedMediaNotes { get; set; }
 #nullable restore
 #else
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject> MatchedMediaNotes { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets> MatchedMediaNotes { get; set; }
 #endif
     /// <summary>Metadata for media attached to this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject>? MediaMetadata { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets>? MediaMetadata { get; set; }
 #nullable restore
 #else
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject> MediaMetadata { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets> MediaMetadata { get; set; }
 #endif
     /// <summary>Nonpublic engagement metrics for the Post at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,10 +179,10 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Community-Notes request suggestions for this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject>? NoteRequestSuggestions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets>? NoteRequestSuggestions { get; set; }
 #nullable restore
 #else
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject> NoteRequestSuggestions { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets> NoteRequestSuggestions { get; set; }
 #endif
     /// <summary>Organic nonpublic engagement metrics for the Post at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,10 +215,10 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>A list of Posts this Post refers to. If the Post is a Retweet, Quote or Reply, it includes the referenced Post&apos;s type and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject>? ReferencedPosts { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets>? ReferencedPosts { get; set; }
 #nullable restore
 #else
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject> ReferencedPosts { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets> ReferencedPosts { get; set; }
 #endif
     /// <summary>Shows who can reply to this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -255,10 +255,10 @@ namespace XbyOpenApi.Core.Client.Models
     /// <summary>Suggested source URLs for this Post, each with the number of times it was suggested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject>? SuggestedSourceLinksWithCounts { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets>? SuggestedSourceLinksWithCounts { get; set; }
 #nullable restore
 #else
-    public List<global::XbyOpenApi.Core.Client.Models.StreamObject> SuggestedSourceLinksWithCounts { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.Tweets> SuggestedSourceLinksWithCounts { get; set; }
 #endif
     /// <summary>The content of the Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -315,7 +315,7 @@ namespace XbyOpenApi.Core.Client.Models
                 { "author_id", n => { AuthorId = n.GetStringValue(); } },
                 { "card_uri", n => { CardUri = n.GetStringValue(); } },
                 { "community_id", n => { CommunityId = n.GetStringValue(); } },
-                { "context_annotations", n => { ContextAnnotations = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>(global::XbyOpenApi.Core.Client.Models.StreamObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "context_annotations", n => { ContextAnnotations = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>(global::XbyOpenApi.Core.Client.Models.Tweets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "display_text_range", n => { DisplayTextRange = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
@@ -326,22 +326,22 @@ namespace XbyOpenApi.Core.Client.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "in_reply_to_user_id", n => { InReplyToUserId = n.GetStringValue(); } },
                 { "lang", n => { Lang = n.GetStringValue(); } },
-                { "matched_media_notes", n => { MatchedMediaNotes = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>(global::XbyOpenApi.Core.Client.Models.StreamObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "media_metadata", n => { MediaMetadata = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>(global::XbyOpenApi.Core.Client.Models.StreamObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "matched_media_notes", n => { MatchedMediaNotes = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>(global::XbyOpenApi.Core.Client.Models.Tweets.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "media_metadata", n => { MediaMetadata = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>(global::XbyOpenApi.Core.Client.Models.Tweets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.Post_non_public_metrics>(global::XbyOpenApi.Core.Client.Models.Post_non_public_metrics.CreateFromDiscriminatorValue); } },
                 { "note_post", n => { NotePost = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.PostNotePost>(global::XbyOpenApi.Core.Client.Models.PostNotePost.CreateFromDiscriminatorValue); } },
-                { "note_request_suggestions", n => { NoteRequestSuggestions = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>(global::XbyOpenApi.Core.Client.Models.StreamObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "note_request_suggestions", n => { NoteRequestSuggestions = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>(global::XbyOpenApi.Core.Client.Models.Tweets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.Post_organic_metrics>(global::XbyOpenApi.Core.Client.Models.Post_organic_metrics.CreateFromDiscriminatorValue); } },
                 { "paid_partnership", n => { PaidPartnership = n.GetBoolValue(); } },
                 { "possibly_sensitive", n => { PossiblySensitive = n.GetBoolValue(); } },
                 { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.Post_promoted_metrics>(global::XbyOpenApi.Core.Client.Models.Post_promoted_metrics.CreateFromDiscriminatorValue); } },
                 { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.PostPublicMetrics>(global::XbyOpenApi.Core.Client.Models.PostPublicMetrics.CreateFromDiscriminatorValue); } },
-                { "referenced_posts", n => { ReferencedPosts = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>(global::XbyOpenApi.Core.Client.Models.StreamObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "referenced_posts", n => { ReferencedPosts = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>(global::XbyOpenApi.Core.Client.Models.Tweets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reply_settings", n => { ReplySettings = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.PostScopes>(global::XbyOpenApi.Core.Client.Models.PostScopes.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "suggested_source_links", n => { SuggestedSourceLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "suggested_source_links_with_counts", n => { SuggestedSourceLinksWithCounts = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>(global::XbyOpenApi.Core.Client.Models.StreamObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "suggested_source_links_with_counts", n => { SuggestedSourceLinksWithCounts = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>(global::XbyOpenApi.Core.Client.Models.Tweets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "withheld", n => { Withheld = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.PostWithheld>(global::XbyOpenApi.Core.Client.Models.PostWithheld.CreateFromDiscriminatorValue); } },
@@ -360,7 +360,7 @@ namespace XbyOpenApi.Core.Client.Models
       writer.WriteStringValue("author_id", AuthorId);
       writer.WriteStringValue("card_uri", CardUri);
       writer.WriteStringValue("community_id", CommunityId);
-      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>("context_annotations", ContextAnnotations);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>("context_annotations", ContextAnnotations);
       writer.WriteStringValue("conversation_id", ConversationId);
       writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
       writer.WriteCollectionOfPrimitiveValues<long?>("display_text_range", DisplayTextRange);
@@ -371,22 +371,22 @@ namespace XbyOpenApi.Core.Client.Models
       writer.WriteStringValue("id", Id);
       writer.WriteStringValue("in_reply_to_user_id", InReplyToUserId);
       writer.WriteStringValue("lang", Lang);
-      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>("matched_media_notes", MatchedMediaNotes);
-      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>("media_metadata", MediaMetadata);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>("matched_media_notes", MatchedMediaNotes);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>("media_metadata", MediaMetadata);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.Post_non_public_metrics>("non_public_metrics", NonPublicMetrics);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.PostNotePost>("note_post", NotePost);
-      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>("note_request_suggestions", NoteRequestSuggestions);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>("note_request_suggestions", NoteRequestSuggestions);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.Post_organic_metrics>("organic_metrics", OrganicMetrics);
       writer.WriteBoolValue("paid_partnership", PaidPartnership);
       writer.WriteBoolValue("possibly_sensitive", PossiblySensitive);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.Post_promoted_metrics>("promoted_metrics", PromotedMetrics);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.PostPublicMetrics>("public_metrics", PublicMetrics);
-      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>("referenced_posts", ReferencedPosts);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>("referenced_posts", ReferencedPosts);
       writer.WriteStringValue("reply_settings", ReplySettings);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.PostScopes>("scopes", Scopes);
       writer.WriteStringValue("source", Source);
       writer.WriteCollectionOfPrimitiveValues<string>("suggested_source_links", SuggestedSourceLinks);
-      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.StreamObject>("suggested_source_links_with_counts", SuggestedSourceLinksWithCounts);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.Tweets>("suggested_source_links_with_counts", SuggestedSourceLinksWithCounts);
       writer.WriteStringValue("text", Text);
       writer.WriteStringValue("username", Username);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.PostWithheld>("withheld", Withheld);

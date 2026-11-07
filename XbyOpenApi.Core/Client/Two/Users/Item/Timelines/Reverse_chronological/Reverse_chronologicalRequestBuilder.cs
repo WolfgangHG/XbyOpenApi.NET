@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Timelines.Reverse_chronological
     {
     }
     /// <summary>
-    /// When both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.
+    /// Retrieves a reverse chronological list of Posts in the authenticated user&apos;s Timeline.When both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersTimelineResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Timelines.Reverse_chronological
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersTimelineResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersTimelineResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// When both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.
+    /// Retrieves a reverse chronological list of Posts in the authenticated user&apos;s Timeline.When both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Timelines.Reverse_chronological
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Timelines.Reverse_chronological.Reverse_chronologicalRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// When both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.
+    /// Retrieves a reverse chronological list of Posts in the authenticated user&apos;s Timeline.When both are provided, `start_time` must be earlier than `end_time`. When both are provided, `since_id` must be less than `until_id`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Reverse_chronologicalRequestBuilderGetQueryParameters

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using XbyOpenApi.Core.Client.Models;
+using XbyOpenApi.Core.Client.Two.Broadcasts.Chat;
 using XbyOpenApi.Core.Client.Two.Broadcasts.Item;
 using XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled;
 namespace XbyOpenApi.Core.Client.Two.Broadcasts
@@ -19,6 +20,11 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class BroadcastsRequestBuilder : BaseRequestBuilder
   {
+    /// <summary>The chat property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Broadcasts.Chat.ChatRequestBuilder Chat
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Broadcasts.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>The scheduled property</summary>
     public global::XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled.ScheduledRequestBuilder Scheduled
     {
@@ -76,6 +82,31 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.ListBroadcastsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.ListBroadcastsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
+    /// Takes one of the authenticated user&apos;s sources live and returns 201 with the new broadcast. The broadcast goes live immediately (state `RUNNING`), even before the encoder sends video, and is ended (`TIMED_OUT`) if no video arrives within 5 minutes. It is announced in a Post unless `should_not_tweet` is true. When the source already has a live broadcast, returns 200 with that broadcast unchanged and ignores the request&apos;s `title`, `locale`, `chat_option` and `should_not_tweet`. A missing `tweet_id` means the Post hasn&apos;t been created yet, was suppressed with `should_not_tweet`, or could not be created; read it later with GET /2/broadcasts/:id. A 409 `conflict` means the source can&apos;t go live right now: either it can&apos;t take video before the encoder connects (external HLS sources, or regions where this isn&apos;t available), so retry once video is flowing, or another broadcast is live on it, so END that broadcast first. The `detail` says which, and names the live broadcast when known.
+    /// </summary>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.CreateBroadcastResponse"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+    /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public async Task<global::XbyOpenApi.Core.Client.Models.CreateBroadcastResponse?> PostAsync(global::XbyOpenApi.Core.Client.Models.CreateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#nullable restore
+#else
+    public async Task<global::XbyOpenApi.Core.Client.Models.CreateBroadcastResponse> PostAsync(global::XbyOpenApi.Core.Client.Models.CreateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+      var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::XbyOpenApi.Core.Client.Models.Error.CreateFromDiscriminatorValue },
+            };
+      return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.CreateBroadcastResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.CreateBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+    }
+    /// <summary>
     /// Returns the authenticated user&apos;s live-video broadcasts, or selected owned broadcasts when ids are provided.At most one of `ids`, `max_results` may be provided. At most one of `ids`, `pagination_token` may be provided.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
@@ -92,6 +123,28 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts
       var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
       requestInfo.Configure(requestConfiguration);
       requestInfo.Headers.TryAdd("Accept", "application/json");
+      return requestInfo;
+    }
+    /// <summary>
+    /// Takes one of the authenticated user&apos;s sources live and returns 201 with the new broadcast. The broadcast goes live immediately (state `RUNNING`), even before the encoder sends video, and is ended (`TIMED_OUT`) if no video arrives within 5 minutes. It is announced in a Post unless `should_not_tweet` is true. When the source already has a live broadcast, returns 200 with that broadcast unchanged and ignores the request&apos;s `title`, `locale`, `chat_option` and `should_not_tweet`. A missing `tweet_id` means the Post hasn&apos;t been created yet, was suppressed with `should_not_tweet`, or could not be created; read it later with GET /2/broadcasts/:id. A 409 `conflict` means the source can&apos;t go live right now: either it can&apos;t take video before the encoder connects (external HLS sources, or regions where this isn&apos;t available), so retry once video is flowing, or another broadcast is live on it, so END that broadcast first. The `detail` says which, and names the live broadcast when known.
+    /// </summary>
+    /// <returns>A <see cref="RequestInformation"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.CreateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
+#nullable restore
+#else
+    public RequestInformation ToPostRequestInformation(global::XbyOpenApi.Core.Client.Models.CreateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+      requestInfo.Configure(requestConfiguration);
+      requestInfo.Headers.TryAdd("Accept", "application/json");
+      requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
       return requestInfo;
     }
     /// <summary>

@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.ListScheduledBroadcastsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.ListScheduledBroadcastsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Schedules a one-off or recurring broadcast for the authenticated user. A `source_id` (ingest) is required at create time.
+    /// Schedules a broadcast for the authenticated user on one of their sources: `source_id` is required. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source&apos;s `id` from GET /2/sources instead.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.CreateScheduledBroadcastResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Scheduled
       return requestInfo;
     }
     /// <summary>
-    /// Schedules a one-off or recurring broadcast for the authenticated user. A `source_id` (ingest) is required at create time.
+    /// Schedules a broadcast for the authenticated user on one of their sources: `source_id` is required. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source&apos;s `id` from GET /2/sources instead.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

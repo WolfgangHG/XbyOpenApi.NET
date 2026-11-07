@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
     {
     }
     /// <summary>
-    /// At most one of `pagination_token`, `next_token` may be provided.
+    /// Retrieves the count of Posts matching a search query from the full archive.At most one of `pagination_token`, `next_token` may be provided.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetPostsCountsAllResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetPostsCountsAllResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetPostsCountsAllResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// At most one of `pagination_token`, `next_token` may be provided.
+    /// Retrieves the count of Posts matching a search query from the full archive.At most one of `pagination_token`, `next_token` may be provided.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Counts.All
       return new global::XbyOpenApi.Core.Client.Two.Tweets.Counts.All.AllRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// At most one of `pagination_token`, `next_token` may be provided.
+    /// Retrieves the count of Posts matching a search query from the full archive.At most one of `pagination_token`, `next_token` may be provided.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AllRequestBuilderGetQueryParameters

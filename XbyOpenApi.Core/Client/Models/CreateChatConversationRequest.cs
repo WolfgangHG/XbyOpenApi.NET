@@ -12,7 +12,7 @@ namespace XbyOpenApi.Core.Client.Models
   public partial class CreateChatConversationRequest : IAdditionalDataHolder, IParsable
 #pragma warning restore CS1591
   {
-    /// <summary>Cryptographic signatures for the action.</summary>
+    /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public List<global::XbyOpenApi.Core.Client.Models.CreateChatConversationActionSignatures>? ActionSignatures { get; set; }

@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.By.Creator_ids
     {
     }
     /// <summary>
-    /// Get Spaces by Creator IDs
+    /// Retrieves details of Spaces created by specified User IDs.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetSpacesByCreatorIdsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.By.Creator_ids
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetSpacesByCreatorIdsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetSpacesByCreatorIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Spaces by Creator IDs
+    /// Retrieves details of Spaces created by specified User IDs.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.By.Creator_ids
       return new global::XbyOpenApi.Core.Client.Two.Spaces.By.Creator_ids.Creator_idsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Spaces by Creator IDs
+    /// Retrieves details of Spaces created by specified User IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Creator_idsRequestBuilderGetQueryParameters

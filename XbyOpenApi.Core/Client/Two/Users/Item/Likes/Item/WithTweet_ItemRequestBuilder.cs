@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Likes.Item
     {
     }
     /// <summary>
-    /// Unlike Post
+    /// Causes the authenticated user to unlike a specific Post by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UnlikePostResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Likes.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UnlikePostResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UnlikePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Unlike Post
+    /// Causes the authenticated user to unlike a specific Post by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

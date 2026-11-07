@@ -40,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Webhooks.Item.Subscription
     {
     }
     /// <summary>
-    /// Validate Account Activity Subscription
+    /// Checks a user&apos;s Account Activity subscription for a given webhook.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.ValidateAccountActivitySubscriptionResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace XbyOpenApi.Core.Client.Two.Account_activity.Webhooks.Item.Subscription
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.CreateAccountActivitySubscriptionResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.CreateAccountActivitySubscriptionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Validate Account Activity Subscription
+    /// Checks a user&apos;s Account Activity subscription for a given webhook.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

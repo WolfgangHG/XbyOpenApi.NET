@@ -14,6 +14,8 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData { get; set; }
+    /// <summary>The time the activity occurred, not when it was delivered.</summary>
+    public DateTimeOffset? CreatedAt { get; set; }
     /// <summary>The event_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +89,7 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "event_type", n => { EventType = n.GetStringValue(); } },
                 { "event_uuid", n => { EventUuid = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter>(global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter.CreateFromDiscriminatorValue); } },
@@ -102,6 +105,7 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+      writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
       writer.WriteStringValue("event_type", EventType);
       writer.WriteStringValue("event_uuid", EventUuid);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.ActivitySubscriptionFilter>("filter", Filter);

@@ -28,6 +28,14 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string EventType { get; set; }
 #endif
+    /// <summary>Subscription expiration time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public string? ExpiresAt { get; set; }
+#nullable restore
+#else
+    public string ExpiresAt { get; set; }
+#endif
     /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +96,7 @@ namespace XbyOpenApi.Core.Client.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "event_type", n => { EventType = n.GetStringValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.UpdateActivitySubscriptionResponseDataSubscriptionFilter>(global::XbyOpenApi.Core.Client.Models.UpdateActivitySubscriptionResponseDataSubscriptionFilter.CreateFromDiscriminatorValue); } },
                 { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
@@ -104,6 +113,7 @@ namespace XbyOpenApi.Core.Client.Models
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
       writer.WriteStringValue("created_at", CreatedAt);
       writer.WriteStringValue("event_type", EventType);
+      writer.WriteStringValue("expires_at", ExpiresAt);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.UpdateActivitySubscriptionResponseDataSubscriptionFilter>("filter", Filter);
       writer.WriteStringValue("subscription_id", SubscriptionId);
       writer.WriteStringValue("tag", Tag);

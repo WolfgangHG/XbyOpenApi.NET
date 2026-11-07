@@ -42,7 +42,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public global::XbyOpenApi.Core.Client.Models.MediaNonPublicMetrics NonPublicMetrics { get; set; }
 #endif
-    /// <summary>Organic nonpublic engagement metrics for the media at the time of the request.</summary>
+    /// <summary>Lifetime organic engagement metrics for the media at the time of the request.Only available to the user who uploaded the video.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public global::XbyOpenApi.Core.Client.Models.MediaOrganicMetrics? OrganicMetrics { get; set; }

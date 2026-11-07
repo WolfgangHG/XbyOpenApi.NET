@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Item.Chat.Mutes
     {
     }
     /// <summary>
-    /// Prevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must own the broadcast.
+    /// Prevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must be the broadcast host or a moderator.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.MuteBroadcastChatUserResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Item.Chat.Mutes
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.MuteBroadcastChatUserResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.MuteBroadcastChatUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Prevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must own the broadcast.
+    /// Prevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must be the broadcast host or a moderator.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

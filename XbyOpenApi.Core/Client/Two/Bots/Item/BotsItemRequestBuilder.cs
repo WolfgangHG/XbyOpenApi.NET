@@ -40,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item
     {
     }
     /// <summary>
-    /// Delete Bot
+    /// Deletes a bot account from the calling app&apos;s project.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.DeleteBotResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.DeleteBotResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.DeleteBotResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Update Bot
+    /// Updates a bot&apos;s handle, display name, or who may send it Direct Messages.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UpdateBotResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UpdateBotResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UpdateBotResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Delete Bot
+    /// Deletes a bot account from the calling app&apos;s project.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item
       return requestInfo;
     }
     /// <summary>
-    /// Update Bot
+    /// Updates a bot&apos;s handle, display name, or who may send it Direct Messages.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

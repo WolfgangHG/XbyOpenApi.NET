@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.Counts
     {
     }
     /// <summary>
-    /// Get Rule Counts
+    /// Retrieves the count of rules in the active rule set for the filtered stream.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetRuleCountsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.Counts
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetRuleCountsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetRuleCountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Rule Counts
+    /// Retrieves the count of rules in the active rule set for the filtered stream.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.Counts
       return new global::XbyOpenApi.Core.Client.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Rule Counts
+    /// Retrieves the count of rules in the active rule set for the filtered stream.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CountsRequestBuilderGetQueryParameters

@@ -7,13 +7,22 @@ using System.IO;
 using System;
 namespace XbyOpenApi.Core.Client.Models
 {
+  /// <summary>
+  /// At least one of `encoded_message_create_event`, `content` is required.
+  /// </summary>
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-#pragma warning disable CS1591
   public partial class SendChatMessageRequest : IAdditionalDataHolder, IParsable
-#pragma warning restore CS1591
   {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData { get; set; }
+    /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public global::XbyOpenApi.Core.Client.Models.SendChatMessageContent? Content { get; set; }
+#nullable restore
+#else
+    public global::XbyOpenApi.Core.Client.Models.SendChatMessageContent Content { get; set; }
+#endif
     /// <summary>Optional conversation token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,7 +31,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string ConversationToken { get; set; }
 #endif
-    /// <summary>Base64-encoded Thrift MessageCreateEvent containing encrypted message contents.</summary>
+    /// <summary>Base64-encoded Thrift MessageCreateEvent containing encrypted message contents. Omit when sending `content`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? EncodedMessageCreateEvent { get; set; }
@@ -45,6 +54,14 @@ namespace XbyOpenApi.Core.Client.Models
 #nullable restore
 #else
     public string MessageId { get; set; }
+#endif
+    /// <summary>Version of the Chat XDK that produced the payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public string? XdkVersion { get; set; }
+#nullable restore
+#else
+    public string XdkVersion { get; set; }
 #endif
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Models.SendChatMessageRequest"/> and sets the default values.
@@ -71,10 +88,12 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
+                { "content", n => { Content = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.SendChatMessageContent>(global::XbyOpenApi.Core.Client.Models.SendChatMessageContent.CreateFromDiscriminatorValue); } },
                 { "conversation_token", n => { ConversationToken = n.GetStringValue(); } },
                 { "encoded_message_create_event", n => { EncodedMessageCreateEvent = n.GetStringValue(); } },
                 { "encoded_message_event_signature", n => { EncodedMessageEventSignature = n.GetStringValue(); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
+                { "xdk_version", n => { XdkVersion = n.GetStringValue(); } },
             };
     }
     /// <summary>
@@ -84,10 +103,12 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+      writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.SendChatMessageContent>("content", Content);
       writer.WriteStringValue("conversation_token", ConversationToken);
       writer.WriteStringValue("encoded_message_create_event", EncodedMessageCreateEvent);
       writer.WriteStringValue("encoded_message_event_signature", EncodedMessageEventSignature);
       writer.WriteStringValue("message_id", MessageId);
+      writer.WriteStringValue("xdk_version", XdkVersion);
       writer.WriteAdditionalData(AdditionalData);
     }
   }

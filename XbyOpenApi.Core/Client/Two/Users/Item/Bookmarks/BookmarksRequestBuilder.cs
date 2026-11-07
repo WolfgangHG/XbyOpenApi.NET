@@ -53,7 +53,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks
     {
     }
     /// <summary>
-    /// Get Users Bookmarks
+    /// Retrieves a list of Posts bookmarked by the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersBookmarksResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.CreateUsersBookmarkResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.CreateUsersBookmarkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Bookmarks
+    /// Retrieves a list of Posts bookmarked by the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.BookmarksRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Bookmarks
+    /// Retrieves a list of Posts bookmarked by the authenticated user.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BookmarksRequestBuilderGetQueryParameters

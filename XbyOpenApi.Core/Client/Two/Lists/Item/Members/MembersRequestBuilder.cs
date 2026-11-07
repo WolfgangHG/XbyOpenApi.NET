@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Members
     {
     }
     /// <summary>
-    /// Get Lists Members
+    /// Retrieves a list of Users who are members of a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetListsMembersResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Members
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetListsMembersResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetListsMembersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Add Lists Member
+    /// Adds a User to a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.AddListsMemberResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Members
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.AddListsMemberResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.AddListsMemberResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Lists Members
+    /// Retrieves a list of Users who are members of a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Members
       return requestInfo;
     }
     /// <summary>
-    /// Add Lists Member
+    /// Adds a User to a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Members
       return new global::XbyOpenApi.Core.Client.Two.Lists.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Lists Members
+    /// Retrieves a list of Users who are members of a specific List by its ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilderGetQueryParameters

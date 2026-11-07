@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Item.Chat.Mutes.Item
     {
     }
     /// <summary>
-    /// Allows a muted user to post messages in a running broadcast chat again. The authenticated user must own the broadcast.
+    /// Allows a muted user to post messages in a running broadcast chat again. The authenticated user must be the broadcast host or a moderator.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UnmuteBroadcastChatUserResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Item.Chat.Mutes.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UnmuteBroadcastChatUserResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UnmuteBroadcastChatUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Allows a muted user to post messages in a running broadcast chat again. The authenticated user must own the broadcast.
+    /// Allows a muted user to post messages in a running broadcast chat again. The authenticated user must be the broadcast host or a moderator.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

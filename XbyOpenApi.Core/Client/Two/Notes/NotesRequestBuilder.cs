@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Two.Notes
     {
     }
     /// <summary>
-    /// Create Community Notes
+    /// Creates a Community Note on a Post. With test_mode set to true, the note is only for testing and is not publicly visible.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.CreateCommunityNotesResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace XbyOpenApi.Core.Client.Two.Notes
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.CreateCommunityNotesResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.CreateCommunityNotesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Create Community Notes
+    /// Creates a Community Note on a Post. With test_mode set to true, the note is only for testing and is not publicly visible.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

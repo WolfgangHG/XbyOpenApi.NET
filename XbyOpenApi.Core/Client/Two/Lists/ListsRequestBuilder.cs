@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists
     {
     }
     /// <summary>
-    /// Create Lists
+    /// Creates a new List for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.CreateListsResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.CreateListsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.CreateListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Create Lists
+    /// Creates a new List for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

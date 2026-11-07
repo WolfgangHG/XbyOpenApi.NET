@@ -14,7 +14,7 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Enable replay.</summary>
     public bool? AvailableForReplay { get; set; }
-    /// <summary>Chat permission option (numeric string).</summary>
+    /// <summary>Who can chat (numeric string): `0` default, `1` chat off, `2` everyone, `3` verified accounts, `4` accounts the host follows, `5` the host&apos;s subscribers, `6` accounts followed by an account the host follows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? ChatOption { get; set; }
@@ -50,7 +50,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public global::XbyOpenApi.Core.Client.Models.CreateScheduledBroadcastRecurrence Recurrence { get; set; }
 #endif
-    /// <summary>End time, ms since Unix epoch (decimal string).</summary>
+    /// <summary>Optional end time, ms since Unix epoch (decimal string). Omit for an open-ended broadcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? ScheduledEndMs { get; set; }
@@ -66,7 +66,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string ScheduledStartMs { get; set; }
 #endif
-    /// <summary>Ingest / source id to bind (same as sources `rtmp_stream_key`).</summary>
+    /// <summary>Source to bind: a source&apos;s `id` from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? SourceId { get; set; }
@@ -74,7 +74,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string SourceId { get; set; }
 #endif
-    /// <summary>Optional telecast id (numeric string).</summary>
+    /// <summary>Deprecated: telecast associations are being retired and this field will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? TelecastId { get; set; }

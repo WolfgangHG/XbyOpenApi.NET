@@ -20,7 +20,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string DisplayName { get; set; }
 #endif
-    /// <summary>Who may send Direct Messages to the bot.</summary>
+    /// <summary>Who may send the bot Direct Messages: everyone, or premium for verified senders only. Premium isn&apos;t meant for org-only bots, since everyone in an org-only bot&apos;s developer account should be able to message it, verified or not; requesting premium for one may be refused with a 400. The no_one value is deprecated and kept only so bots that already use it can keep it; choosing it for any other bot may be refused with a 400.</summary>
     public global::XbyOpenApi.Core.Client.Models.UpdateBotRequest_dm_permission? DmPermission { get; set; }
     /// <summary>New handle (X screen name): 5-15 characters, letters, numbers, or underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

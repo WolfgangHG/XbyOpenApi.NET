@@ -12,7 +12,7 @@ namespace XbyOpenApi.Core.Client.Models
   public partial class RotateBotTokenRequest : IParsable
 #pragma warning restore CS1591
   {
-    /// <summary>Scopes for the new bearer token; defaults to the standard bot scope set (dm.read, dm.write, tweet.read, users.read, media.write).</summary>
+    /// <summary>Scopes for the new bearer token. Broadcast moderation additionally supports broadcast.read and broadcast.write. Defaults to the XChat scope set (dm.read, dm.write, tweet.read, users.read, media.write).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public List<string>? Scopes { get; set; }

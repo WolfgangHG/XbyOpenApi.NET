@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using XbyOpenApi.Core.Client.Models;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members.Remove;
 namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members
 {
   /// <summary>
@@ -17,6 +18,11 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class MembersRequestBuilder : BaseRequestBuilder
   {
+    /// <summary>The remove property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members.Remove.RemoveRequestBuilder Remove
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members.MembersRequestBuilder"/> and sets the default values.
     /// </summary>
@@ -34,7 +40,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members
     {
     }
     /// <summary>
-    /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key.
+    /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key. Adding a user who has a pending join request approves that request; approval needs the same key-rotation body as adding any member.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.AddChatGroupMembersResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -59,7 +65,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.AddChatGroupMembersResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.AddChatGroupMembersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key.
+    /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key. Adding a user who has a pending join request approves that request; approval needs the same key-rotation body as adding any member.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

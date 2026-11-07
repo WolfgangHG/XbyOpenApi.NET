@@ -9,12 +9,24 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using XbyOpenApi.Core.Client.Models;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admin_requests;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admin_settings;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admins;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Archive;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Invite;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Invites;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Join_requests;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Keys;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Message_ttl;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Messages;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Mute;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Pinned_messages;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Read;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Screen_capture;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Typing;
+using XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Unread;
 namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
 {
   /// <summary>
@@ -23,10 +35,45 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class ConversationsItemRequestBuilder : BaseRequestBuilder
   {
+    /// <summary>The admin_requests property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admin_requests.Admin_requestsRequestBuilder Admin_requests
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admin_requests.Admin_requestsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The admin_settings property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admin_settings.Admin_settingsRequestBuilder Admin_settings
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admin_settings.Admin_settingsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The admins property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admins.AdminsRequestBuilder Admins
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Admins.AdminsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The archive property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Archive.ArchiveRequestBuilder Archive
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>The events property</summary>
     public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events.EventsRequestBuilder Events
     {
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The invite property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Invite.InviteRequestBuilder Invite
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Invite.InviteRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The invites property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Invites.InvitesRequestBuilder Invites
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Invites.InvitesRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The join_requests property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Join_requests.Join_requestsRequestBuilder Join_requests
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Join_requests.Join_requestsRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The keys property</summary>
     public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Keys.KeysRequestBuilder Keys
@@ -38,20 +85,45 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
     {
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
     }
+    /// <summary>The message_ttl property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Message_ttl.Message_ttlRequestBuilder Message_ttl
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Message_ttl.Message_ttlRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>The messages property</summary>
     public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Messages.MessagesRequestBuilder Messages
     {
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The mute property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Mute.MuteRequestBuilder Mute
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Mute.MuteRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The pinned_messages property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Pinned_messages.Pinned_messagesRequestBuilder Pinned_messages
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Pinned_messages.Pinned_messagesRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The read property</summary>
     public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Read.ReadRequestBuilder Read
     {
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Read.ReadRequestBuilder(PathParameters, RequestAdapter);
     }
+    /// <summary>The screen_capture property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Screen_capture.Screen_captureRequestBuilder Screen_capture
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Screen_capture.Screen_captureRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>The typing property</summary>
     public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder Typing
     {
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The unread property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Unread.UnreadRequestBuilder Unread
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.Unread.UnreadRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/> and sets the default values.
@@ -70,7 +142,32 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
     {
     }
     /// <summary>
-    /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
+    /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app.
+    /// </summary>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.DeleteChatConversationResponse"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+    /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public async Task<global::XbyOpenApi.Core.Client.Models.DeleteChatConversationResponse?> DeleteAsync(global::XbyOpenApi.Core.Client.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#nullable restore
+#else
+    public async Task<global::XbyOpenApi.Core.Client.Models.DeleteChatConversationResponse> DeleteAsync(global::XbyOpenApi.Core.Client.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+      var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::XbyOpenApi.Core.Client.Models.Error.CreateFromDiscriminatorValue },
+            };
+      return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.DeleteChatConversationResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.DeleteChatConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+    }
+    /// <summary>
+    /// Returns metadata for a Chat conversation including type, muted status, group details, and your unread state. For the unread state, request chat_conversation.fields=unread,last_read_event_id,newest_event_id: those fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetChatConversationResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +190,54 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetChatConversationResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetChatConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
+    /// Renames an encrypted Chat group conversation, changes its avatar, or sets its description. The client encrypts each value with the conversation key and lists the values it changed in modified_fields.
+    /// </summary>
+    /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UpdateChatGroupResponse"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+    /// <exception cref="global::XbyOpenApi.Core.Client.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public async Task<global::XbyOpenApi.Core.Client.Models.UpdateChatGroupResponse?> PutAsync(global::XbyOpenApi.Core.Client.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#nullable restore
+#else
+    public async Task<global::XbyOpenApi.Core.Client.Models.UpdateChatGroupResponse> PutAsync(global::XbyOpenApi.Core.Client.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+      var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::XbyOpenApi.Core.Client.Models.Error.CreateFromDiscriminatorValue },
+            };
+      return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UpdateChatGroupResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UpdateChatGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+    }
+    /// <summary>
+    /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app.
+    /// </summary>
+    /// <returns>A <see cref="RequestInformation"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public RequestInformation ToDeleteRequestInformation(global::XbyOpenApi.Core.Client.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
+#nullable restore
+#else
+    public RequestInformation ToDeleteRequestInformation(global::XbyOpenApi.Core.Client.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+      requestInfo.Configure(requestConfiguration);
+      requestInfo.Headers.TryAdd("Accept", "application/json");
+      requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+      return requestInfo;
+    }
+    /// <summary>
+    /// Returns metadata for a Chat conversation including type, muted status, group details, and your unread state. For the unread state, request chat_conversation.fields=unread,last_read_event_id,newest_event_id: those fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,6 +256,28 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
       return requestInfo;
     }
     /// <summary>
+    /// Renames an encrypted Chat group conversation, changes its avatar, or sets its description. The client encrypts each value with the conversation key and lists the values it changed in modified_fields.
+    /// </summary>
+    /// <returns>A <see cref="RequestInformation"/></returns>
+    /// <param name="body">The request body</param>
+    /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public RequestInformation ToPutRequestInformation(global::XbyOpenApi.Core.Client.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+    {
+#nullable restore
+#else
+    public RequestInformation ToPutRequestInformation(global::XbyOpenApi.Core.Client.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+    {
+#endif
+      if (ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+      var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+      requestInfo.Configure(requestConfiguration);
+      requestInfo.Headers.TryAdd("Accept", "application/json");
+      requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+      return requestInfo;
+    }
+    /// <summary>
     /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
@@ -121,7 +287,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations.Item
       return new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
+    /// Returns metadata for a Chat conversation including type, muted status, group details, and your unread state. For the unread state, request chat_conversation.fields=unread,last_read_event_id,newest_event_id: those fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationsItemRequestBuilderGetQueryParameters

@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Owned_lists
     {
     }
     /// <summary>
-    /// Get Users Owned Lists
+    /// Retrieves a list of Lists owned by a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersOwnedListsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Owned_lists
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersOwnedListsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersOwnedListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Owned Lists
+    /// Retrieves a list of Lists owned by a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Owned_lists
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Owned_lists.Owned_listsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Owned Lists
+    /// Retrieves a list of Lists owned by a specific User by their ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Owned_listsRequestBuilderGetQueryParameters

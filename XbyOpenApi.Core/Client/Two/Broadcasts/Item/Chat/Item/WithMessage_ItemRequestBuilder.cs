@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Item.Chat.Item
     {
     }
     /// <summary>
-    /// Removes a specific chat message from a running broadcast owned by the authenticated user.
+    /// Removes a specific chat message from a running broadcast where the authenticated user is the host or a moderator.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.DeleteBroadcastChatMessageResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Broadcasts.Item.Chat.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.DeleteBroadcastChatMessageResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.DeleteBroadcastChatMessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Removes a specific chat message from a running broadcast owned by the authenticated user.
+    /// Removes a specific chat message from a running broadcast where the authenticated user is the host or a moderator.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

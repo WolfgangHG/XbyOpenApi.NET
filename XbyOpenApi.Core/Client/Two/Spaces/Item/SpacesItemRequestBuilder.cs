@@ -46,7 +46,7 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Item
     {
     }
     /// <summary>
-    /// Get Spaces by ID
+    /// Retrieves details of a specific Space by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetSpacesByIdResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetSpacesByIdResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetSpacesByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Spaces by ID
+    /// Retrieves details of a specific Space by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +97,7 @@ namespace XbyOpenApi.Core.Client.Two.Spaces.Item
       return new global::XbyOpenApi.Core.Client.Two.Spaces.Item.SpacesItemRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Spaces by ID
+    /// Retrieves details of a specific Space by its ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SpacesItemRequestBuilderGetQueryParameters

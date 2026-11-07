@@ -12,16 +12,16 @@ namespace XbyOpenApi.Core.Client.Models
   public partial class MarkChatConversationReadRequest : IAdditionalDataHolder, IParsable
 #pragma warning restore CS1591
   {
-    /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-    public IDictionary<string, object> AdditionalData { get; set; }
-    /// <summary>The sequence ID of the last message to mark as read up to.</summary>
+    /// <summary>Signature over the read receipt (a MarkConversationReadEvent). Omit to send it unsigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public string? SeenUntilSequenceId { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadActionSignatures>? ActionSignatures { get; set; }
 #nullable restore
 #else
-    public string SeenUntilSequenceId { get; set; }
+    public List<global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadActionSignatures> ActionSignatures { get; set; }
 #endif
+    /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+    public IDictionary<string, object> AdditionalData { get; set; }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadRequest"/> and sets the default values.
     /// </summary>
@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
-                { "seen_until_sequence_id", n => { SeenUntilSequenceId = n.GetStringValue(); } },
+                { "action_signatures", n => { ActionSignatures = n.GetCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadActionSignatures>(global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadActionSignatures.CreateFromDiscriminatorValue)?.AsList(); } },
             };
     }
     /// <summary>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-      writer.WriteStringValue("seen_until_sequence_id", SeenUntilSequenceId);
+      writer.WriteCollectionOfObjectValues<global::XbyOpenApi.Core.Client.Models.MarkChatConversationReadActionSignatures>("action_signatures", ActionSignatures);
       writer.WriteAdditionalData(AdditionalData);
     }
   }

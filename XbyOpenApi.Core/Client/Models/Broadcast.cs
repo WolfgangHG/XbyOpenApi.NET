@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string BroadcastId { get; set; }
 #endif
-    /// <summary>The chat_option property</summary>
+    /// <summary>Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host&apos;s subscribers, 6 accounts followed by an account the host follows.</summary>
     public int? ChatOption { get; set; }
     /// <summary>The created_at_ms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -118,7 +118,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string ShareUrl { get; set; }
 #endif
-    /// <summary>The source_id property</summary>
+    /// <summary>Id of the source the broadcast streams from, as returned by GET /2/sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? SourceId { get; set; }

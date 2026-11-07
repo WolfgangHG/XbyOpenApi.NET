@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
     {
     }
     /// <summary>
-    /// Search News
+    /// Retrieves a list of News stories matching the specified search query.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.SearchNewsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.SearchNewsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.SearchNewsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Search News
+    /// Retrieves a list of News stories matching the specified search query.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.News.Search
       return new global::XbyOpenApi.Core.Client.Two.News.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Search News
+    /// Retrieves a list of News stories matching the specified search query.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRequestBuilderGetQueryParameters

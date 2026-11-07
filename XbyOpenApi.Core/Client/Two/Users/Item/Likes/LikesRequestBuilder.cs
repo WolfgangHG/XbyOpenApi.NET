@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Likes
     {
     }
     /// <summary>
-    /// Like Post
+    /// Causes the authenticated user to like a specific Post by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.LikePostResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Likes
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.LikePostResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.LikePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Like Post
+    /// Causes the authenticated user to like a specific Post by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

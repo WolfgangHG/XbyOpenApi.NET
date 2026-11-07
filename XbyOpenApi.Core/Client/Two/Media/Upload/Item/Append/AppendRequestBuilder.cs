@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload.Item.Append
     {
     }
     /// <summary>
-    /// Append Media Upload
+    /// Appends data to a Media upload request.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.AppendMediaUploadResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Two.Media.Upload.Item.Append
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.AppendMediaUploadResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.AppendMediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Append Media Upload
+    /// Appends data to a Media upload request.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Dm.Unblock
     {
     }
     /// <summary>
-    /// Unblock Users Dms
+    /// Unblocks direct messages to or from a specific User by their ID for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.UnblockUsersDmsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Dm.Unblock
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.UnblockUsersDmsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.UnblockUsersDmsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Unblock Users Dms
+    /// Unblocks direct messages to or from a specific User by their ID for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

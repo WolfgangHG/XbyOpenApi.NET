@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Dm.Block
     {
     }
     /// <summary>
-    /// Block Users Dms
+    /// Blocks direct messages to or from a specific User by their ID for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.BlockUsersDmsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Dm.Block
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.BlockUsersDmsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.BlockUsersDmsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Block Users Dms
+    /// Blocks direct messages to or from a specific User by their ID for the authenticated user.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

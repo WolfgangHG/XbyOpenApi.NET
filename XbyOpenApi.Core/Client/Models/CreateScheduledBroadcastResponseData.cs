@@ -16,7 +16,7 @@ namespace XbyOpenApi.Core.Client.Models
     public IDictionary<string, object> AdditionalData { get; set; }
     /// <summary>Whether replay is enabled.</summary>
     public bool? AvailableForReplay { get; set; }
-    /// <summary>Alphanumeric UBS broadcast id (path `:id` for get/update/delete/live).</summary>
+    /// <summary>Alphanumeric broadcast id (path `:id` for get/update/delete/live).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? BroadcastId { get; set; }
@@ -24,7 +24,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string BroadcastId { get; set; }
 #endif
-    /// <summary>Optional chat permission option.</summary>
+    /// <summary>Who can chat (numeric string): `0` default, `1` chat off, `2` everyone, `3` verified accounts, `4` accounts the host follows, `5` the host&apos;s subscribers, `6` accounts followed by an account the host follows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? ChatOption { get; set; }
@@ -50,7 +50,7 @@ namespace XbyOpenApi.Core.Client.Models
 #endif
     /// <summary>When true, coordinator will not auto-publish; call POST .../live when ready.</summary>
     public bool? ManualPublish { get; set; }
-    /// <summary>Set when this occurrence belongs to a recurrence.</summary>
+    /// <summary>Deprecated: always null for new schedules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? RecurringScheduleId { get; set; }
@@ -82,7 +82,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string ScheduledStartMs { get; set; }
 #endif
-    /// <summary>Bound ingest / source id (`rtmp_stream_key`).</summary>
+    /// <summary>Id of the bound source, as returned by GET /2/sources. Omitted when unknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? SourceId { get; set; }
@@ -90,7 +90,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string SourceId { get; set; }
 #endif
-    /// <summary>Scheduler state (Created, Scheduled, Running, …).</summary>
+    /// <summary>Scheduler state: `Created` or `Scheduled` before start, then `Running`, `Ended`, or `Error`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? State { get; set; }
@@ -98,7 +98,7 @@ namespace XbyOpenApi.Core.Client.Models
 #else
     public string State { get; set; }
 #endif
-    /// <summary>Optional telecast association.</summary>
+    /// <summary>Deprecated: always null for new schedules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? TelecastId { get; set; }

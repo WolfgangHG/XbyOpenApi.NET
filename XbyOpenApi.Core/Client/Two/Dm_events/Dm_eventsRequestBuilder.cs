@@ -47,7 +47,7 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
     {
     }
     /// <summary>
-    /// Get Direct Messages Events
+    /// Retrieves a list of recent direct message events across all conversations.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetDirectMessagesEventsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetDirectMessagesEventsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetDirectMessagesEventsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Direct Messages Events
+    /// Retrieves a list of recent direct message events across all conversations.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace XbyOpenApi.Core.Client.Two.Dm_events
       return new global::XbyOpenApi.Core.Client.Two.Dm_events.Dm_eventsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Direct Messages Events
+    /// Retrieves a list of recent direct message events across all conversations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dm_eventsRequestBuilderGetQueryParameters

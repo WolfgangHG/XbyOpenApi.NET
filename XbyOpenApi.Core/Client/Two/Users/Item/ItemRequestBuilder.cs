@@ -12,6 +12,7 @@ using XbyOpenApi.Core.Client.Models;
 using XbyOpenApi.Core.Client.Two.Users.Item.Affiliates;
 using XbyOpenApi.Core.Client.Two.Users.Item.Blocking;
 using XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks;
+using XbyOpenApi.Core.Client.Two.Users.Item.Broadcasts;
 using XbyOpenApi.Core.Client.Two.Users.Item.Dm;
 using XbyOpenApi.Core.Client.Two.Users.Item.Followed_lists;
 using XbyOpenApi.Core.Client.Two.Users.Item.Followers;
@@ -25,6 +26,7 @@ using XbyOpenApi.Core.Client.Two.Users.Item.Owned_lists;
 using XbyOpenApi.Core.Client.Two.Users.Item.Pinned_lists;
 using XbyOpenApi.Core.Client.Two.Users.Item.Public_keys;
 using XbyOpenApi.Core.Client.Two.Users.Item.Retweets;
+using XbyOpenApi.Core.Client.Two.Users.Item.Sources;
 using XbyOpenApi.Core.Client.Two.Users.Item.Timelines;
 using XbyOpenApi.Core.Client.Two.Users.Item.Tweets;
 namespace XbyOpenApi.Core.Client.Two.Users.Item
@@ -49,6 +51,11 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item
     public global::XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.BookmarksRequestBuilder Bookmarks
     {
       get => new global::XbyOpenApi.Core.Client.Two.Users.Item.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The broadcasts property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Users.Item.Broadcasts.BroadcastsRequestBuilder Broadcasts
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Users.Item.Broadcasts.BroadcastsRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>The dm property</summary>
     public global::XbyOpenApi.Core.Client.Two.Users.Item.Dm.DmRequestBuilder Dm
@@ -115,6 +122,11 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item
     {
       get => new global::XbyOpenApi.Core.Client.Two.Users.Item.Retweets.RetweetsRequestBuilder(PathParameters, RequestAdapter);
     }
+    /// <summary>The sources property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Users.Item.Sources.SourcesRequestBuilder Sources
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Users.Item.Sources.SourcesRequestBuilder(PathParameters, RequestAdapter);
+    }
     /// <summary>The timelines property</summary>
     public global::XbyOpenApi.Core.Client.Two.Users.Item.Timelines.TimelinesRequestBuilder Timelines
     {
@@ -142,7 +154,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item
     {
     }
     /// <summary>
-    /// Get Users by ID
+    /// Retrieves details of a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersByIdResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -165,7 +177,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersByIdResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users by ID
+    /// Retrieves details of a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -193,7 +205,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users by ID
+    /// Retrieves details of a specific User by their ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemRequestBuilderGetQueryParameters

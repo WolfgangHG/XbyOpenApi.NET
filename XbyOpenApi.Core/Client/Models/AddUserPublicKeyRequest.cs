@@ -14,8 +14,6 @@ namespace XbyOpenApi.Core.Client.Models
   {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData { get; set; }
-    /// <summary>When true, the server generates a new version.</summary>
-    public bool? GenerateVersion { get; set; }
     /// <summary>The public_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,14 +21,6 @@ namespace XbyOpenApi.Core.Client.Models
 #nullable restore
 #else
     public global::XbyOpenApi.Core.Client.Models.AddUserPublicKeyPublicKey PublicKey { get; set; }
-#endif
-    /// <summary>Public key version.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-    public string? Version { get; set; }
-#nullable restore
-#else
-    public string Version { get; set; }
 #endif
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Models.AddUserPublicKeyRequest"/> and sets the default values.
@@ -57,9 +47,7 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
-                { "generate_version", n => { GenerateVersion = n.GetBoolValue(); } },
                 { "public_key", n => { PublicKey = n.GetObjectValue<global::XbyOpenApi.Core.Client.Models.AddUserPublicKeyPublicKey>(global::XbyOpenApi.Core.Client.Models.AddUserPublicKeyPublicKey.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetStringValue(); } },
             };
     }
     /// <summary>
@@ -69,9 +57,7 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-      writer.WriteBoolValue("generate_version", GenerateVersion);
       writer.WriteObjectValue<global::XbyOpenApi.Core.Client.Models.AddUserPublicKeyPublicKey>("public_key", PublicKey);
-      writer.WriteStringValue("version", Version);
       writer.WriteAdditionalData(AdditionalData);
     }
   }

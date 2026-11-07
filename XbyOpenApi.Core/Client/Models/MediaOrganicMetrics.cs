@@ -8,13 +8,17 @@ using System;
 namespace XbyOpenApi.Core.Client.Models
 {
   /// <summary>
-  /// Organic nonpublic engagement metrics for the media at the time of the request.
+  /// Lifetime organic engagement metrics for the media at the time of the request.Only available to the user who uploaded the video.
   /// </summary>
   [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
   public partial class MediaOrganicMetrics : IAdditionalDataHolder, IParsable
   {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData { get; set; }
+    /// <summary>Number of clicks on the video&apos;s call-to-action URL.</summary>
+    public long? CtaUrlClickCount { get; set; }
+    /// <summary>Number of clicks on the video&apos;s &quot;watch&quot; call to action.</summary>
+    public long? CtaWatchClickCount { get; set; }
     /// <summary>Number of users who started playback (0% quartile) of this video.</summary>
     public long? Playback0Count { get; set; }
     /// <summary>Number of users who completed playback (100% quartile) of this video.</summary>
@@ -25,8 +29,10 @@ namespace XbyOpenApi.Core.Client.Models
     public long? Playback50Count { get; set; }
     /// <summary>Number of users who watched at least 75% of this video.</summary>
     public long? Playback75Count { get; set; }
-    /// <summary>The number of organic views of this video. Null when the backend returns quartile data without a view count.</summary>
+    /// <summary>The number of organic views of this video.</summary>
     public long? ViewCount { get; set; }
+    /// <summary>Total time this video has been watched, in milliseconds.</summary>
+    public long? WatchTimeMs { get; set; }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Models.MediaOrganicMetrics"/> and sets the default values.
     /// </summary>
@@ -52,12 +58,15 @@ namespace XbyOpenApi.Core.Client.Models
     {
       return new Dictionary<string, Action<IParseNode>>
             {
+                { "cta_url_click_count", n => { CtaUrlClickCount = n.GetLongValue(); } },
+                { "cta_watch_click_count", n => { CtaWatchClickCount = n.GetLongValue(); } },
                 { "playback_0_count", n => { Playback0Count = n.GetLongValue(); } },
                 { "playback_100_count", n => { Playback100Count = n.GetLongValue(); } },
                 { "playback_25_count", n => { Playback25Count = n.GetLongValue(); } },
                 { "playback_50_count", n => { Playback50Count = n.GetLongValue(); } },
                 { "playback_75_count", n => { Playback75Count = n.GetLongValue(); } },
                 { "view_count", n => { ViewCount = n.GetLongValue(); } },
+                { "watch_time_ms", n => { WatchTimeMs = n.GetLongValue(); } },
             };
     }
     /// <summary>
@@ -67,12 +76,15 @@ namespace XbyOpenApi.Core.Client.Models
     public virtual void Serialize(ISerializationWriter writer)
     {
       if (ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+      writer.WriteLongValue("cta_url_click_count", CtaUrlClickCount);
+      writer.WriteLongValue("cta_watch_click_count", CtaWatchClickCount);
       writer.WriteLongValue("playback_0_count", Playback0Count);
       writer.WriteLongValue("playback_100_count", Playback100Count);
       writer.WriteLongValue("playback_25_count", Playback25Count);
       writer.WriteLongValue("playback_50_count", Playback50Count);
       writer.WriteLongValue("playback_75_count", Playback75Count);
       writer.WriteLongValue("view_count", ViewCount);
+      writer.WriteLongValue("watch_time_ms", WatchTimeMs);
       writer.WriteAdditionalData(AdditionalData);
     }
   }

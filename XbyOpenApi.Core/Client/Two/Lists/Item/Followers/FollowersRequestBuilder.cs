@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Followers
     {
     }
     /// <summary>
-    /// Get Lists Followers
+    /// Retrieves a list of Users who follow a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetListsFollowersResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Followers
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetListsFollowersResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetListsFollowersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Lists Followers
+    /// Retrieves a list of Users who follow a specific List by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Lists.Item.Followers
       return new global::XbyOpenApi.Core.Client.Two.Lists.Item.Followers.FollowersRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Lists Followers
+    /// Retrieves a list of Users who follow a specific List by its ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowersRequestBuilderGetQueryParameters

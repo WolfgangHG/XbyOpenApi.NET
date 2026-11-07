@@ -8,6 +8,10 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
   public enum GetUserFieldsQueryParameterType
 #pragma warning restore CS1591
   {
+    [EnumMember(Value = "active_follower_count")]
+#pragma warning disable CS1591
+    Active_follower_count,
+#pragma warning restore CS1591
     [EnumMember(Value = "confirmed_email")]
 #pragma warning disable CS1591
     Confirmed_email,
@@ -63,6 +67,10 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Following
     [EnumMember(Value = "public_metrics")]
 #pragma warning disable CS1591
     Public_metrics,
+#pragma warning restore CS1591
+    [EnumMember(Value = "receives_your_chat")]
+#pragma warning disable CS1591
+    Receives_your_chat,
 #pragma warning restore CS1591
     [EnumMember(Value = "receives_your_dm")]
 #pragma warning disable CS1591

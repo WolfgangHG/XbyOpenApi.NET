@@ -89,7 +89,7 @@ namespace XbyOpenApi.Core.Client.Two.Users
     {
     }
     /// <summary>
-    /// Get Users by IDs
+    /// Retrieves details of multiple Users by their IDs.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersByIdsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace XbyOpenApi.Core.Client.Two.Users
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersByIdsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users by IDs
+    /// Retrieves details of multiple Users by their IDs.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace XbyOpenApi.Core.Client.Two.Users
       return new global::XbyOpenApi.Core.Client.Two.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users by IDs
+    /// Retrieves details of multiple Users by their IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersRequestBuilderGetQueryParameters

@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Dm_conversations.Item.Messages
     {
     }
     /// <summary>
-    /// Create Direct Messages by Conversation ID
+    /// Sends a new direct message to a specific conversation by its ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.CreateDirectMessagesByConversationIdResponse"/></returns>
     /// <param name="body">At least one of `text`, `attachments` is required.</param>
@@ -59,7 +59,7 @@ namespace XbyOpenApi.Core.Client.Two.Dm_conversations.Item.Messages
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.CreateDirectMessagesByConversationIdResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.CreateDirectMessagesByConversationIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Create Direct Messages by Conversation ID
+    /// Sends a new direct message to a specific conversation by its ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">At least one of `text`, `attachments` is required.</param>

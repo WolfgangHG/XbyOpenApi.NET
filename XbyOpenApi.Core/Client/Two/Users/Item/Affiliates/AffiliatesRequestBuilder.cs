@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Affiliates
     {
     }
     /// <summary>
-    /// Get Users Affiliates
+    /// Retrieves a list of Users who are affiliated with a specific organization User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersAffiliatesResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Affiliates
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersAffiliatesResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersAffiliatesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Affiliates
+    /// Retrieves a list of Users who are affiliated with a specific organization User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Affiliates
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Affiliates.AffiliatesRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Affiliates
+    /// Retrieves a list of Users who are affiliated with a specific organization User by their ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AffiliatesRequestBuilderGetQueryParameters

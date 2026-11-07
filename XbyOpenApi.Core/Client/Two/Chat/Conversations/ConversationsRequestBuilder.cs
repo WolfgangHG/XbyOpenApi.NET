@@ -25,7 +25,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>Gets an item from the XbyOpenApi.Core.Client.Two.chat.conversations.item collection</summary>
-    /// <param name="position">Unique identifier of the item</param>
+    /// <param name="position">The ID of the conversation: a group ID starting with `g`, the other user&apos;s ID for a 1:1 conversation, or both user IDs of a 1:1 conversation joined by a hyphen.</param>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
     public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder this[string position]
     {
@@ -41,7 +41,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
     /// </summary>
     /// <param name="pathParameters">Path parameters for the request</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,expansions,max_results*,pagination_token*,user%2Efields}", pathParameters)
+    public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,end_time*,expansions,is_archived*,is_muted*,max_results*,pagination_token*,participant_ids,participant_query*,start_time*,type*,unread_only*,user%2Efields}", pathParameters)
     {
     }
     /// <summary>
@@ -49,11 +49,11 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
     /// </summary>
     /// <param name="rawUrl">The raw URL to use for the request builder.</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,expansions,max_results*,pagination_token*,user%2Efields}", rawUrl)
+    public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,end_time*,expansions,is_archived*,is_muted*,max_results*,pagination_token*,participant_ids,participant_query*,start_time*,type*,unread_only*,user%2Efields}", rawUrl)
     {
     }
     /// <summary>
-    /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
+    /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox, newest first: the most recently active conversation comes first. To find the chat with a particular person, start with participant_query set to their @username or name. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation&apos;s latest notifying message. Request them with chat_conversation.fields=unread,last_read_event_id,newest_event_id.The filters unread_only, type, is_archived, is_muted, participant_ids, participant_query, start_time and end_time are optional, and all filters must match (AND). participant_query keeps conversations where another participant&apos;s username, or a word of their display name, starts with the query, ignoring case and accents; with a leading @ it matches usernames only. It considers the 100 people who best match the query, uses only public profile information, and never matches group names, nicknames or messages. start_time and end_time apply to the time of each conversation&apos;s latest message.Each page covers max_results conversations and returns those that match, so a page can hold fewer than max_results, or none, while meta.next_token is set and has_more is true: keep paging, passing meta.next_token as pagination_token. Once a page reaches a conversation whose latest message is older than start_time, has_more is false. A pagination_token only works with the same filters as the request that returned it; with other filters, the request fails with a 400.When both are provided, `start_time` must be earlier than `end_time`.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetChatConversationsResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetChatConversationsResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetChatConversationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
+    /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox, newest first: the most recently active conversation comes first. To find the chat with a particular person, start with participant_query set to their @username or name. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation&apos;s latest notifying message. Request them with chat_conversation.fields=unread,last_read_event_id,newest_event_id.The filters unread_only, type, is_archived, is_muted, participant_ids, participant_query, start_time and end_time are optional, and all filters must match (AND). participant_query keeps conversations where another participant&apos;s username, or a word of their display name, starts with the query, ignoring case and accents; with a leading @ it matches usernames only. It considers the 100 people who best match the query, uses only public profile information, and never matches group names, nicknames or messages. start_time and end_time apply to the time of each conversation&apos;s latest message.Each page covers max_results conversations and returns those that match, so a page can hold fewer than max_results, or none, while meta.next_token is set and has_more is true: keep paging, passing meta.next_token as pagination_token. Once a page reaches a conversation whose latest message is older than start_time, has_more is false. A pagination_token only works with the same filters as the request that returned it; with other filters, the request fails with a 400.When both are provided, `start_time` must be earlier than `end_time`.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
       return new global::XbyOpenApi.Core.Client.Two.Chat.Conversations.ConversationsRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
+    /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox, newest first: the most recently active conversation comes first. To find the chat with a particular person, start with participant_query set to their @username or name. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation&apos;s latest notifying message. Request them with chat_conversation.fields=unread,last_read_event_id,newest_event_id.The filters unread_only, type, is_archived, is_muted, participant_ids, participant_query, start_time and end_time are optional, and all filters must match (AND). participant_query keeps conversations where another participant&apos;s username, or a word of their display name, starts with the query, ignoring case and accents; with a leading @ it matches usernames only. It considers the 100 people who best match the query, uses only public profile information, and never matches group names, nicknames or messages. start_time and end_time apply to the time of each conversation&apos;s latest message.Each page covers max_results conversations and returns those that match, so a page can hold fewer than max_results, or none, while meta.next_token is set and has_more is true: keep paging, passing meta.next_token as pagination_token. Once a page reaches a conversation whose latest message is older than start_time, has_more is false. A pagination_token only works with the same filters as the request that returned it; with other filters, the request fails with a 400.When both are provided, `start_time` must be earlier than `end_time`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationsRequestBuilderGetQueryParameters
@@ -119,6 +119,9 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
       [QueryParameter("chat_conversation%2Efields")]
       public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.GetChat_conversationFieldsQueryParameterType[] ChatConversationFields { get; set; }
 #endif
+      /// <summary>ISO 8601, e.g. 2026-10-17T00:00:00Z. Chats whose latest message is before this time.</summary>
+      [QueryParameter("end_time")]
+      public DateTimeOffset? EndTime { get; set; }
       /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,23 +132,54 @@ namespace XbyOpenApi.Core.Client.Two.Chat.Conversations
       [QueryParameter("expansions")]
       public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
-#pragma warning disable CS1591
+      /// <summary>true: only archived; false: only not archived. Omit for both.</summary>
+      [QueryParameter("is_archived")]
+      public bool? IsArchived { get; set; }
+      /// <summary>true: only muted; false: only not muted. Omit for both.</summary>
+      [QueryParameter("is_muted")]
+      public bool? IsMuted { get; set; }
+      /// <summary>Conversations covered per page (1-1000, default 200). Filtered pages can return fewer.</summary>
       [QueryParameter("max_results")]
       public int? MaxResults { get; set; }
-#pragma warning restore CS1591
+      /// <summary>meta.next_token from the previous page. Send the same filters with it, or the request fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-#pragma warning disable CS1591
       [QueryParameter("pagination_token")]
       public string? PaginationToken { get; set; }
-#pragma warning restore CS1591
 #nullable restore
 #else
-#pragma warning disable CS1591
       [QueryParameter("pagination_token")]
       public string PaginationToken { get; set; }
-#pragma warning restore CS1591
 #endif
+      /// <summary>Comma-separated numeric user IDs (1-10), all in the chat. Names or @handles: use participant_query.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+      [QueryParameter("participant_ids")]
+      public string[]? ParticipantIds { get; set; }
+#nullable restore
+#else
+      [QueryParameter("participant_ids")]
+      public string[] ParticipantIds { get; set; }
+#endif
+      /// <summary>Start here to find someone&apos;s chat: their @username or a word of their name (1-50 chars).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+      [QueryParameter("participant_query")]
+      public string? ParticipantQuery { get; set; }
+#nullable restore
+#else
+      [QueryParameter("participant_query")]
+      public string ParticipantQuery { get; set; }
+#endif
+      /// <summary>ISO 8601, e.g. 2026-10-16T00:00:00Z. Chats whose latest message is at or after this time.</summary>
+      [QueryParameter("start_time")]
+      public DateTimeOffset? StartTime { get; set; }
+      /// <summary>Only direct (1:1) or only group conversations. Omit for both.</summary>
+      [QueryParameter("type")]
+      public global::XbyOpenApi.Core.Client.Two.Chat.Conversations.GetTypeQueryParameterType? Type { get; set; }
+      /// <summary>Return only unread conversations. A page can be short; keep paging while has_more.</summary>
+      [QueryParameter("unread_only")]
+      public bool? UnreadOnly { get; set; }
       /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

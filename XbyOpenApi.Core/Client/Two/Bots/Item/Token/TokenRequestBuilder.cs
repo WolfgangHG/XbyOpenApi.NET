@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item.Token
     {
     }
     /// <summary>
-    /// Revoke Bot Token
+    /// Revokes a bot&apos;s bearer token. The bot account is kept, and rotating its token mints a new one.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.RevokeBotTokenResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item.Token
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.RevokeBotTokenResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.RevokeBotTokenResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Rotate Bot Token
+    /// Mints a new bearer token for a bot and invalidates every token previously issued for it. The new token is returned only once.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.RotateBotTokenResponse"/></returns>
     /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item.Token
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.RotateBotTokenResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.RotateBotTokenResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Revoke Bot Token
+    /// Revokes a bot&apos;s bearer token. The bot account is kept, and rotating its token mints a new one.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace XbyOpenApi.Core.Client.Two.Bots.Item.Token
       return requestInfo;
     }
     /// <summary>
-    /// Rotate Bot Token
+    /// Mints a new bearer token for a bot and invalidates every token previously issued for it. The new token is returned only once.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="body">The request body</param>

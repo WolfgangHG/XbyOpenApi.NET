@@ -34,7 +34,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followers
     {
     }
     /// <summary>
-    /// Get Users Followers
+    /// Retrieves a list of Users who follow a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="global::XbyOpenApi.Core.Client.Models.GetUsersFollowersResponse"/></returns>
     /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followers
       return await RequestAdapter.SendAsync<global::XbyOpenApi.Core.Client.Models.GetUsersFollowersResponse>(requestInfo, global::XbyOpenApi.Core.Client.Models.GetUsersFollowersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
     }
     /// <summary>
-    /// Get Users Followers
+    /// Retrieves a list of Users who follow a specific User by their ID.
     /// </summary>
     /// <returns>A <see cref="RequestInformation"/></returns>
     /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followers
       return new global::XbyOpenApi.Core.Client.Two.Users.Item.Followers.FollowersRequestBuilder(rawUrl, RequestAdapter);
     }
     /// <summary>
-    /// Get Users Followers
+    /// Retrieves a list of Users who follow a specific User by their ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowersRequestBuilderGetQueryParameters
@@ -100,11 +100,10 @@ namespace XbyOpenApi.Core.Client.Two.Users.Item.Followers
       [QueryParameter("expansions")]
       public global::XbyOpenApi.Core.Client.Two.Users.Item.Followers.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
-#pragma warning disable CS1591
+      /// <summary>The maximum number of users to return.</summary>
       [QueryParameter("max_results")]
       public int? MaxResults { get; set; }
-#pragma warning restore CS1591
-      /// <summary>A base32hex-encoded pagination token.</summary>
+      /// <summary>The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
       [QueryParameter("pagination_token")]

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System;
 using XbyOpenApi.Core.Client.Two.Chat.Conversations;
 using XbyOpenApi.Core.Client.Two.Chat.Media;
+using XbyOpenApi.Core.Client.Two.Chat.Message_requests;
+using XbyOpenApi.Core.Client.Two.Chat.Settings;
 namespace XbyOpenApi.Core.Client.Two.Chat
 {
   /// <summary>
@@ -25,6 +27,16 @@ namespace XbyOpenApi.Core.Client.Two.Chat
     public global::XbyOpenApi.Core.Client.Two.Chat.Media.MediaRequestBuilder Media
     {
       get => new global::XbyOpenApi.Core.Client.Two.Chat.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The message_requests property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Message_requests.Message_requestsRequestBuilder Message_requests
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Message_requests.Message_requestsRequestBuilder(PathParameters, RequestAdapter);
+    }
+    /// <summary>The settings property</summary>
+    public global::XbyOpenApi.Core.Client.Two.Chat.Settings.SettingsRequestBuilder Settings
+    {
+      get => new global::XbyOpenApi.Core.Client.Two.Chat.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
     }
     /// <summary>
     /// Instantiates a new <see cref="global::XbyOpenApi.Core.Client.Two.Chat.ChatRequestBuilder"/> and sets the default values.
