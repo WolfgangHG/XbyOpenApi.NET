@@ -3,8 +3,8 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="2.1.1" />
+    <PackageVersion Include="Microsoft.Kiota.Bundle" Version="2.1.6" />
     <PackageVersion Include="TinyOAuth1" Version="1.1.0" />
-    <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.4191.47" />
+    <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.4314.35" />
   </ItemGroup>
 </Project>
